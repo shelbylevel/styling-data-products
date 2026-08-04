@@ -1,0 +1,9 @@
+title: Shelby Level Brand
+author: Shelby Level
+version: 1.1.0
+quarto-required: ">=1.2.0"
+contributes:
+  formats:
+    html:
+      include-in-header:
+        - logo-header.html

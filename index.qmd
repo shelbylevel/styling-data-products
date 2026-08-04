@@ -1,0 +1,559 @@
+---
+title: "First Impressions Matter"
+subtitle: "Styling data products people actually want to use"
+author: "Shelby Level"
+format:
+    revealjs:
+        # slide-number: true
+        hash: true
+        progress: true
+        transition: fade
+        chalkboard: false
+        preview-links: auto
+        menu: false
+        center: false
+        brand: _brand.yml
+        theme: sl-brand.scss
+        # logo: _extensions/shelbylevel/brand/logo-header.html
+        # logo:
+        #   images:
+        #     sl-logo: img/sl-logo.svg
+        footer: "posit::conf(2026)"
+execute:
+    echo: true
+---
+
+# First Impressions Matter
+
+## Styling data products people actually want to use
+
+Shelby Level
+
+Reporting & Analytics Analyst III
+
+```{r eval = FALSE}
+# tags$img(htmltools::HTML(paste(
+#   suppressWarnings(readLines(
+#     "_extensions/shelbylevel/brand/logo-header.html"
+#   )),
+#   collapse = "\n"
+# )))
+```
+
+::: notes
+
+Welcome everybody.
+
+I work primarily on dashboards, reports, and other data products that help people make decisions.
+
+Today's talk is about something that often gets treated as optional: styling.
+
+Not because I think every data scientist should become a designer.
+
+But because styling has a direct impact on whether people engage with our work.
+
+:::
+
+---
+
+# A quick question
+
+## Which one would you trust?
+
+::: columns
+
+::: column
+[Placeholder: Screenshot of plain default dashboard]
+:::
+
+::: column
+[Placeholder: Screenshot of professionally styled version]
+:::
+
+:::
+
+::: notes
+
+Give people a second to react.
+
+The functionality is identical.
+
+The data is identical.
+
+Yet most people immediately form an opinion.
+
+That's the challenge we're talking about today.
+
+:::
+
+---
+
+# The uncomfortable truth
+
+## Users judge the product before they read the insight
+
+::: notes
+
+People evaluate trustworthiness, usability, and professionalism almost instantly.
+
+The visual experience becomes part of the analytical experience.
+
+That may not feel fair, but it's reality.
+
+:::
+
+---
+
+# The default look has a cost
+
+- Feels unfinished
+- Reduces confidence
+- Lowers adoption
+- Makes great analysis easier to ignore
+
+::: notes
+
+We've all built something that worked perfectly.
+
+And then received little engagement.
+
+Sometimes the issue isn't the analysis.
+
+It's the experience surrounding the analysis.
+
+:::
+
+---
+
+# But there's a problem
+
+## Most of us are not CSS experts
+
+::: notes
+
+Data scientists already juggle:
+
+- statistics
+- programming
+- deployment
+- stakeholder communication
+
+Adding advanced front-end development to that list can feel unrealistic.
+
+:::
+
+---
+
+# The common assumption
+
+## Professional styling requires lots of custom CSS
+
+```css
+.dashboard-header {
+  font-family: ...
+  background: ...
+  border-radius: ...
+}
+```
+
+::: notes
+
+This assumption keeps many people from improving presentation quality.
+
+But there are much higher-level tools available now.
+
+:::
+
+---
+
+# Today's Takeaway
+
+# Bootswatch + brand.yml
+
+## Professional styling without starting from scratch
+
+::: notes
+
+If you remember one thing from this talk, let it be this slide.
+
+Bootswatch provides a polished foundation.
+
+brand.yml provides reusable customization.
+
+Together, they create a practical workflow.
+
+:::
+
+---
+
+# Start with Bootswatch
+
+## A professional foundation in minutes
+
+[Placeholder: Gallery of several Bootswatch themes]
+
+::: notes
+
+Bootswatch gives us professionally designed Bootstrap themes.
+
+Instead of beginning with a blank canvas, we're starting from something already coherent.
+
+:::
+
+---
+
+# Before and After
+
+## Same content
+
+## Different experience
+
+::: columns
+
+::: column
+
+### Default
+
+[Placeholder Screenshot]
+
+:::
+
+::: column
+
+### Bootswatch
+
+[Placeholder Screenshot]
+
+:::
+
+:::
+
+::: notes
+
+Focus audience attention here.
+
+Nothing meaningful changed in the underlying app.
+
+Only presentation.
+
+Yet the perceived quality changes dramatically.
+
+:::
+
+---
+
+# Why themes work
+
+## They solve consistency for you
+
+- Typography
+- Spacing
+- Color hierarchy
+- Component styling
+- Visual rhythm
+
+::: notes
+
+Consistency is one of the hardest things to create manually.
+
+Themes provide consistency automatically.
+
+:::
+
+---
+
+# But themes aren't enough
+
+## Eventually everything starts looking the same
+
+::: notes
+
+Bootswatch is a great starting point.
+
+But organizations and teams often need something more recognizable.
+
+That's where brand.yml enters the picture.
+
+:::
+
+---
+
+# Meet brand.yml
+
+## Store design decisions in YAML
+
+```yaml
+meta:
+  name: My Organization
+
+color:
+  primary: "#006699"
+
+typography:
+  fonts:
+    - family: Source Sans Pro
+```
+
+::: notes
+
+The key idea:
+
+Design decisions become configuration rather than CSS.
+
+:::
+
+---
+
+# What can brand.yml control?
+
+- Colors
+- Typography
+- Logos
+- Links
+- Brand identity
+- Reusable themes
+
+::: notes
+
+Think of brand.yml as a central source of truth.
+
+:::
+
+---
+
+# Why this matters
+
+## One definition
+
+## Multiple products
+
+::: columns
+
+::: column
+
+- Dashboard
+- Report
+- Website
+
+:::
+
+::: column
+
+[Placeholder architecture diagram]
+
+:::
+
+:::
+
+::: notes
+
+Instead of customizing every project individually, we reuse the same branding decisions.
+
+This scales much better.
+
+:::
+
+---
+
+# The Workflow
+
+# Step 1
+
+Choose a Bootswatch theme
+
+[Placeholder screenshot]
+
+::: notes
+
+Find one that is already close to the feel you want.
+
+Don't optimize prematurely.
+
+:::
+
+---
+
+# The Workflow
+
+# Step 2
+
+Add a brand.yml
+
+[Placeholder simple brand.yml example]
+
+::: notes
+
+Capture colors, typography, and organization-specific choices.
+
+:::
+
+---
+
+# The Workflow
+
+# Step 3
+
+Reuse everywhere
+
+[Placeholder examples:
+Shiny
+Quarto report
+Quarto website]
+
+::: notes
+
+This is where the productivity gains appear.
+
+You stop restyling every project independently.
+
+:::
+
+---
+
+# Real Example
+
+## From one of my projects
+
+[Placeholder actual dashboard screenshot]
+
+::: notes
+
+Walk through an authentic example.
+
+Discuss what changed.
+
+Discuss what did NOT change.
+
+Highlight that the underlying analysis remained identical.
+
+:::
+
+---
+
+# Accessibility Matters Too
+
+## Better styling is not only aesthetics
+
+- Contrast
+- Typography
+- Readability
+- Focus
+- Hierarchy
+
+::: notes
+
+Good styling often improves accessibility.
+
+Accessibility and design are frequently aligned goals rather than competing goals.
+
+:::
+
+---
+
+# Common Mistakes
+
+### Too many colors
+
+### Too many fonts
+
+### Too much customization
+
+### No consistency
+
+::: notes
+
+The goal is not maximum customization.
+
+The goal is intentional customization.
+
+:::
+
+---
+
+# The Goal
+
+## Don't make everything unique
+
+## Make everything recognizable
+
+::: notes
+
+Strong branding is consistency.
+
+Not novelty.
+
+:::
+
+---
+
+# What Success Looks Like
+
+### Professional
+
+### Consistent
+
+### Trustworthy
+
+### Reusable
+
+::: notes
+
+Notice that none of these require becoming a CSS specialist.
+
+:::
+
+---
+
+# Key Takeaways
+
+## Start with Bootswatch
+
+## Personalize with brand.yml
+
+## Reuse across products
+
+## Improve trust and adoption
+
+::: notes
+
+Return directly to the promise from the abstract.
+
+This should feel like a complete loop.
+
+:::
+
+---
+
+# Resources
+
+### Bootswatch
+
+### Quarto Branding
+
+### brand.yml
+
+### Example repository
+
+[Placeholder links]
+
+::: notes
+
+Provide resources.
+
+Encourage experimentation.
+
+:::
+
+---
+
+# Thank You
+
+## Questions?
+
+Contact information
+
+GitHub
+
+LinkedIn
+
+Website

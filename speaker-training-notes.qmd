@@ -1,0 +1,73 @@
+---
+title: "Speaker Training Notes"
+format: html
+    # revealjs:
+    #     theme: _extensions/_brand.yml
+embed-resources: TRUE
+---
+
+-  **Title**: First Impressions Matter: Styling data products people actually want to use
+-  **Abstract**: Professional styling isn't a luxury for data products—it determines whether users engage with our insights or click away. But for data scientists already managing complex code, mastering CSS to achieve polished results can feel overwhelming. This talk demonstrates how Bootswatch and brand.yml help you create professionally styled HTML-based products without CSS expertise. You'll learn to leverage ready-made themes with pick-and-choose YAML-based customization, taking your data products from functional-but-forgettable to professional and memorable tools people trust and rely on. Whether building internal dashboards or public-facing applications, you'll leave with practical examples and techniques to implement immediately.
+-  **Script**: Picture this: You've clicked on a link, the page loads, and you immediately think "Did I just give myself a virus?” The font choice is questionable and colors are everywhere. And you close that tab faster than your brain can process why. Hopefully our data products aren’t that bad, but you get the point. It doesn't matter how brilliant your analyses are if users leave after just a few clicks. Branding isn’t about vanity, it makes your work stand out, in a good way, and instantly recognizable, just like this sign [points to the iconic Chicago cubs sign behind me]. Good styling catches users’ attention and makes the difference between a product they glance at once and one they actually rely on. But you don’t have time to master CSS? This is where pairing a ready-made Bootswatch theme with customizable brand.yml comes to the resuce by taking your product from "functional-but-forgettable" to professional and memorable, without a CSS-induced headache. I’m Shelby Level, R programmer and dashboard enthusiast, and in this talk I'll show you how to use these tools to make data products that people don't just use—they actually WANT to use. Because your work deserves better than looking like it escaped from 2003.
+
+## Session 1: Narrow your topic - What is the one takeaway you want to offer the audience?
+
+Prep: Just bring your big idea and what you want the audience to take away. Think about why you want the audience to hear it.
+: There is an easier way to apply branding to your reports and dashboards, and it is through a central source of truth that can be reused across multiple products. This allows for a more consistent and professional look, while also saving time and effort in the long run.
+
+Start here: what inspired you to submit your topic?
+: a love of branding and making things eye-catching and pleasant to look at. builidng a brand is a fun and creative process, and I want to share that with others.
+
+Consider your audience: Look at the session you’re in and who would have self selected to go to your talk! What might have made them select your talk?
+: Pretty Useful Data Viz, people looking to make their work more useful and engaging, allowing users to draw concusions, better understand, and act on the data they are seeing.
+
+Style of hooks: Metaphor, interesting fact or observation, story, etc.
+
+the “Is this you?” and then a relatable frustrating experience that the talk is about to solve.
+: clicking on a webpage or dashboard that looks terrible and makes you not want to use it, or worse, makes you not trust the data you are seeing. being overwhelmed by the amount of information, or not being able to find what you are looking for. The talk is about how to make your dashboards and reports more user friendly and visually appealing.
+
+### Personal Feedback
+
+Use transcript in AI to get feedback
+
+### Group Feedback
+
+
+
+## Session 2: Outline your talk - Focus on talk elements and the order of your talk
+
+Prep: Bring your rough outline to walk through.
+
+Need to add a little context to get people caught up to where I am
+
+TIP: You always need to set context for the data that you want to show. What context do you think matters to the audience?
+
+### The 5-Line Story Method
+
+-  **Situation**: Analysis done, dashboard/report produced, feeling good about your work, and ready to share it with the world.
+-  **Desire**: You just want to share it — you're not trying to become a designer.
+-  **Conflict**: You hit "pick a color" and realize you have no framework for it; it looks bad and you don't know why. It looks like every other dashboard/report you've ever seen, and you don't want to be that person. You want your work to stand out, but you don't know how to make it happen.
+-  **Change**: You go down the rabbit hole — researching palettes, reading about how The Economist/NYT do it, discovering Bootswatch/brand.yml as a way to systematize this without becoming a full-time designer.
+-  **Result**: You're now the person at work making the case that this matters, and building the tools that make it easy for other people who feel exactly like grad-school-you did.
+
+### Outline
+
+1. **Hook**:
+    -  Which one of these would you trust? If you had to pick between the two, which one do you want to use? (show two dashboards, one styled and one not)
+    -  **Problem**: Is this you? You just finished a dashboard or report, and you are ready to share it with the world. But when you hit "pick a color" you realize you have no framework for it; it looks bad and you don't know why. It looks like every other dashboard/report you've ever seen, and you don't want to be that person. You want to build trust in your work and make your work stand out, but you don't know how to make it happen and you don't have the time to become a designer.
+2.  **Styling Creates Trust**: psychology/marketing angle
+    -  Color: Carries emotional and psychological weight, and can help guide the user's eye to the most important information.
+    -  Typography: Your Brand’s Tone of Voice. The right font can make your work look more professional and easier to read.
+3.  **Example Screenshots**: Show examples of dashboards and reports that are styled well and those that are not. Show how styling can make a difference in how people perceive your work.
+4.  **Solution**: Bootswatch and brand.yml are tools that allow you to apply branding to your reports and dashboards in a consistent and professional way, without having to become a designer. This allows for a more consistent and professional look, while also saving time and effort in the long run. 
+    -  A visual diagram showing Bootswatch + brand.yml -> Quarto dashboard/report
+5.  **Demo Code and Screenshots**: Show how to use Bootswatch and brand.yml to style a dashboard or report. Show how to customize the colors and fonts to match your brand.
+6.  **Call to Action**: Encourage the audience to try out Bootswatch and brand.yml in their own work, and to share their experiences with others.
+
+## Session 3: Dig into the details - Attention to data, stories, hooks, transitions, and visuals while starting to talk the talk out loud
+
+Prep: Bring your rough slides and your opening hook. (first time they want to see slides)
+
+## Session 4: Put it together - Fine tune ideas and language, while putting the visuals and spoken content together
+
+Deliver 7-9 minutes of your talk you want to get feedback on.

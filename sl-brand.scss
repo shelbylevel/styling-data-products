@@ -1,0 +1,61 @@
+/*-- scss:defaults --*/
+$body-bg: #a2bbbd;
+$heading-color: #254D56;
+
+/*-- scss:rules --*/
+
+/* Target the absolute viewport wrapper that is locked to your screen edges */
+.reveal-viewport {
+    position: relative;
+}
+
+/* Create an overlay layer that handles the intersecting screen-to-screen grid lines */
+.reveal-viewport::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    pointer-events: none;
+    /* Prevents the overlay from blocking text selection or links */
+
+    /* Set line parameters */
+    $line-color: #45767a;
+    $line-thickness: 1.25px;
+    $inset-distance: 25px;
+    /* Distance of the lines from the window edges */
+
+    /* Generates 4 infinite intersecting lines spanning across the entire canvas viewport */
+    background-image:
+        /* Top horizontal line */
+        linear-gradient(to bottom, transparent $inset-distance, $line-color $inset-distance, $line-color (
+            $inset-distance + $line-thickness),
+        transparent ($inset-distance + $line-thickness)),
+        /* Bottom horizontal line */
+        linear-gradient(to top, transparent $inset-distance, $line-color $inset-distance, $line-color (
+            $inset-distance + $line-thickness),
+        transparent ($inset-distance + $line-thickness)),
+        /* Left vertical line */
+        linear-gradient(to right, transparent $inset-distance, $line-color $inset-distance, $line-color (
+            $inset-distance + $line-thickness),
+        transparent ($inset-distance + $line-thickness)),
+        /* Right vertical line */
+        linear-gradient(to left, transparent $inset-distance, $line-color $inset-distance, $line-color (
+            $inset-distance + $line-thickness),
+        transparent ($inset-distance + $line-thickness)
+    );
+}
+
+/* Uppercase headings */
+.reveal h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #254D56;
+}

@@ -1,0 +1,4 @@
+# _quarto.yml
+project:
+  type: default        # or "website", whatever you're already using
+  post-render: postprocess_code_highlighting.R

@@ -1,559 +1,564 @@
 ---
 title: "First Impressions Matter"
-subtitle: "Styling data products people actually want to use"
+subtitle: "Styling Data Products People Actually Want To Use"
 author: "Shelby Level"
 format:
     revealjs:
+        revealjs-plugins:
+            - codewindow
+            # - editable
+        filters:
+            - shinylive
+            - diagrams
+            # - editable
         # slide-number: true
+        pagetitle: "First Impressions Matter"
         hash: true
+        code-line-numbers: false
         progress: true
         transition: fade
         chalkboard: false
         preview-links: auto
-        menu: false
+        menu: true
         center: false
-        brand: _brand.yml
+        # brand: _brand.yml
         theme: sl-brand.scss
+        css: bd/css/brand-deconstructed.css
+        # pandoc-args: []
+        # include-after-body:
+        #     text: |
+        #         <script src="r-namespace-highlight.js"></script>
         # logo: _extensions/shelbylevel/brand/logo-header.html
         # logo:
         #   images:
         #     sl-logo: img/sl-logo.svg
-        footer: "posit::conf(2026)"
+        # footer: "posit::conf(2026)"
+        include-in-header:
+            text: |
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+        include-after-body:
+            - bd/js/infra.html
+            - bd/js/brand-deconstructed.html
+        embed-resources: false
 execute:
     echo: true
 ---
 
-# First Impressions Matter
-
-## Styling data products people actually want to use
-
-Shelby Level
-
-Reporting & Analytics Analyst III
-
-```{r eval = FALSE}
-# tags$img(htmltools::HTML(paste(
-#   suppressWarnings(readLines(
-#     "_extensions/shelbylevel/brand/logo-header.html"
-#   )),
-#   collapse = "\n"
-# )))
-```
+::: {.fragment}
+![](inst/img/linux-distro.jpeg){.absolute top=5px right=0 height="100%"}
+:::
 
 ::: notes
-
-Welcome everybody.
-
-I work primarily on dashboards, reports, and other data products that help people make decisions.
-
-Today's talk is about something that often gets treated as optional: styling.
-
-Not because I think every data scientist should become a designer.
-
-But because styling has a direct impact on whether people engage with our work.
-
+To start us off I have a quick question: how many of you would download and install software from this website? Not many, right?
 :::
 
 ---
 
-# A quick question
-
-## Which one would you trust?
-
-::: columns
-
-::: column
-[Placeholder: Screenshot of plain default dashboard]
-:::
-
-::: column
-[Placeholder: Screenshot of professionally styled version]
-:::
-
+::: {.fragment}
+![](inst/img/worst-dashboard.jpg){.absolute top=5px right=0 height="100%"}
 :::
 
 ::: notes
-
-Give people a second to react.
-
-The functionality is identical.
-
-The data is identical.
-
-Yet most people immediately form an opinion.
-
-That's the challenge we're talking about today.
-
+And how many of you would want to share this dashboard with your boss or a client? Again, not many. You might even be cringing at the thought of it.
 :::
 
 ---
 
-# The uncomfortable truth
-
-## Users judge the product before they read the insight
+::: {.fragment}
+![](inst/img/bootstrap-logo.svg){.absolute top=6px right=100px height="100%"}
+:::
 
 ::: notes
+Now your work probably doesn't look nearly as bad as the examples I just showed you. That is thanks to Bootstrap. Bootstrap is the default core styling and layout engine for HTML-based outputs, dashboards, websites, and books. When we make something with Quarto or Shiny, we are using Bootstrap often without knowing it.
+This is what gives us our "good enough" look right out of the box. Your headers are bolded, your tables are formatted, and your content automatically resizes to fit the screen without having to write any CSS.
+:::
+
+---
+
+::: {.columns}
+
+::: {.column}
+![](inst/img/default-bootstrap.png){.absolute top=5px right=400px height="100%"}
+:::
+
+::: {.column}
+![](inst/img/quarto-demo.png){.absolute top=120px left=465px height="60%"}
+:::
+
+:::
+
+::: notes
+But it also means that your work looks like every other dashboard or report you'v ever seen, and probably also the demo you copied from the Shiny or Quarto website. 
+This default look has a cost. It feels unfinished, and it makes great data products much easier to ignore.
+:::
+
+---
+
+::: notes
+Hi everyone! I'm Shelby Level, and I work primarily on dashboards, reports, and other data products that help people make decisions.
+Today's talk is about something that often gets treated as optional or an afterthought: styling.
+Not because I think every data person should become a designer.
+But because styling can make or break whether people engage with our work.
+:::
+
+---
+
+## What to Expect
+
+::: {.fragment}
+1.  Why Styling Matters
+-  design factors that influence perceived trustworthiness (paper)
+:::
+::: {.fragment}
+2.  Color
+:::
+::: {.fragment}
+3.  Leveraging Color with bootswatch
+    -  bootswatch
+    -  flip between themes with paper of different colors
+:::
+::: {.fragment}
+4.  Typography
+:::
+::: {.fragment}
+5.  Leveraging Typography with brand.yml
+    -  brand.yml
+    -  flip between fonts with paper of different fonts
+:::
+::: {.fragment}
+6.  Creating Reliability
+    -  brand.yml use across various formats
+:::
+
+::: notes
+in this talk I’ll walk you through applying these skills to your own work, without a CSS induced headache
+:::
+
+---
+
+![](inst/img/design-factors.png){}
+
+
+
+---
+
+## Hidden Dimensions of Visual Trust
+
+::: notes
+Why didn't you want to download software from that first website? Why didn't you want to share that dashboard with your boss or a client? Because you didn't trust it. Trust is an emotional gatekeeper, and it is influenced by more than just the data itself. The McKinley et al. (2025) framework proves that viewers reject accurate data if it fails the "instinct" test. People evaluate trustworthiness, usability, and professionalism almost instantly. The visual experience becomes part of the analytical experience.
+:::
+
+---
+
+## Trust Equation
+
+![](inst/img/trust.jpg){.absolute top=0px right=0 height="100%"}
+
+___
+
+## Styling != Trust
+
+Linux reveal
+
+---
+
+::: {.fragment}
+![](inst/img/plain-dashboard.jpeg){fig-align="center"}
+:::
+
+::: notes
+I’ll let you in on a secret, this is my dashboard and over time I’ve learned how to style data products people actually want to use, like this one
+:::
+
+---
+
+::: {.fragment}
+![](inst/img/styled-dashboard.jpeg){fig-align="center"}
+:::
+
+---
+
+## Why Styling Matters
+
+Trust
+
+-  Color
+-  Typography
+
+::: notes
+When creating data products, the visual design plays a crucial role in how users interact with and perceive the information. A well-designed interface can make complex data more accessible and engaging, while a poorly designed one can lead to confusion and disengagement.
 
 People evaluate trustworthiness, usability, and professionalism almost instantly.
 
 The visual experience becomes part of the analytical experience.
 
 That may not feel fair, but it's reality.
-
 :::
 
 ---
 
-# The default look has a cost
+## The Landscape of Visual Trust {auto-animate=true}
 
-- Feels unfinished
-- Reduces confidence
-- Lowers adoption
-- Makes great analysis easier to ignore
+::: {style="text-align: center; margin-top: 10px; font-size: 1.1em; color: #bbb;"}
+Perceived trustworthiness is driven by 5 core macro themes and 16 distinct design keywords.
+:::
 
-::: notes
+::: {#big-picture-grid style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 30px; height: 680px;"}
 
-We've all built something that worked perfectly.
+<!-- 1. READABILITY (BLUE) -->
+::: {#theme-readability style="background: #162a3d; border-top: 6px solid #2b5c8f; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;"}
+### 📱 Readability
+::: {.keyword style="background: #2b5c8f;"} Simple :::
+::: {.keyword style="background: #2b5c8f;"} Complex :::
+::: {.keyword style="background: #2b5c8f;"} Clarity :::
+:::
 
-And then received little engagement.
+<!-- 2. INTEGRITY & TRANSPARENCY (GREEN) -->
+::: {#theme-integrity style="background: #132b1a; border-top: 6px solid #2e6f40; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;"}
+### 🛡️ Integrity
+::: {.keyword style="background: #2e6f40;"} Data Integrity
+  <span class="sub-pill">↳ Labeling</span>
+:::
+::: {.keyword style="background: #2e6f40;"} Source
+  <span class="sub-pill">↳ Objectivity</span>
+:::
+::: {.keyword style="background: #2e6f40;"} Intent :::
+:::
 
-Sometimes the issue isn't the analysis.
+<!-- 3. QUALITY & DESIGN (ORANGE) -->
+::: {#theme-quality style="background: #36200d; border-top: 6px solid #d97724; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;"}
+### 🎨 Quality & Design
+::: {.keyword style="background: #d97724;"} Vis Type
+  <span class="sub-pill">↳ Visual Elements</span>
+:::
+::: {.keyword style="background: #d97724;"} Aesthetics
+  <span class="sub-pill">↳ Professional</span>
+:::
+::: {.keyword style="background: #d97724;"} Academic :::
+:::
 
-It's the experience surrounding the analysis.
+<!-- 4. FAMILIARITY (PURPLE) -->
+::: {#theme-familiarity style="background: #21152e; border-top: 6px solid #6a3d9a; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;"}
+### 🤝 Familiarity
+::: {.keyword style="background: #6a3d9a;"} with Topic :::
+::: {.keyword style="background: #6a3d9a;"} with Source :::
+::: {.keyword style="background: #6a3d9a;"} Unspecified :::
+:::
+
+<!-- 5. PERSONAL (GRAY) -->
+::: {#theme-personal style="background: #262626; border-top: 6px solid #555555; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;"}
+### 🧠 Personal
+::: {.keyword style="background: #555555;"} Confidence
+  <span class="sub-pill">↳ Reliability</span>
+:::
+::: {.keyword style="background: #555555;"} Intuition
+  <span class="sub-pill">↳ Importance</span>
+:::
+::: {.keyword style="background: #555555;"} Relevance :::
+:::
 
 :::
 
----
+## Design Factors That Influence Perceived Trustworthiness
 
-# But there's a problem
+::::::: {.hierarchy node-color="#dddddd" arrow-color="#999999"}
+:::::: {.item color="#f2f2f2"}
 
-## Most of us are not CSS experts
+::::: {.item color="#87cefa"}
+Readability
 
-::: notes
+:::: {.item color="#8FC1E8"}
+Complex
+::::
 
-Data scientists already juggle:
+:::: {.item color="#8FC1E8"}
+Simple
+::::
 
-- statistics
-- programming
-- deployment
-- stakeholder communication
+:::: {.item color="#8FC1E8"}
+Clarity
+::::
+:::::
 
-Adding advanced front-end development to that list can feel unrealistic.
+::::: {.item color="#A9D18E"}
+Integrity and Transparency
 
+:::: {.item color="#A9D18E"}
+Data Integrity
+
+::: {.item color="#A9D18E"}
+Labeling
+:::
+::::
+
+:::: {.item color="#A9D18E"}
+Source
+
+::: {.item color="#A9D18E"}
+Objectivity
+:::
+::::
+
+::: {.item color="#A9D18E"}
+Intent
+:::
+:::::
+
+::::: {.item color="#E8974E"}
+Quality & Design
+
+:::: {.item color="#E8974E"}
+Vis Type
+
+::: {.item color="#E8974E"}
+Visual Elements
+:::
+::::
+
+:::: {.item color="#E8974E"}
+Aesthetics
+
+::: {.item color="#E8974E"}
+Professional
+:::
+::::
+
+::: {.item color="#E8974E"}
+Academic
+:::
+:::::
+
+::::: {.item color="#d8bfd7"}
+Familiarity
+
+:::: {.item color="#C6A2D9"}
+with Topic
 :::
 
+:::: {.item color="#C6A2D9"}
+with Source
+::::
+
+:::: {.item color="#C6A2D9"}
+Unspecified
+::::
+:::::
+
+::::: {.item color="#c7c7c7"}
+Personal
+
+:::: {.item color="#B0B0B0"}
+Confidence
+
+::: {.item color="#B0B0B0"}
+Reliability
+:::
+::::
+
+:::: {.item color="#B0B0B0"}
+Intuition
+
+::: {.item color="#B0B0B0"}
+Importance
+:::
+::::
+
+::: {.item color="#B0B0B0"}
+Relevance
+:::
+:::::
+::::::
+:::::::
+
 ---
 
-# The common assumption
+## Color
 
-## Professional styling requires lots of custom CSS
+---
 
-```css
-.dashboard-header {
-  font-family: ...
-  background: ...
-  border-radius: ...
-}
+## Leveraging Color
+
+:::: {.codewindow}
+::: {.editor .qmd name="ui.R"}
+```r
+bslib::page_navbar(
+  title = "Dashboard",
+  bslib::nav_panel(...)
+)
 ```
+:::
+
+::: {.editor .qmd .fragment name="ui.R"}
+```{.r code-line-numbers="|3"}
+bslib::page_navbar(
+  title = "Dashboard",
+  theme = bslib::bs_theme(preset = "lux"),
+  bslib::nav_panel(...)
+)
+```
+:::
+::::
+
+---
+
+## Typography
+
+---
+
+## Using Typography
+
+---
+
+![](inst/img/bootswatch-logo.png){.absolute top=0 right=200px height="100%"}
 
 ::: notes
-
-This assumption keeps many people from improving presentation quality.
-
-But there are much higher-level tools available now.
-
+Themes for bootstrap are available through Bootswatch, which is a collection of free and open-source themes that can be easily applied to your dashboards and reports. These themes provide a quick way to change the look and feel of your data products without having to write custom CSS.
 :::
 
 ---
 
-# Today's Takeaway
+## Apply Bootswatch Theme
 
-# Bootswatch + brand.yml
+::: {.codewindow .r}
+ui.R
+````{.r}
+bslib::page_navbar(
+    title = "Dashboard",
+    id = "main_nav",
 
-## Professional styling without starting from scratch
+    theme = bslib::bs_theme(
+        preset = "lux"
+        brand = "www/brand.yml"
+    )
+)
+````
+:::
+
+---
+
+::: {.codewindow .r}
+my-deck.R
+````{.r}
+bslib::page_navbar(
+    title = "Dashboard",
+    id = "main_nav",
+
+    theme = bslib::bs_theme(
+        preset = "sandstone",
+        brand = "www/brand.yml"
+    )
+)
+````
+:::
+
+---
+
+![](inst/img/brand-yml-logo.svg){.absolute top=0 right=0 height="100%"}
+
+---
+
+<!-- ::: {.codewindow .codewindow-dark .quarto width="80%"}
+my-deck.qmd
+
+````markdown
+```{{r}}
+#| echo: false
+plot(1:10)
+```
+````
+::: -->
+
+---
+
+:::: {.codewindow}
+::: {.editor .yaml name="00-load.R"}
+```yaml
+meta:
+  name: shelbylevel
+  link: https://www.shelbylevel.org
+
+color:
+  palette:
+    deep-jade: "#254D56"
+    faded-jade: "#45767a"
+    faded-jade-50: "#a2bbbd"
+    faded-jade-30: "#c7d6d7"
+    faded-jade-10: "#ecf1f2"
+    gulfstream: "#7fa6ad"
+    edgewater: "#d3dfdd"
+    edgewater-20: "#dce5e4"
+    cascade: "#b3c2c9"
+    boulder: "#727E70"
+    spring-rain: "#b2c5b4"
+    timberwolf: "#D8D5CE"
+    timberwolf-50: "#eceae7"
+    almond-dust: "#B8AEA8"
+    moonstone: "#969996"
+    storm-cloud: "#64635E"
+    plum-crazy: "#59224A"
+  
+  foreground: $brand-deep-jade       # main text color
+  background: $brand-faded-jade-10     # background
+  primary: "#45767a"            # primary brand color
+  secondary: "#7fa6ad"          # secondary accent
+  tertiary: "#a2bbbd"           # tertiary accent
+  success: "#727E70"            # success states
+  info: "#b2c5b4"               # info messages
+  warning: "#B8AEA8"            # warnings
+  danger: "#6f4a64"             # errors/danger
+  light: "#ecf1f2"              # light backgrounds
+  dark: "#64635E"               # dark elements
+```
+:::
+
+::: {.editor .yaml .fragment name="01-clean.R"}
+```yaml
+typography:
+  fonts:
+    - family: "Lato"
+      source: google
+      weight: [200, 300, 400, 600]
+    - family: "Nunito Sans"
+      source: google
+      weight: [400, 600]
+  
+  base:
+    family: "Lato"
+    size: "1rem"
+    line-height: 1.6
+    weight: 300
+  
+  headings:
+    family: "Nunito Sans"
+    style: normal
+    weight: 600
+    line-height: 1.2
+    color: primary
+```
+:::
+::::
+
+---
+
+## Summary {.bd-slide}
+
+::: {.gd-stage-wrap}
+<div id="bd-stage"></div>
+:::
+[]{.fragment .gd-frag id="bd-lay"}
+[]{.fragment .gd-frag id="bd-explode"}
+[]{.fragment .gd-frag id="bd-focus-base"}
+[]{.fragment .gd-frag id="bd-focus-bootswatch"}
+[]{.fragment .gd-frag id="bd-focus-brand"}
+[]{.fragment .gd-frag id="bd-focus-polish"}
+[]{.fragment .gd-frag id="bd-collapse"}
+[]{.fragment .gd-frag id="bd-unrotate"}
 
 ::: notes
 
 If you remember one thing from this talk, let it be this slide.
-
 Bootswatch provides a polished foundation.
-
 brand.yml provides reusable customization.
-
 Together, they create a practical workflow.
 
 :::
-
----
-
-# Start with Bootswatch
-
-## A professional foundation in minutes
-
-[Placeholder: Gallery of several Bootswatch themes]
-
-::: notes
-
-Bootswatch gives us professionally designed Bootstrap themes.
-
-Instead of beginning with a blank canvas, we're starting from something already coherent.
-
-:::
-
----
-
-# Before and After
-
-## Same content
-
-## Different experience
-
-::: columns
-
-::: column
-
-### Default
-
-[Placeholder Screenshot]
-
-:::
-
-::: column
-
-### Bootswatch
-
-[Placeholder Screenshot]
-
-:::
-
-:::
-
-::: notes
-
-Focus audience attention here.
-
-Nothing meaningful changed in the underlying app.
-
-Only presentation.
-
-Yet the perceived quality changes dramatically.
-
-:::
-
----
-
-# Why themes work
-
-## They solve consistency for you
-
-- Typography
-- Spacing
-- Color hierarchy
-- Component styling
-- Visual rhythm
-
-::: notes
-
-Consistency is one of the hardest things to create manually.
-
-Themes provide consistency automatically.
-
-:::
-
----
-
-# But themes aren't enough
-
-## Eventually everything starts looking the same
-
-::: notes
-
-Bootswatch is a great starting point.
-
-But organizations and teams often need something more recognizable.
-
-That's where brand.yml enters the picture.
-
-:::
-
----
-
-# Meet brand.yml
-
-## Store design decisions in YAML
-
-```yaml
-meta:
-  name: My Organization
-
-color:
-  primary: "#006699"
-
-typography:
-  fonts:
-    - family: Source Sans Pro
-```
-
-::: notes
-
-The key idea:
-
-Design decisions become configuration rather than CSS.
-
-:::
-
----
-
-# What can brand.yml control?
-
-- Colors
-- Typography
-- Logos
-- Links
-- Brand identity
-- Reusable themes
-
-::: notes
-
-Think of brand.yml as a central source of truth.
-
-:::
-
----
-
-# Why this matters
-
-## One definition
-
-## Multiple products
-
-::: columns
-
-::: column
-
-- Dashboard
-- Report
-- Website
-
-:::
-
-::: column
-
-[Placeholder architecture diagram]
-
-:::
-
-:::
-
-::: notes
-
-Instead of customizing every project individually, we reuse the same branding decisions.
-
-This scales much better.
-
-:::
-
----
-
-# The Workflow
-
-# Step 1
-
-Choose a Bootswatch theme
-
-[Placeholder screenshot]
-
-::: notes
-
-Find one that is already close to the feel you want.
-
-Don't optimize prematurely.
-
-:::
-
----
-
-# The Workflow
-
-# Step 2
-
-Add a brand.yml
-
-[Placeholder simple brand.yml example]
-
-::: notes
-
-Capture colors, typography, and organization-specific choices.
-
-:::
-
----
-
-# The Workflow
-
-# Step 3
-
-Reuse everywhere
-
-[Placeholder examples:
-Shiny
-Quarto report
-Quarto website]
-
-::: notes
-
-This is where the productivity gains appear.
-
-You stop restyling every project independently.
-
-:::
-
----
-
-# Real Example
-
-## From one of my projects
-
-[Placeholder actual dashboard screenshot]
-
-::: notes
-
-Walk through an authentic example.
-
-Discuss what changed.
-
-Discuss what did NOT change.
-
-Highlight that the underlying analysis remained identical.
-
-:::
-
----
-
-# Accessibility Matters Too
-
-## Better styling is not only aesthetics
-
-- Contrast
-- Typography
-- Readability
-- Focus
-- Hierarchy
-
-::: notes
-
-Good styling often improves accessibility.
-
-Accessibility and design are frequently aligned goals rather than competing goals.
-
-:::
-
----
-
-# Common Mistakes
-
-### Too many colors
-
-### Too many fonts
-
-### Too much customization
-
-### No consistency
-
-::: notes
-
-The goal is not maximum customization.
-
-The goal is intentional customization.
-
-:::
-
----
-
-# The Goal
-
-## Don't make everything unique
-
-## Make everything recognizable
-
-::: notes
-
-Strong branding is consistency.
-
-Not novelty.
-
-:::
-
----
-
-# What Success Looks Like
-
-### Professional
-
-### Consistent
-
-### Trustworthy
-
-### Reusable
-
-::: notes
-
-Notice that none of these require becoming a CSS specialist.
-
-:::
-
----
-
-# Key Takeaways
-
-## Start with Bootswatch
-
-## Personalize with brand.yml
-
-## Reuse across products
-
-## Improve trust and adoption
-
-::: notes
-
-Return directly to the promise from the abstract.
-
-This should feel like a complete loop.
-
-:::
-
----
-
-# Resources
-
-### Bootswatch
-
-### Quarto Branding
-
-### brand.yml
-
-### Example repository
-
-[Placeholder links]
-
-::: notes
-
-Provide resources.
-
-Encourage experimentation.
-
-:::
-
----
-
-# Thank You
-
-## Questions?
-
-Contact information
-
-GitHub
-
-LinkedIn
-
-Website

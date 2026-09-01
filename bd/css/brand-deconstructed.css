@@ -1,0 +1,102 @@
+/* Add alongside your existing gd/css/demos.css rules, or append to that
+   file directly — these are namespaced bd- so they won't collide with the
+   ggplot2-deconstructed gd- rules already in there. */
+
+.bd-slide .gd-stage-wrap,
+.bd-slide #bd-stage { perspective: 1600px; }
+
+#bd-stage {
+  display: flex; gap: 48px; align-items: flex-start;
+}
+.bd-code {
+  flex: 0 0 380px; background: #1b1e27; border-radius: 10px;
+  padding: 22px 24px; font: 14.5px/1.55 "SFMono-Regular", Consolas, monospace;
+  color: #c7cbd6; white-space: pre; overflow-x: auto;
+}
+.bd-code span[data-blk] {
+  display: block; padding: 3px 8px; margin: 0 -8px; border-radius: 6px;
+  transition: background .3s, opacity .3s;
+}
+.bd-code span[data-blk].bd-hot { background: rgba(125,211,192,.14); }
+
+#bd-plot {
+  position: relative; width: 600px; height: 380px; flex: 0 0 600px;
+  transform-style: preserve-3d;
+}
+.bd-plane { position: absolute; inset: 0; transform-style: preserve-3d; }
+.bd-tilt {
+  position: absolute; inset: 0; transform-style: preserve-3d;
+  transform-origin: center center;
+}
+.bd-card {
+  position: absolute; inset: -10px; border-radius: 14px;
+  background: #0e1016; box-shadow: 0 20px 46px rgba(0,0,0,.5);
+  opacity: 0;
+}
+.bd-mockup {
+  position: absolute; inset: 0; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+
+/* ================= the four stages of the mockup skin =================
+   Swap these hex values / fonts for your talk's real bootswatch choice and
+   your real _brand.yml — the point is the SAME markup restyled by variables,
+   which is the whole "brand.yml doesn't touch your app code" argument. */
+.bd-mockup {
+  --primary: #0d6efd; --accent: #6c757d;
+  --navbar-bg: #f8f9fa; --navbar-fg: #212529;
+  --body-font: -apple-system, "Segoe UI", Roboto, sans-serif;
+  --heading-font: var(--body-font);
+  --radius: .375rem; --card-bg: #fff; --card-border: #dee2e6;
+  --shadow: none; --bar-radius: 0; --logo-display: none;
+  background: #fff; font-family: var(--body-font); color: #212529;
+}
+.bd-mockup.s-bootswatch {
+  --primary: #18BC9C; --navbar-bg: #2C3E50; --navbar-fg: #fff;
+  --body-font: 'Lato', -apple-system, sans-serif; --heading-font: var(--body-font);
+  --radius: 0; --card-bg: #fff; --card-border: #ecf0f1;
+}
+.bd-mockup.s-brand {
+  --primary: #7B2D46; --accent: #C9A227;
+  --navbar-bg: #7B2D46; --navbar-fg: #fff;
+  --body-font: 'Georgia', serif; --heading-font: 'Georgia', serif;
+  --radius: .25rem; --card-bg: #fff; --card-border: #eee; --logo-display: flex;
+}
+.bd-mockup.s-polish {
+  --primary: #7B2D46; --accent: #C9A227;
+  --navbar-bg: #7B2D46; --navbar-fg: #fff;
+  --body-font: 'Georgia', serif; --heading-font: 'Georgia', serif;
+  --radius: .75rem; --card-bg: #fff; --card-border: #f1eceb; --logo-display: flex;
+  --shadow: 0 10px 24px rgba(123,45,70,.16); --bar-radius: 6px 6px 0 0;
+  background: linear-gradient(180deg,#fff 0%,#fbf5f3 100%);
+}
+
+.bd-mockup .navbar {
+  height: 52px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; background: var(--navbar-bg); color: var(--navbar-fg);
+  font-family: var(--heading-font); border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.bd-mockup .brandmark { display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 15px; }
+.bd-mockup .logo-dot { display: var(--logo-display); width: 18px; height: 18px; border-radius: 50%; background: var(--accent); }
+.bd-mockup .navlinks { display: flex; align-items: center; gap: 18px; font-size: 13px; }
+.bd-mockup .navlinks a { color: var(--navbar-fg); opacity: .85; text-decoration: none; }
+.bd-mockup .btn-primary {
+  background: var(--primary); border: 1px solid var(--primary); color: #fff;
+  border-radius: var(--radius); padding: 6px 14px; font-size: 12.5px; font-family: var(--body-font);
+}
+.bd-mockup .content { padding: 22px 24px; }
+.bd-mockup .stats { display: flex; gap: 16px; margin-bottom: 18px; }
+.bd-mockup .stat-card {
+  flex: 1; background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px;
+}
+.bd-mockup .stat-card .label { font-size: 11.5px; color: #8a8f98; margin-bottom: 6px; }
+.bd-mockup .stat-card .value { font-family: var(--heading-font); font-size: 22px; font-weight: 700; color: var(--primary); }
+.bd-mockup .stat-card .delta { font-size: 11px; color: #4caf7d; margin-top: 4px; }
+.bd-mockup .chart-card {
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 18px;
+}
+.bd-mockup .chart-title { font-family: var(--heading-font); font-size: 13px; font-weight: 700; margin-bottom: 12px; color: #333; }
+.bd-mockup .bars { display: flex; align-items: flex-end; gap: 10px; height: 90px; }
+.bd-mockup .bar { flex: 1; background: var(--primary); border-radius: var(--bar-radius); opacity: .92; }

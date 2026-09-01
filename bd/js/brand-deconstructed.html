@@ -1,0 +1,176 @@
+<script>
+/* ---- brand.yml, deconstructed ----
+ * Marker slide: .bd-slide   Stage container: #bd-stage
+ * Same architecture as ggplot2-deconstructed.js, ported for a UI instead
+ * of a chart: four stacked HTML "planes" — base bootstrap, +bootswatch,
+ * +brand.yml, +polish CSS — each rendering the SAME mini-dashboard markup
+ * with only a stage class swapped in (CSS custom properties do the
+ * restyling, same as bslib not touching your ui() code). A later explode
+ * step pulls the planes apart along the code lines that produced them.
+ * Reuses TM.gate / TM.anime / TM.onReveal from infra.html unchanged.
+ */
+(function () {
+  const STAGE_CLASSES = ['s-base', 's-bootswatch', 's-brand', 's-polish'];
+  const BLK = ['base', 'bootswatch', 'brand', 'polish']; // plane index -> code block
+
+  // ---- the mini-dashboard markup, identical across all four planes -------
+  const MOCKUP_HTML = `
+    <div class="navbar">
+      <div class="brandmark"><span class="logo-dot"></span>Acme Analytics</div>
+      <div class="navlinks"><a>Dashboard</a><a>Reports</a><button class="btn-primary">Export</button></div>
+    </div>
+    <div class="content">
+      <div class="stats">
+        <div class="stat-card"><div class="label">Revenue</div><div class="value">$128K</div><div class="delta">&#9650; 4.2%</div></div>
+        <div class="stat-card"><div class="label">Orders</div><div class="value">1,204</div><div class="delta">&#9650; 1.8%</div></div>
+        <div class="stat-card"><div class="label">Customers</div><div class="value">386</div><div class="delta">&#9650; 6.1%</div></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Monthly Signups</div>
+        <div class="bars">
+          <div class="bar" style="height:40%"></div>
+          <div class="bar" style="height:65%"></div>
+          <div class="bar" style="height:50%"></div>
+          <div class="bar" style="height:80%"></div>
+          <div class="bar" style="height:70%"></div>
+          <div class="bar" style="height:95%"></div>
+        </div>
+      </div>
+    </div>`;
+
+  // ---- left-hand code listing --------------------------------------------
+  // Swap in whatever your real ui()/brand.yml/scss look like — the data-blk
+  // tags are all the explode step cares about.
+  const CODE = `<span data-blk="base"><span class="gd-fn">library</span>(shiny)
+
+ui &lt;- <span class="gd-fn">fluidPage</span>(
+  <span class="gd-fn">navbarPage</span>(<span class="gd-str">"Acme Analytics"</span>,
+    <span class="gd-fn">tabPanel</span>(<span class="gd-str">"Dashboard"</span>, ...)
+  )
+)</span>
+
+<span data-blk="bootswatch">ui &lt;- <span class="gd-fn">fluidPage</span>(
+  <span class="gd-arg">theme</span> = bslib::<span class="gd-fn">bs_theme</span>(
+    <span class="gd-arg">bootswatch</span> = <span class="gd-str">"flatly"</span>
+  ),
+  ...
+)</span>
+
+<span data-blk="brand"><span class="gd-str"># _brand.yml</span>
+color:
+  primary: <span class="gd-str">"#7B2D46"</span>
+  palette:
+    gold: <span class="gd-str">"#C9A227"</span>
+typography:
+  base: Georgia
+  headings: Georgia
+logo: logo.svg
+
+ui &lt;- <span class="gd-fn">fluidPage</span>(
+  <span class="gd-arg">theme</span> = bslib::<span class="gd-fn">bs_theme</span>(
+    <span class="gd-arg">brand</span> = <span class="gd-str">"_brand.yml"</span>
+  ),
+  ...
+)</span>
+
+<span data-blk="polish"><span class="gd-str">// custom.scss</span>
+.stat-card {
+  box-shadow: <span class="gd-num">0</span> <span class="gd-num">10</span>px <span class="gd-num">24</span>px rgba(<span class="gd-num">123</span>,<span class="gd-num">45</span>,<span class="gd-num">70</span>,.<span class="gd-num">16</span>);
+  border-radius: .<span class="gd-num">75</span>rem;
+}
+.bar { border-radius: <span class="gd-num">6</span>px <span class="gd-num">6</span>px <span class="gd-num">0</span> <span class="gd-num">0</span>; }</span>`;
+
+  let built = false;
+  let planes = [];      // [base, bootswatch, brand, polish] bottom -> top
+  let codeBlocks = [];
+
+  function htmlPlane(id, stageClass) {
+    const d = document.createElement('div');
+    d.className = 'bd-plane';
+    d.id = id;
+    d.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;';
+    const tilt = document.createElement('div');
+    tilt.className = 'bd-tilt';
+    const card = document.createElement('div');
+    card.className = 'bd-card';
+    const mockup = document.createElement('div');
+    mockup.className = 'bd-mockup ' + stageClass;
+    mockup.innerHTML = MOCKUP_HTML;
+    tilt.appendChild(card);
+    tilt.appendChild(mockup);
+    d.appendChild(tilt);
+    return { div: d, tilt, mockup, card };
+  }
+
+  function build() {
+    const stage = document.getElementById('bd-stage');
+    if (!stage || built) return !!stage;
+    built = true;
+
+    const code = document.createElement('div');
+    code.className = 'bd-code';
+    code.innerHTML = CODE;
+    stage.appendChild(code);
+    codeBlocks = Array.from(code.querySelectorAll('[data-blk]'));
+
+    const plot = document.createElement('div');
+    plot.id = 'bd-plot';
+    planes = STAGE_CLASSES.map((cls, i) => htmlPlane('bd-plane-' + BLK[i], cls));
+    planes.forEach(p => plot.appendChild(p.div));
+    stage.appendChild(plot);
+    return true;
+  }
+
+  function render(stage) {
+    if (!build()) return;
+    // Same stage machine as ggplot2-deconstructed: 0 flat, 1 laid, 2 exploded,
+    // 3..(3+N-1) focus each plane in turn, then collapse, then flat again.
+    const flat = stage >= 8;
+    const collapsed = stage >= 7;
+    const laid = stage >= 1 && !flat;
+    const exploded = stage >= 2 && !collapsed;
+    const focusIdx = (stage >= 3 && !collapsed) ? stage - 3 : -1;
+    const focusBlk = focusIdx >= 0 ? BLK[focusIdx] : null;
+
+    const N = planes.length;
+    const SPREAD = 75;
+    planes.forEach((p, i) => {
+      const fan = exploded ? 18 + ((N - 1) / 2 - i) * SPREAD : 0;
+      const dim = focusIdx >= 0 && i !== focusIdx;
+      TM.anime({
+        targets: p.div,
+        translateY: fan,
+        duration: 850,
+        easing: 'easeInOutCubic',
+      });
+      TM.anime({
+        targets: p.tilt,
+        rotateX: laid ? 56 : 0,
+        rotateZ: laid ? 20 : 0,
+        scale: exploded ? 0.82 : 1,
+        opacity: dim ? 0.16 : 1,
+        duration: 850,
+        easing: 'easeInOutCubic',
+      });
+      TM.anime({
+        targets: p.card,
+        opacity: exploded ? 1 : 0,
+        duration: 600,
+        easing: 'easeInOutQuad',
+      });
+    });
+
+    codeBlocks.forEach(b => {
+      b.classList.toggle('bd-hot', b.dataset.blk === focusBlk);
+    });
+  }
+
+  TM.gate({
+    markerClass: 'bd-slide',
+    fragmentIds: ['bd-lay', 'bd-explode',
+                  'bd-focus-base', 'bd-focus-bootswatch', 'bd-focus-brand', 'bd-focus-polish',
+                  'bd-collapse', 'bd-unrotate'],
+    render,
+  });
+})();
+</script>

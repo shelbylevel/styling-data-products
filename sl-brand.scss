@@ -42,6 +42,275 @@ $code-block-bg: $theme-bg;
 
 /*-- scss:rules --*/
 
+:root {
+  /* category accent colors, built from the theme palette above
+     plus two warm accents (terracotta, sand) that sit opposite
+     jade/teal on the color wheel for contrast without clashing */
+  --trust-readability: #{$dark-jade};
+  --trust-integrity: #727E70;
+  --trust-quality: #{$faded-jade};
+  --trust-familiarity: #59224A;
+  --trust-personal: #64635E;
+}
+
+/* Slide 1: Design Factors overview grid */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+ 
+.trust-box {
+//   padding: 14px 10px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.trust-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+ 
+.trust-readability-bg { background: var(--trust-readability); }
+.trust-integrity-bg { background: var(--trust-integrity); }
+.trust-quality-bg { background: var(--trust-quality); }
+.trust-familiarity-bg { background: var(--trust-familiarity); }
+.trust-personal-bg { background: var(--trust-personal); }
+ 
+.trust-title {
+  display: block;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  color: white;
+}
+ 
+.trust-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+ 
+.trust-chip {
+  background: rgba(255,255,255,0.18);
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: none;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  /* Chip lines in the .qmd have no blank line between them, so Pandoc
+     merges them into one paragraph and the flex `gap` on .trust-chips
+     never applies between individual chips. Margin guarantees spacing
+     regardless of markup structure. */
+  margin-bottom: 20px;
+}
+
+.trust-chip:last-child {
+  margin-bottom: 0;
+}
+
+/* Color each chip to match its own theme box, not a single fixed color.
+   rgba() can't tint a custom-property color, so use color-mix() to fade
+   the theme color into a translucent-looking tint against the dark bg. */
+.trust-readability-chips .trust-chip { color: var(--trust-readability); background: color-mix(in srgb, var(--trust-readability) 18%, transparent); }
+.trust-integrity-chips .trust-chip { color: var(--trust-integrity); background: color-mix(in srgb, var(--trust-integrity) 18%, transparent); }
+.trust-quality-chips .trust-chip { color: var(--trust-quality); background: color-mix(in srgb, var(--trust-quality) 18%, transparent); }
+.trust-familiarity-chips .trust-chip { color: var(--trust-familiarity); background: color-mix(in srgb, var(--trust-familiarity) 18%, transparent); }
+.trust-personal-chips .trust-chip { color: var(--trust-personal); background: color-mix(in srgb, var(--trust-personal) 18%, transparent); }
+
+/* Slide: zoom in on two themes, push remaining three to a dimmed sidebar.
+   Sidebar/focus panes are sized with flex-basis (not grid tracks) so their
+   width doesn't depend on which one appears first in the markup; use
+   `order` per-slide to control which side the sidebar sits on. */
+.trust-zoom-grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.trust-zoom-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0.4;
+  flex: 0 0 200px;
+}
+
+.trust-zoom-focus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  flex: 1 1 auto;
+}
+
+/* Overlooked Dimensions slide: fit all three columns on one row */
+.trust-zoom-focus-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+// .trust-zoom-focus .trust-box {
+//   min-height: 140px;
+// }
+
+.trust-zoom-focus .trust-title {
+  font-size: 28px;
+}
+
+/* "Where This Talk Is Headed" slide: identical layout to "Affective-Based
+   Components," but the six chips carrying forward into the rest of the
+   talk (Visual Elements, Aesthetics, Professional, With Source, Intuition,
+   Reliability) get a distinguishing highlight so they stand out among the
+   others. Shared data-id values let auto-animate morph the whole slide,
+   including these chips, from the previous slide. Highlight brightens
+   each chip's own theme color rather than using a neutral white outline,
+   so it reads consistently against every theme color. */
+.trust-chip-focus {
+  font-weight: 700;
+  outline: 2px solid;
+//   outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: -2px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.trust-readability-chips .trust-chip-focus { background: color-mix(in srgb, var(--trust-readability) 45%, transparent); outline: var(--trust-readability); }
+.trust-integrity-chips .trust-chip-focus { background: color-mix(in srgb, var(--trust-integrity) 45%, transparent); }
+.trust-quality-chips .trust-chip-focus { background: color-mix(in srgb, var(--trust-quality) 45%, transparent); }
+.trust-familiarity-chips .trust-chip-focus { background: color-mix(in srgb, var(--trust-familiarity) 45%, transparent); }
+.trust-personal-chips .trust-chip-focus { background: color-mix(in srgb, var(--trust-personal) 45%, transparent); }
+ 
+/* Slides 2-3: narrowing-focus sequence */
+.intro-text {
+  text-align: center;
+  font-size: 1.2em;
+  color: #aaa;
+}
+.intro-text.tall { margin-top: 100px; }
+.intro-text.short { margin-top: 50px; }
+ 
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+ 
+.focus-grid-expanded {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+ 
+.box-rational {
+  background: #1a3a2a;
+  border: 3px solid #2e6f40;
+  padding: 40px;
+  border-radius: 12px;
+  opacity: 1;
+}
+ 
+.box-rational-faded {
+  background: #1a3a2a;
+  border: 1px solid #2e6f40;
+  padding: 25px;
+  border-radius: 12px;
+  opacity: 0.4;
+  font-size: 0.8em;
+}
+ 
+.box-emotional-dim {
+  background: #222;
+  border: 2px dashed #444;
+  padding: 40px;
+  border-radius: 12px;
+  opacity: 0.3;
+}
+ 
+.box-emotional-active {
+  background: #2a2438;
+  border: 3px solid #9b5de5;
+  padding: 35px;
+  border-radius: 12px;
+  opacity: 1;
+}
+ 
+.triad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+ 
+.fragment-card {
+  padding: 20px;
+  border-radius: 8px;
+}
+.fragment-quality { background: #3e2723; border-left: 5px solid #d97724; }
+.fragment-familiarity { background: #281545; border-left: 5px solid #6a3d9a; }
+.fragment-personal { background: #263238; border-left: 5px solid #78909c; }
+
+/* "...But Trust is an Emotional Gatekeeper" slide: highlight the specific
+   sub-items that carry through as the focus for the rest of the talk
+   (Visual Elements, Aesthetics, Professional, With Source, Intuition,
+   Reliability), distinguishing them from the other listed items. */
+.trust-focus-item {
+  font-weight: 700;
+  color: #ffd166;
+  background: rgba(255, 209, 102, 0.15);
+  border-radius: 4px;
+  padding: 1px 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+ 
+.text-accent-green { color: #4ade80; }
+.text-muted-dim { color: #666; }
+ 
+/* Slide 4: Takeaway */
+.takeaway-wrap {
+  margin-top: 120px;
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.takeaway-quote {
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+.takeaway-list {
+  margin-top: 50px;
+  font-size: 1.3em;
+  color: #aaa;
+  text-align: left;
+}
+
 /* Target the absolute viewport wrapper that is locked to your screen edges */
 .reveal-viewport {
     position: relative;

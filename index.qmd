@@ -4,6 +4,8 @@ subtitle: "Styling Data Products People Actually Want To Use"
 author: "Shelby Level"
 format:
     revealjs:
+        width: 1280
+        height: 720
         revealjs-plugins:
             - codewindow
             # - editable
@@ -107,7 +109,6 @@ But because styling can make or break whether people engage with our work.
 
 ::: {.fragment}
 1.  Why Styling Matters
--  design factors that influence perceived trustworthiness (paper)
 :::
 ::: {.fragment}
 2.  Color
@@ -131,22 +132,392 @@ But because styling can make or break whether people engage with our work.
 :::
 
 ::: notes
-in this talk I’ll walk you through applying these skills to your own work, without a CSS induced headache
+What to expect: In this talk we'll cover the basics of styling, why it matters, and discuss two important but easy to implement aspects of styling: color and typography. Finally, in this talk I’ll walk you through applying these skills to your own work, without a CSS induced headache
 :::
 
 ---
 
-![](inst/img/design-factors.png){}
+## Why Styling Matters
 
+::: notes
+Why didn't you want to download software from that first website? Why didn't you want to share that dashboard with your boss or a client? Because you didn't trust it. It didn't matter what the contents were, the visual design was poor and you were instantly skeptical. Now you may not be able to put your finger on why, but researchers actually studied this. In a 2025 qualitative study they asked viewers what makes them trust a chart and coded their 185 responses into five real categories. This study found that people's own reasons for trusting (or distrusting) a chart go well beyond the data itself — and they don't always agree on which factors matter most.
 
+Trust is an emotional gatekeeper, and it is influenced by more than just the data itself. The McKinley et al. (2025) framework proves that viewers reject accurate data if it fails the "instinct" test. People evaluate trustworthiness, usability, and professionalism almost instantly. The visual experience becomes part of the analytical experience.
+:::
+
+## Influencing Trust {auto-animate=true}
+
+::: {#theme-container .trust-grid}
+
+::: {.trust-column}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+
+::: {.trust-chips .trust-readability-chips}
+[Simple]{.trust-chip}
+[Clarity]{.trust-chip}
+[Complex]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+
+::: {.trust-chips .trust-integrity-chips}
+[Data Integrity]{.trust-chip}
+[Labeling]{.trust-chip}
+[Source]{.trust-chip}
+[Objectivity]{.trust-chip}
+[Intent]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+
+::: {.trust-chips .trust-quality-chips}
+[Vis Type]{.trust-chip}
+[Visual Elements]{.trust-chip}
+[Aesthetics]{.trust-chip}
+[Professional]{.trust-chip}
+[Academic]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+
+::: {.trust-chips .trust-familiarity-chips}
+[With Topic]{.trust-chip}
+[With Source]{.trust-chip}
+[Unspecified]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+
+::: {.trust-chips .trust-personal-chips}
+[Confidence]{.trust-chip}
+[Intuition]{.trust-chip}
+[Relevance]{.trust-chip}
+[Reliability]{.trust-chip}
+[Importance]{.trust-chip}
+:::
+:::
+
+:::
+
+::: notes
+Here are all the design factors that influence a viewer's perceived trustworthiness of your work. That's a lot right? Let's break it down
+:::
+
+## Cognition-Based Components {auto-animate=true}
+
+::: {#theme-container .trust-zoom-grid}
+
+::: {.trust-zoom-focus}
+
+::: {.trust-column}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+
+::: {.trust-chips .trust-readability-chips}
+[Simple]{.trust-chip}
+[Clarity]{.trust-chip}
+[Complex]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+
+::: {.trust-chips .trust-integrity-chips}
+[Data Integrity]{.trust-chip}
+[Labeling]{.trust-chip}
+[Source]{.trust-chip}
+[Objectivity]{.trust-chip}
+[Intent]{.trust-chip}
+:::
+:::
+
+:::
+
+::: {.trust-zoom-sidebar}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+:::
+
+:::
+
+::: notes
+Here is where we spend the most time on: Readability and Integrity & Transparency. We make sure the data is accurate, the source is credible, and the intent is clear. 
+
+* **Data Accuracy:** Clean data, clear labeling.
+* **Source & Intent:** Citation, peer review, objectivity.
+* *Status: Crucial, non-negotiable, and where we spend our time.*
+:::
+
+## Affective-Based Components {auto-animate=true}
+
+::: {#theme-container .trust-zoom-grid}
+
+::: {.trust-zoom-sidebar}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+:::
+
+::: {.trust-zoom-focus .trust-zoom-focus-3col}
+
+::: {.trust-column}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+
+::: {.trust-chips .trust-quality-chips}
+[Vis Type]{.trust-chip}
+[Visual Elements]{.trust-chip data-id="chip-visual-elements"}
+[Aesthetics]{.trust-chip data-id="chip-aesthetics"}
+[Professional]{.trust-chip data-id="chip-professional"}
+[Academic]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+
+::: {.trust-chips .trust-familiarity-chips}
+[With Topic]{.trust-chip}
+[With Source]{.trust-chip data-id="chip-with-source"}
+[Unspecified]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+
+::: {.trust-chips .trust-personal-chips}
+[Confidence]{.trust-chip}
+[Intuition]{.trust-chip data-id="chip-intuition"}
+[Relevance]{.trust-chip}
+[Reliability]{.trust-chip data-id="chip-reliability"}
+[Importance]{.trust-chip}
+:::
+:::
+
+:::
+
+:::
+
+::: notes
+But we often overlook the other three dimensions: Quality & Design, Familiarity, and Personal Intuition, dismissing them as "superficial styling." However, these are the emotional and cognitive gatekeepers that can make or break whether someone trusts our work.
+
+* Execution & Aesthetics
+* Psychological Alignment
+* *Status: Often dismissed as "superficial styling."*
+:::
+
+## Where This Talk Is Headed {auto-animate=true}
+
+::: {#theme-container .trust-zoom-grid}
+
+::: {.trust-zoom-sidebar}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+:::
+
+::: {.trust-zoom-focus .trust-zoom-focus-3col}
+
+::: {.trust-column}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+
+::: {.trust-chips .trust-quality-chips}
+[Vis Type]{.trust-chip}
+[Visual Elements]{.trust-chip .trust-chip-focus data-id="chip-visual-elements"}
+[Aesthetics]{.trust-chip .trust-chip-focus data-id="chip-aesthetics"}
+[Professional]{.trust-chip .trust-chip-focus data-id="chip-professional"}
+[Academic]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+
+::: {.trust-chips .trust-familiarity-chips}
+[With Topic]{.trust-chip}
+[With Source]{.trust-chip .trust-chip-focus data-id="chip-with-source"}
+[Unspecified]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+
+::: {.trust-chips .trust-personal-chips}
+[Confidence]{.trust-chip}
+[Intuition]{.trust-chip .trust-chip-focus data-id="chip-intuition"}
+[Relevance]{.trust-chip}
+[Reliability]{.trust-chip .trust-chip-focus data-id="chip-reliability"}
+[Importance]{.trust-chip}
+:::
+:::
+
+:::
+
+:::
+
+::: notes
+These six factors — the design, source, and intuition cues — are what the rest of this talk will focus on.
+:::
+
+## Revisit
+
+::: {.fragment}
+![](inst/img/linux-distro.jpeg){.absolute top=5px right=0 height="100%"}
+:::
+
+::: notes
+Still not convinced that these affective-based components are worth your time? Let's revisit the first example. Most of you labelled the website I showed you as untrustworthy. Why? Because it failed the "instinct" test. It didn't look professional, the source didn't look familiar, and it didn't inspire confidence. However, there are probably a few of you who would download software from this website because you recognize it as a trusted source. DistroWatch has been a credible and reliable source of information for the Linux Community, one of the most widely used operating system in the world, for over 25 years? Linux users have trusted this site for decades to track, compare, and learn about different available Linux distributions. 
+
+Now that you know the cognitive based components check out, you're probably more likely to overlook the affective based components when reconsidering your initial assessment. This demonstrates the interplay between the cognitive and affective components of trust. The data is the same, but the perceived quality changes dramatically based on the design, source, and intuition cues you receive on first glance.
+:::
+
+## Trust is an Emotional Gatekeeper for Our Work
+
+::: notes
+Tying this back to our work: A data professional would probably trust your work even if it wasn't well designed, so long as the cognitive based components are sound like your sources, data integrity, and objectivity. However, the intended audience of our work is usually not data professionals. They are busy decision makers. They don't have time to read every chart, and they don't have time to evaluate the quality of our work. They make snap judgments based on their first impressions, meaning they might not even get to considering your data sources and integrity if their intuition tells them it's untrustworthy. And those first impressions are influenced by the design, source, and intuition cues we just discussed. This is why styling matters, and why it is worth your time to learn how to do it well.
+:::
+
+## Trust is an Emotional Gatekeeper {auto-animate=true}
+
+::: notes
+But we often overlook the other three dimensions: Quality & Design, Familiarity, and Personal Intuition, dismissing them as "superficial styling." However, these are the emotional and cognitive gatekeepers that can make or break whether someone trusts our work.
+
+* Execution & Aesthetics
+* Psychological Alignment
+* *Status: Often dismissed as "superficial styling."*
+
+* **Aesthetics**
+* **Visual Elements**
+* **Professional Finish**
+
+* **With Source**
+* Reduces cognitive load
+* Visual recognition
+:::
+
+## ...But Trust is an Emotional Gatekeeper {auto-animate=true}
+
+::: {.intro-text .short}
+McKinley, Pandey & Ottley's 2025 CHI study on viewer trust in data visualization found that people's own reasons for trusting (or distrusting) a chart go well beyond the data itself — and they don't always agree on which factors matter most:
+:::
+
+::: {#framework-grid data-id="framework-grid" .focus-grid-expanded}
+
+::: {#box-rational data-id="box-rational" .box-rational-faded}
+### 1. Integrity & Transparency
+
+* Data Accuracy
+* Source & Intent
+:::
+
+::: {#box-emotional data-id="box-emotional" .box-emotional-active}
+### The Design & Psychological Triad
+
+::: {.triad-grid}
+
+::: {.fragment .fragment-card .fragment-quality}
+#### 🎨 Quality & Design
+
+* [Aesthetics]{.trust-focus-item}
+* [Visual Elements]{.trust-focus-item}
+* [Professional Finish]{.trust-focus-item}
+:::
+
+::: {.fragment .fragment-card .fragment-familiarity}
+#### 🤝 Familiarity
+
+* [With Source]{.trust-focus-item}
+* Reduces cognitive load
+* Visual recognition
+:::
+
+::: {.fragment .fragment-card .fragment-personal}
+#### 🧠 Personal Context
+
+* Confidence
+* [Reliability]{.trust-focus-item}
+* [Intuition]{.trust-focus-item}
+:::
+
+:::
+:::
+:::
+
+## The Takeaway: Design Earns the Right to be Read
+
+::: {.takeaway-wrap}
+
+::: {.takeaway-quote}
+"Data integrity builds the truth, but quality and design build the *bridge* to that truth."
+:::
+
+::: {.takeaway-list}
+* **Without Quality:** Excellent data is dismissed as amateurish or suspicious.
+* **Without Familiarity:** Complex data induces anxiety and cognitive rejection.
+* **Without Personal Intuition:** The user lacks the raw confidence to act on your insights.
+:::
+
+:::
+
+::: notes
+The "Hard" Metrics (The Baseline): Data Integrity, Source, and Intent are what data professionals focus 99% of their time on. They are required, but they are invisible if the user rejects the chart upfront.
+
+The "Soft" Metrics (The Gatekeepers): Quality, Familiarity, and Personal Intuition act as the emotional and cognitive gatekeeper. If a chart looks unprofessional or unfamiliar, viewers experience friction and judge it as untrustworthy before they even read a single data point.
+:::
 
 ---
 
 ## Hidden Dimensions of Visual Trust
 
-::: notes
-Why didn't you want to download software from that first website? Why didn't you want to share that dashboard with your boss or a client? Because you didn't trust it. Trust is an emotional gatekeeper, and it is influenced by more than just the data itself. The McKinley et al. (2025) framework proves that viewers reject accurate data if it fails the "instinct" test. People evaluate trustworthiness, usability, and professionalism almost instantly. The visual experience becomes part of the analytical experience.
-:::
+
 
 ---
 
@@ -419,20 +790,21 @@ Themes for bootstrap are available through Bootswatch, which is a collection of 
 
 ## Apply Bootswatch Theme
 
-::: {.codewindow .r}
-ui.R
-````{.r}
+::::: {.codewindow}
+::: {.editor .r name="ui.R"}
+```{.r code-line-numbers="|6-9"}
 bslib::page_navbar(
     title = "Dashboard",
     id = "main_nav",
 
     theme = bslib::bs_theme(
-        preset = "lux"
+        preset = "lux",
         brand = "www/brand.yml"
     )
 )
-````
+```
 :::
+:::::
 
 ---
 

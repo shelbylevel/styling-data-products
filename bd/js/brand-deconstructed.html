@@ -13,6 +13,113 @@
   const STAGE_CLASSES = ['s-base', 's-bootswatch', 's-brand', 's-polish'];
   const BLK = ['base', 'bootswatch', 'brand', 'polish']; // plane index -> code block
 
+  // Copied verbatim from _extensions/emilhvitfeldt/codewindow/codewindow.js so
+  // the hand-built panel below matches the extension's "mac" chrome and R
+  // file icon exactly.
+  const MAC_BUTTONS_SVG = `<svg viewBox="0 0 420 100" style="width:55px"><circle fill="#ff5f57" cx="50" cy="50" r="50"/><circle fill="#febc2e" cx="210" cy="50" r="50"/><circle fill="#28c840" cx="370" cy="50" r="50"/></svg>`;
+  const R_ICON_SVG = `<svg viewBox="0 0 724 561" style="height:1em"><path d="M361.453,485.937 C162.329,485.937 0.906,377.828 0.906,244.469 C0.906,111.109 162.329,3.000 361.453,3.000 C560.578,3.000 722.000,111.109 722.000,244.469 C722.000,377.828 560.578,485.937 361.453,485.937 ZM416.641,97.406 C265.289,97.406 142.594,171.314 142.594,262.484 C142.594,353.654 265.289,427.562 416.641,427.562 C567.992,427.562 679.687,377.033 679.687,262.484 C679.687,147.971 567.992,97.406 416.641,97.406 Z" fill="#a9a8ad" fill-rule="evenodd"/><path d="M550.000,377.000 C550.000,377.000 571.822,383.585 584.500,390.000 C588.899,392.226 596.510,396.668 602.000,402.500 C607.378,408.212 610.000,414.000 610.000,414.000 L696.000,559.000 L557.000,559.062 L492.000,437.000 C492.000,437.000 478.690,414.131 470.500,407.500 C463.668,401.969 460.755,400.000 454.000,400.000 C449.298,400.000 420.974,400.000 420.974,400.000 L421.000,558.974 L298.000,559.026 L298.000,152.938 L545.000,152.938 C545.000,152.938 657.500,154.967 657.500,262.000 C657.500,369.033 550.000,377.000 550.000,377.000 ZM496.500,241.024 L422.037,240.976 L422.000,310.026 L496.500,310.002 C496.500,310.002 531.000,309.895 531.000,274.877 C531.000,239.155 496.500,241.024 496.500,241.024 Z" fill="rgb(39,109,195)" fill-rule="evenodd"/></svg>`;
+
+  // ---- port of R/postprocess_code_highlighting.R's dynamic passes --------
+  // The rest of the deck's code windows are static Pandoc/reveal-codewindow
+  // output that gets walked once, after render, by that R script (namespace
+  // coloring, hex-color pills, then rainbow brackets by nesting depth). This
+  // panel is assembled in the browser instead, so it never goes through that
+  // post-render step -- these three functions are a direct JS port, run in
+  // the same order, so the two "custom" highlighting layers match exactly.
+  const BRACKET_COLORS = ["#ed90a4", "#d3a263", "#99b657", "#33c192", "#00bdce", "#94a9ec", "#dc91db"];
+  const NAMESPACE_COLOR = "#FFCC66";
+  const HEX_PATTERN = /#(?:[0-9A-Fa-f]{3}){1,2}\b/g;
+  const OPEN_BRACKETS = "([{";
+  const CLOSE_BRACKETS = ")]}";
+
+  function contrastingTextColor(hex) {
+    hex = hex.replace(/^#/, "");
+    if (hex.length === 3) hex = hex.split("").map(c => c + c).join("");
+    const channels = [0, 2, 4].map(i => parseInt(hex.substr(i, 2), 16) / 255);
+    const linear = channels.map(c => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)));
+    const luminance = linear[0] * 0.2126 + linear[1] * 0.7152 + linear[2] * 0.0722;
+    return luminance > 0.5 ? "#1a1a1a" : "#ffffff";
+  }
+
+  function textNodesIn(el) {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    let n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    return nodes;
+  }
+
+  function replaceWithHtml(node, html) {
+    const tpl = document.createElement("template");
+    tpl.innerHTML = html;
+    node.replaceWith(...tpl.content.childNodes);
+  }
+
+  function addHexPills(codeEl) {
+    textNodesIn(codeEl).forEach(tn => {
+      const txt = tn.nodeValue;
+      if (!HEX_PATTERN.test(txt)) return;
+      HEX_PATTERN.lastIndex = 0;
+      let cursor = 0, out = "", m;
+      while ((m = HEX_PATTERN.exec(txt))) {
+        out += txt.slice(cursor, m.index);
+        const hex = m[0];
+        out += `<span class="hex-pill" style="background-color:${hex};color:${contrastingTextColor(hex)};">${hex}</span>`;
+        cursor = m.index + hex.length;
+      }
+      out += txt.slice(cursor);
+      replaceWithHtml(tn, out);
+    });
+  }
+
+  function addRainbowBrackets(codeEl) {
+    let depth = 0;
+    textNodesIn(codeEl).forEach(tn => {
+      const txt = tn.nodeValue;
+      if (!/[()[\]{}]/.test(txt)) return;
+      let out = "";
+      for (const ch of txt) {
+        if (OPEN_BRACKETS.includes(ch)) {
+          depth += 1;
+          out += `<span class="bracket-depth" style="color:${BRACKET_COLORS[(depth - 1) % BRACKET_COLORS.length]};">${ch}</span>`;
+        } else if (CLOSE_BRACKETS.includes(ch)) {
+          out += `<span class="bracket-depth" style="color:${BRACKET_COLORS[(Math.max(depth, 1) - 1) % BRACKET_COLORS.length]};">${ch}</span>`;
+          depth = Math.max(depth - 1, 0);
+        } else {
+          out += ch;
+        }
+      }
+      replaceWithHtml(tn, out);
+    });
+  }
+
+  function addNamespaceColoring(codeEl) {
+    codeEl.querySelectorAll("span.sc").forEach(sc => {
+      if (sc.textContent !== "::") return;
+      let prev = sc.previousSibling;
+      while (prev && prev.nodeType !== Node.TEXT_NODE) prev = prev.previousSibling;
+      if (!prev) return;
+      const txt = prev.nodeValue;
+      const m = txt.match(/[A-Za-z0-9._]+\s*$/);
+      if (!m) return;
+      const pkgWithWs = m[0];
+      const pkg = pkgWithWs.trim();
+      const prefix = txt.slice(0, txt.length - pkgWithWs.length);
+      const trailingWs = pkgWithWs.slice(pkg.length);
+      replaceWithHtml(prev, `${prefix}<span class="namespace" style="color:${NAMESPACE_COLOR};">${pkg}</span>${trailingWs}`);
+    });
+  }
+
+  // Run in the same order postprocess_code_highlighting.R does: namespace
+  // coloring needs the original span.sc text nodes still intact, hex pills
+  // next, rainbow brackets last (depth must track across whatever text
+  // nodes remain after the earlier passes).
+  function applyCustomHighlighting(codeEl) {
+    addNamespaceColoring(codeEl);
+    addHexPills(codeEl);
+    addRainbowBrackets(codeEl);
+  }
+
   // ---- the mini-dashboard markup, identical across all four planes -------
   const MOCKUP_HTML = `
     <div class="navbar">
@@ -41,38 +148,27 @@
   // ---- left-hand code listing --------------------------------------------
   // Swap in whatever your real ui()/brand.yml/scss look like — the data-blk
   // tags are all the explode step cares about.
-  const CODE = `<span data-blk="base"><span class="gd-fn">library</span>(shiny)
-
-ui &lt;- <span class="gd-fn">fluidPage</span>(
-  <span class="gd-fn">navbarPage</span>(<span class="gd-str">"Acme Analytics"</span>,
-    <span class="gd-fn">tabPanel</span>(<span class="gd-str">"Dashboard"</span>, ...)
-  )
+  const CODE = `<span data-blk="base">bslib::<span class="gd-fn">page_navbar</span>(
+  <span class="gd-arg">title</span> = <span class="gd-str">"Dashboard"</span>,
+  bslib::<span class="gd-fn">nav_panel</span>(...)
 )</span>
-
-<span data-blk="bootswatch">ui &lt;- <span class="gd-fn">fluidPage</span>(
-  <span class="gd-arg">theme</span> = bslib::<span class="gd-fn">bs_theme</span>(
-    <span class="gd-arg">bootswatch</span> = <span class="gd-str">"flatly"</span>
-  ),
-  ...
+ 
+<span data-blk="bootswatch">bslib::<span class="gd-fn">page_navbar</span>(
+  <span class="gd-arg">title</span> = <span class="gd-str">"Dashboard"</span>,
+  <span class="gd-arg">theme</span> = bslib::<span class="gd-fn">bs_theme</span>(<span class="gd-arg">preset</span> = <span class="gd-str">"lux"</span>),
+  bslib::<span class="gd-fn">nav_panel</span>(...)
 )</span>
-
-<span data-blk="brand"><span class="gd-str"># _brand.yml</span>
-color:
-  primary: <span class="gd-str">"#7B2D46"</span>
-  palette:
-    gold: <span class="gd-str">"#C9A227"</span>
-typography:
-  base: Georgia
-  headings: Georgia
-logo: logo.svg
-
-ui &lt;- <span class="gd-fn">fluidPage</span>(
-  <span class="gd-arg">theme</span> = bslib::<span class="gd-fn">bs_theme</span>(
-    <span class="gd-arg">brand</span> = <span class="gd-str">"_brand.yml"</span>
-  ),
-  ...
+ 
+<span data-blk="brand">bslib::<span class="gd-fn">page_navbar</span>(
+    <span class="gd-arg">title</span> = <span class="gd-str">"Dashboard"</span>,
+    <span class="gd-arg">id</span> = <span class="gd-str">"main_nav"</span>,
+ 
+    <span class="gd-arg">theme</span> = bslib::<span class="gd-fn">bs_theme</span>(
+        <span class="gd-arg">preset</span> = <span class="gd-str">"lux"</span>,
+        <span class="gd-arg">brand</span> = <span class="gd-str">"brand.yml"</span>
+    )
 )</span>
-
+ 
 <span data-blk="polish"><span class="gd-str">// custom.scss</span>
 .stat-card {
   box-shadow: <span class="gd-num">0</span> <span class="gd-num">10</span>px <span class="gd-num">24</span>px rgba(<span class="gd-num">123</span>,<span class="gd-num">45</span>,<span class="gd-num">70</span>,.<span class="gd-num">16</span>);
@@ -108,10 +204,47 @@ ui &lt;- <span class="gd-fn">fluidPage</span>(
     built = true;
 
     const code = document.createElement('div');
-    code.className = 'bd-code';
-    code.innerHTML = CODE;
+    // Deliberately NOT given the shared `codewindow` class: RevealCodewindow
+    // (_extensions/emilhvitfeldt/codewindow/codewindow.js) does a one-time
+    // DOM rewrite of every `.codewindow` element on Reveal's 'ready' event.
+    // If this panel is built before 'ready' fires (e.g. a direct link/reload
+    // landing straight on the bd-slide, since TM.gate's boot() renders
+    // immediately), the extension would catch our already-built element,
+    // find no `.editor` children, and wrap our existing header/textarea
+    // inside a *second*, freshly built header/textarea -- the double-nesting
+    // this comment used to invite. `.bd-code` below replicates the same
+    // chrome look via CSS instead, so nothing here depends on that class.
+    code.className = 'bd-code bd-codewindow bd-codewindow-dark';
+    code.setAttribute('data-chrome', 'mac');
+    const codeId = 'bd-code-block';
+    code.innerHTML = `
+      <div class="header">
+        <div class="buttons">${MAC_BUTTONS_SVG}</div>
+        <div class="file active">${R_ICON_SVG}ui.R</div>
+      </div>
+      <div class="textarea">
+        <div class="code-copy-outer-scaffold">
+          <pre><code id="${codeId}" class="sourceCode r">${CODE}</code></pre>
+          <button title="Copy to Clipboard" class="code-copy-button" data-clipboard-target="#${codeId}"><i class="bi"></i></button>
+        </div>
+      </div>
+    `;
     stage.appendChild(code);
     codeBlocks = Array.from(code.querySelectorAll('[data-blk]'));
+    applyCustomHighlighting(code.querySelector('#' + codeId));
+
+    const copyButton = code.querySelector('.code-copy-button');
+    if (copyButton && window.ClipboardJS) {
+      const clipboard = new ClipboardJS(copyButton, {
+        // data-blk spans hold the "displayed" text; strip them back to plain
+        // source so a copy grabs real code, not the highlight markup's text.
+        text: () => code.querySelector('#' + codeId).innerText,
+      });
+      clipboard.on('success', () => {
+        copyButton.classList.add('code-copy-button-checked');
+        setTimeout(() => copyButton.classList.remove('code-copy-button-checked'), 2000);
+      });
+    }
 
     const plot = document.createElement('div');
     plot.id = 'bd-plot';

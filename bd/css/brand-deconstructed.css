@@ -8,10 +8,144 @@
 #bd-stage {
   display: flex; gap: 48px; align-items: flex-start;
 }
+/* .bd-code is deliberately NOT a `.codewindow` element (see the comment in
+   brand-deconstructed.html for why); `.bd-codewindow`/`.bd-codewindow-dark`
+   below duplicate the visual chrome from
+   _extensions/emilhvitfeldt/codewindow/codewindow.css under their own
+   namespaced selectors so this dynamically-built panel matches the deck's
+   other code windows without ever being touched by that extension's JS. */
 .bd-code {
-  flex: 0 0 380px; background: #1b1e27; border-radius: 10px;
-  padding: 22px 24px; font: 14.5px/1.55 "SFMono-Regular", Consolas, monospace;
-  color: #c7cbd6; white-space: pre; overflow-x: auto;
+  flex: 0 0 380px; margin-bottom: 0;
+  font-size: 14.5px; line-height: 1.55;
+  overflow-wrap: anywhere;
+  font-family: monospace;
+}
+.bd-codewindow {
+  border-radius: var(--codewindow-radius, 10px);
+  box-shadow: var(--codewindow-shadow-color, #26394d) 0px 20px 30px -10px;
+  color: var(--codewindow-color, inherit);
+  background: var(--codewindow-bg, white);
+}
+.bd-codewindow .header {
+  display: flex;
+  background: var(--codewindow-header-bg, #e2e8f0);
+  border-top-left-radius: var(--codewindow-radius, 10px);
+  border-top-right-radius: var(--codewindow-radius, 10px);
+  padding-left: 16px;
+  gap: 16px;
+  height: 30px;
+}
+.bd-codewindow .header .buttons {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+.bd-codewindow .header .file {
+  margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--codewindow-tab-active-bg, var(--codewindow-bg, white));
+  border-radius: 10px 10px 0 0;
+  height: 90%;
+}
+.bd-codewindow .textarea {
+  padding: 21px;
+  overflow-x: auto;
+}
+.bd-codewindow .textarea .sourceCode {
+  background: unset;
+  border: unset;
+  font-size: unset;
+}
+.bd-codewindow .textarea pre {
+  font-size: unset;
+  margin: 0;
+}
+
+.bd-codewindow.bd-codewindow-dark {
+  --codewindow-bg: #2D2D2D;
+  --codewindow-header-bg: #252525;
+  --codewindow-tab-active-bg: #2D2D2D;
+  --codewindow-color: #cccccc;
+  --codewindow-shadow-color: #93a1a1;
+}
+
+code.sourceCode.r {
+    color: #cccccc;
+    span {
+        color: #cccccc;
+    }
+
+    /* Named function arguments (e.g. `title =`) — plain foreground */
+    span.va,
+    span.at {
+        color: #cccccc;
+    }
+
+    /* R package namespace before `::`/`:::` — Tomorrow's Class/Support
+    group (yellow, matching "entity.name.namespace.r" in the theme JSON) */
+    span.dt {
+        color: #FFCC66;
+    }
+
+    /* Keywords, control flow, "other" tokens — Tomorrow's Keyword/Storage group */
+    span.cf,
+    span.kw {
+        color: #CC99CC;
+    }
+
+    /* Functions and imports — Tomorrow's Function/Special Method group */
+    span.gd-fn {
+        color: #6699CC;
+    }
+
+    /* Strings, chars, special strings — Tomorrow's String group */
+    span.gd-str {
+        color: #99CC99;
+    }
+
+    /* Numbers, constants, preprocessor — Tomorrow's Number/Constant group */
+    span.bn,
+    span.pp,
+    span.fl,
+    span.dv,
+    span.cn {
+        color: #F2777A;
+    }
+
+    /* Operators — Tomorrow's Operator/Misc group */
+    span.ot,
+    span.op,
+    span.sc {
+        color: #66CCCC;
+    }
+
+    /* Variables, attributes, alerts, errors — Tomorrow's Variable group */
+    span.al,
+    span.er {
+        color: #F2777A;
+    }
+
+    /* Comments, annotations, documentation — muted grey */
+    span.an,
+    span.in,
+    span.wa,
+    span.do,
+    span.cv,
+    span.co {
+        color: $theme-comment;
+    }
+}
+
+/* Quarto's .code-copy-outer-scaffold/.code-copy-button rules already ship in
+   the deck's bundled CSS; position=relative here is what they rely on for
+   the button's position:absolute placement, same as Quarto's own fenced
+   code blocks. */
+.bd-code .code-copy-outer-scaffold {
+  position: relative;
 }
 .bd-code span[data-blk] {
   display: block; padding: 3px 8px; margin: 0 -8px; border-radius: 6px;

@@ -623,8 +623,9 @@ But it is a much better place to start than an empty CSS file and a growing sens
 #   top <- row * (img_height_pct + row_gap)
 #   left <- col * (img_width_pct + col_gap)
 
-#   glue::glue(
-#     '![](https://bootswatch.com/{theme}/thumbnail.png){{.absolute top="{top}%" left="{left}%" height="{img_height_pct}%"}}'
+#   sprintf(
+#     '![](https://bootswatch.com/%s/thumbnail.png){.absolute top="%s%%" left="%s%%" height="%s%%"}',
+#     theme, top, left, img_height_pct
 #   )
 # })
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Speaker Training Notes</title>
+<title>Styling a Quarto Report: Bootswatch + brand.yml, Deconstructed</title>
 <style>
 
 span.smallcaps{font-variant: small-caps;}
@@ -2179,7 +2179,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Speaker Training Notes</h1>
+<h1 class="title">Styling a Quarto Report: Bootswatch + brand.yml, Deconstructed</h1>
 </div>
 
 
@@ -2196,88 +2196,433 @@ vertical-align: -.125em;
 </header>
 
 
-<ul>
-<li><strong>Title</strong>: First Impressions Matter: Styling data products people actually want to use</li>
-<li><strong>Abstract</strong>: Professional styling isn’t a luxury for data products—it determines whether users engage with our insights or click away. But for data scientists already managing complex code, mastering CSS to achieve polished results can feel overwhelming. This talk demonstrates how Bootswatch and brand.yml help you create professionally styled HTML-based products without CSS expertise. You’ll learn to leverage ready-made themes with pick-and-choose YAML-based customization, taking your data products from functional-but-forgettable to professional and memorable tools people trust and rely on. Whether building internal dashboards or public-facing applications, you’ll leave with practical examples and techniques to implement immediately.</li>
-<li><strong>Script</strong>: Picture this: You’ve clicked on a link, the page loads, and you immediately think “Did I just give myself a virus?” The font choice is questionable and colors are everywhere. And you close that tab faster than your brain can process why. Hopefully our data products aren’t that bad, but you get the point. It doesn’t matter how brilliant your analyses are if users leave after just a few clicks. Branding isn’t about vanity, it makes your work stand out, in a good way, and instantly recognizable, just like this sign [points to the iconic Chicago cubs sign behind me]. Good styling catches users’ attention and makes the difference between a product they glance at once and one they actually rely on. But you don’t have time to master CSS? This is where pairing a ready-made Bootswatch theme with customizable brand.yml comes to the resuce by taking your product from”functional-but-forgettable” to professional and memorable, without a CSS-induced headache. I’m Shelby Level, R programmer and dashboard enthusiast, and in this talk I’ll show you how to use these tools to make data products that people don’t just use—they actually WANT to use. Because your work deserves better than looking like it escaped from 2003.</li>
-</ul>
-<section id="session-1-narrow-your-topic---what-is-the-one-takeaway-you-want-to-offer-the-audience" class="level2">
-<h2 class="anchored" data-anchor-id="session-1-narrow-your-topic---what-is-the-one-takeaway-you-want-to-offer-the-audience">Session 1: Narrow your topic - What is the one takeaway you want to offer the audience?</h2>
-<dl>
-<dt>Prep: Just bring your big idea and what you want the audience to take away. Think about why you want the audience to hear it.</dt>
-<dd>
-There is an easier way to apply branding to your reports and dashboards, and it is through a central source of truth that can be reused across multiple products. This allows for a more consistent and professional look, while also saving time and effort in the long run.
-</dd>
-<dt>Start here: what inspired you to submit your topic?</dt>
-<dd>
-a love of branding and making things eye-catching and pleasant to look at. builidng a brand is a fun and creative process, and I want to share that with others.
-</dd>
-<dt>Consider your audience: Look at the session you’re in and who would have self selected to go to your talk! What might have made them select your talk?</dt>
-<dd>
-Pretty Useful Data Viz, people looking to make their work more useful and engaging, allowing users to draw concusions, better understand, and act on the data they are seeing.
-</dd>
-</dl>
-<p>Style of hooks: Metaphor, interesting fact or observation, story, etc.</p>
-<dl>
-<dt>the “Is this you?” and then a relatable frustrating experience that the talk is about to solve.</dt>
-<dd>
-clicking on a webpage or dashboard that looks terrible and makes you not want to use it, or worse, makes you not trust the data you are seeing. being overwhelmed by the amount of information, or not being able to find what you are looking for. The talk is about how to make your dashboards and reports more user friendly and visually appealing.
-</dd>
-</dl>
-<section id="personal-feedback" class="level3">
-<h3 class="anchored" data-anchor-id="personal-feedback">Personal Feedback</h3>
-<p>Use transcript in AI to get feedback</p>
-</section>
-<section id="group-feedback" class="level3">
-<h3 class="anchored" data-anchor-id="group-feedback">Group Feedback</h3>
-</section>
-</section>
-<section id="session-2-outline-your-talk---focus-on-talk-elements-and-the-order-of-your-talk" class="level2">
-<h2 class="anchored" data-anchor-id="session-2-outline-your-talk---focus-on-talk-elements-and-the-order-of-your-talk">Session 2: Outline your talk - Focus on talk elements and the order of your talk</h2>
-<p>Prep: Bring your rough outline to walk through.</p>
-<p>Need to add a little context to get people caught up to where I am</p>
-<p>TIP: You always need to set context for the data that you want to show. What context do you think matters to the audience?</p>
-<section id="the-5-line-story-method" class="level3">
-<h3 class="anchored" data-anchor-id="the-5-line-story-method">The 5-Line Story Method</h3>
-<ul>
-<li><strong>Situation</strong>: Analysis done, dashboard/report produced, feeling good about your work, and ready to share it with the world.</li>
-<li><strong>Desire</strong>: You just want to share it — you’re not trying to become a designer.</li>
-<li><strong>Conflict</strong>: You hit “pick a color” and realize you have no framework for it; it looks bad and you don’t know why. It looks like every other dashboard/report you’ve ever seen, and you don’t want to be that person. You want your work to stand out, but you don’t know how to make it happen.</li>
-<li><strong>Change</strong>: You go down the rabbit hole — researching palettes, reading about how The Economist/NYT do it, discovering Bootswatch/brand.yml as a way to systematize this without becoming a full-time designer.</li>
-<li><strong>Result</strong>: You’re now the person at work making the case that this matters, and building the tools that make it easy for other people who feel exactly like grad-school-you did.</li>
-</ul>
-</section>
-<section id="outline" class="level3">
-<h3 class="anchored" data-anchor-id="outline">Outline</h3>
-<ol type="1">
-<li><strong>Hook</strong>:
-<ul>
-<li>Which one of these would you trust? If you had to pick between the two, which one do you want to use? (show two dashboards, one styled and one not)</li>
-<li><strong>Problem</strong>: Is this you? You just finished a dashboard or report, and you are ready to share it with the world. But when you hit “pick a color” you realize you have no framework for it; it looks bad and you don’t know why. It looks like every other dashboard/report you’ve ever seen, and you don’t want to be that person. You want to build trust in your work and make your work stand out, but you don’t know how to make it happen and you don’t have the time to become a designer.</li>
-</ul></li>
-<li><strong>Styling Creates Trust</strong>: psychology/marketing angle
-<ul>
-<li>Color: Carries emotional and psychological weight, and can help guide the user’s eye to the most important information.</li>
-<li>Typography: Your Brand’s Tone of Voice. The right font can make your work look more professional and easier to read.</li>
-</ul></li>
-<li><strong>Example Screenshots</strong>: Show examples of dashboards and reports that are styled well and those that are not. Show how styling can make a difference in how people perceive your work.</li>
-<li><strong>Solution</strong>: Bootswatch and brand.yml are tools that allow you to apply branding to your reports and dashboards in a consistent and professional way, without having to become a designer. This allows for a more consistent and professional look, while also saving time and effort in the long run.
-<ul>
-<li>A visual diagram showing Bootswatch + brand.yml -&gt; Quarto dashboard/report</li>
-</ul></li>
-<li><strong>Demo Code and Screenshots</strong>: Show how to use Bootswatch and brand.yml to style a dashboard or report. Show how to customize the colors and fonts to match your brand.</li>
-<li><strong>Call to Action</strong>: Encourage the audience to try out Bootswatch and brand.yml in their own work, and to share their experiences with others.</li>
-</ol>
-</section>
-</section>
-<section id="session-3-dig-into-the-details---attention-to-data-stories-hooks-transitions-and-visuals-while-starting-to-talk-the-talk-out-loud" class="level2">
-<h2 class="anchored" data-anchor-id="session-3-dig-into-the-details---attention-to-data-stories-hooks-transitions-and-visuals-while-starting-to-talk-the-talk-out-loud">Session 3: Dig into the details - Attention to data, stories, hooks, transitions, and visuals while starting to talk the talk out loud</h2>
-<p>Prep: Bring your rough slides and your opening hook. (first time they want to see slides)</p>
-</section>
-<section id="session-4-put-it-together---fine-tune-ideas-and-language-while-putting-the-visuals-and-spoken-content-together" class="level2">
-<h2 class="anchored" data-anchor-id="session-4-put-it-together---fine-tune-ideas-and-language-while-putting-the-visuals-and-spoken-content-together">Session 4: Put it together - Fine tune ideas and language, while putting the visuals and spoken content together</h2>
-<p>Deliver 7-9 minutes of your talk you want to get feedback on.</p>
-</section>
+<p>The same rendered Quarto document gets restyled in three passes: a Bootswatch preset, <code>brand.yml</code> layered on top, then a small custom SCSS pass for the finishing touches — no change to your <code>.qmd</code> content at any point. Step through the layers below to see what each pass actually touches.</p>
+<div class="bd-embed">
+  <div class="bd-stage-wrap"><div id="bd-stage"></div></div>
+  <div class="bd-controls">
+    <button id="bdPrev">← Prev</button>
+    <span id="bdStageLabel"></span>
+    <button id="bdNext">Next →</button>
+  </div>
+</div>
+
+<style>
+.bd-embed {
+background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 14px;
+padding: 32px 28px 22px; margin: 1.5rem 0;
+}
+.bd-stage-wrap { perspective: 1600px; display: flex; justify-content: center; }
+#bd-stage {
+display: flex; gap: 40px; align-items: flex-start;
+width: 1000px; max-width: 100%;
+}
+.bd-codewindows { flex: 0 0 320px; display: flex; flex-direction: column; gap: 14px; }
+.bd-codewindows .codewindow {
+background: #1b1e27; border-radius: 10px; overflow: hidden;
+box-shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 6px 18px rgba(0,0,0,.18);
+opacity: .78; transform: scale(.99);
+transition: opacity .3s, transform .3s, box-shadow .3s;
+}
+.bd-codewindows .cw-header {
+display: flex; align-items: center; height: 30px; padding: 0 12px;
+background: #20232c; border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.bd-codewindows .cw-dots { display: flex; gap: 6px; flex: 0 0 auto; }
+.bd-codewindows .cw-dots span { width: 9px; height: 9px; border-radius: 50%; display: block; }
+.bd-codewindows .cw-dots span:nth-child(1) { background: #ff5f56; }
+.bd-codewindows .cw-dots span:nth-child(2) { background: #ffbd2e; }
+.bd-codewindows .cw-dots span:nth-child(3) { background: #27c93f; }
+.bd-codewindows .cw-file { flex: 1; text-align: center; font: 11.5px "SFMono-Regular", Consolas, monospace; color: #8b93a7; }
+.bd-codewindows .cw-spacer { flex: 0 0 auto; width: 36px; }
+.bd-codewindows .cw-body {
+margin: 0; padding: 14px 16px; font: 13.5px/1.55 "SFMono-Regular", Consolas, monospace;
+color: #c7cbd6; white-space: pre; overflow-x: auto;
+}
+.bd-codewindows .codewindow.bd-hot {
+opacity: 1; transform: scale(1);
+box-shadow: 0 0 0 2px rgba(125,211,192,.55), 0 10px 26px rgba(0,0,0,.28);
+}
+.bd-codewindows .codewindow.bd-dim { opacity: .32; }
+.gd-key { color: #8ec9ff; } .gd-str { color: #a8e6b0; }
+#bd-plot {
+position: relative; width: 640px; height: 530px; flex: 0 0 640px;
+transform-style: preserve-3d;
+}
+.bd-plane { position: absolute; inset: 0; transform-style: preserve-3d; }
+.bd-tilt {
+position: absolute; inset: 0; transform-style: preserve-3d;
+transform-origin: center center;
+}
+.bd-card {
+position: absolute; inset: -10px; border-radius: 14px;
+background: #0e1016; box-shadow: 0 20px 40px rgba(0,0,0,.35);
+opacity: 0;
+}
+.bd-mockup {
+position: absolute; inset: 0; border-radius: 10px; overflow: hidden;
+box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+
+.bd-mockup {
+--primary: #0d6efd; --link: #0d6efd;
+--navbar-bg: #0d6efd; --navbar-fg: #fff;
+--body-font: -apple-system, "Segoe UI", Roboto, sans-serif;
+--heading-font: var(--body-font);
+--radius: .375rem; --border: #dee2e6; --toc-active: #0d6efd;
+--callout-bg: #e7f1ff; --callout-border: #0d6efd; --logo-display: none;
+background: #fff; font-family: var(--body-font); color: #212529;
+}
+.bd-mockup.s-bootswatch {
+
+--primary: #1a1a1a; --link: #1a1a1a;
+--navbar-bg: #1a1a1a; --navbar-fg: #fff;
+--body-font: 'Nunito Sans', -apple-system, sans-serif; --heading-font: var(--body-font);
+--radius: .5rem; --border: #ececec; --toc-active: #1a1a1a;
+--callout-bg: #f5f5f5; --callout-border: #1a1a1a;
+}
+.bd-mockup.s-brand {
+
+--primary: #7B2D46; --link: #7B2D46;
+--navbar-bg: #7B2D46; --navbar-fg: #fff;
+--body-font: 'Georgia', serif; --heading-font: 'Georgia', serif;
+--radius: .5rem; --border: #f1eceb; --toc-active: #7B2D46;
+--callout-bg: #fbf1f0; --callout-border: #C9A227; --logo-display: flex;
+}
+.bd-mockup.s-polish {
+
+--primary: #7B2D46; --link: #7B2D46;
+--navbar-bg: #7B2D46; --navbar-fg: #fff;
+--body-font: 'Georgia', serif; --heading-font: 'Georgia', serif;
+--radius: .75rem; --border: #f1eceb; --toc-active: #7B2D46;
+--callout-bg: #fbf1f0; --callout-border: #C9A227; --logo-display: flex;
+background: linear-gradient(180deg,#fff 0%,#fdf8f7 100%);
+}
+.bd-mockup.s-polish .masthead { box-shadow: 0 1px 0 rgba(123,45,70,.06); }
+.bd-mockup.s-polish .doc-title { letter-spacing: .01em; }
+.bd-mockup.s-polish .callout { box-shadow: 0 8px 20px rgba(123,45,70,.14); }
+.bd-mockup.s-polish .margin-table table { border-radius: var(--radius); overflow: hidden; }
+.bd-mockup.s-polish .margin-table tr:nth-child(even) td { background: rgba(123,45,70,.045); }
+.bd-mockup .site-nav {
+height: 28px; display: flex; align-items: center; gap: 14px;
+padding: 0 16px; background: var(--navbar-bg); color: var(--navbar-fg);
+font-family: var(--heading-font); font-size: 11.5px; font-weight: 700;
+}
+.bd-mockup .site-nav .site-brand { display: flex; align-items: center; gap: 7px; }
+.bd-mockup .site-nav .logo-dot { width: 10px; height: 10px; }
+.bd-mockup .site-nav .site-links { display: flex; align-items: center; gap: 14px; font-weight: 400; opacity: .9; }
+.bd-mockup .site-nav .site-search { margin-left: auto; opacity: .85; }
+.bd-mockup .masthead {
+padding: 18px 24px 14px; border-bottom: 1px solid var(--border);
+display: flex; align-items: center; gap: 10px;
+}
+.bd-mockup .logo-dot { display: var(--logo-display); width: 15px; height: 15px; border-radius: 50%; background: var(--primary); flex: 0 0 auto; }
+.bd-mockup .masthead-text { font-family: var(--heading-font); }
+.bd-mockup .doc-title { font-size: 19px; font-weight: 700; color: #1d2433; }
+.bd-mockup .doc-sub { font-size: 12px; color: #6c757d; margin-top: 3px; font-family: var(--body-font); }
+.bd-mockup .doc-body { display: flex; gap: 18px; padding: 16px 24px 20px; align-items: flex-start; }
+.bd-mockup .sidenav {
+flex: 0 0 84px; font-family: var(--body-font); font-size: 11.5px;
+}
+.bd-mockup .sidenav div { padding: 3px 0; color: #6c757d; line-height: 1.3; }
+.bd-mockup .sidenav div.active { color: var(--toc-active); font-weight: 600; }
+.bd-mockup .main { flex: 1; min-width: 0; font-family: var(--body-font); }
+.bd-mockup .main h2 {
+font-family: var(--heading-font); font-size: 15px; margin: 0 0 7px; color: #1d2433;
+}
+.bd-mockup .main p { font-size: 12px; line-height: 1.5; color: #3c4249; margin: 0 0 10px; }
+.bd-mockup .main a { color: var(--link); }
+.bd-mockup .callout {
+border: 1px solid var(--callout-border); border-left: 4px solid var(--callout-border);
+border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; background: #fff;
+}
+.bd-mockup .callout-header {
+background: var(--callout-bg); padding: 6px 10px; display: flex; align-items: center;
+gap: 6px; font-weight: 700; font-size: 11px; color: #1d2433; font-family: var(--heading-font);
+}
+.bd-mockup .callout-body { padding: 8px 10px 10px; font-size: 11.5px; color: #3c4249; }
+.bd-mockup .chart-wrap { margin-top: 4px; }
+.bd-mockup .chart-cap { font-size: 10.5px; color: #6c757d; font-family: var(--body-font); margin-top: 4px; margin-bottom: 20px; }
+.bd-mockup .margin {
+flex: 0 0 148px; font-family: var(--body-font);
+}
+.bd-mockup .margin-toc-title { font-size: 10.5px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+.bd-mockup .margin-toc { font-size: 11.5px; border-left: 2px solid var(--border); padding-left: 10px; margin-bottom: 60px; }
+.bd-mockup .margin-toc div { padding: 3px 0; color: #6c757d; }
+.bd-mockup .margin-toc div.active { color: var(--toc-active); font-weight: 600; }
+.bd-mockup .margin-table table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+.bd-mockup .margin-table th, .bd-mockup .margin-table td {
+text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border);
+font-family: var(--body-font);
+}
+.bd-mockup .margin-table th { color: #6c757d; font-weight: 600; font-size: 9.5px; }
+.bd-mockup .margin-table td:last-child, .bd-mockup .margin-table th:last-child {
+text-align: right; color: var(--primary); font-weight: 600;
+}
+.bd-controls {
+display: flex; gap: 10px; align-items: center; justify-content: center;
+margin-top: 22px;
+}
+.bd-controls button {
+background: #fff; color: #212529; border: 1px solid #ced4da;
+padding: 7px 15px; border-radius: 7px; font-size: 13px; cursor: pointer;
+}
+.bd-controls button:hover { border-color: #7B2D46; }
+#bdStageLabel { color: #6c757d; font-size: 12.5px; min-width: 190px; text-align: center; }
+</style>
+
+<script>/*
+ * anime.js v3.2.2
+ * (c) 2023 Julian Garnier
+ * Released under the MIT license
+ * animejs.com
+ */
+
+!function(n,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):n.anime=e()}(this,function(){"use strict";var i={update:null,begin:null,loopBegin:null,changeBegin:null,change:null,changeComplete:null,loopComplete:null,complete:null,loop:1,direction:"normal",autoplay:!0,timelineOffset:0},M={duration:1e3,delay:0,endDelay:0,easing:"easeOutElastic(1, .5)",round:0},j=["translateX","translateY","translateZ","rotate","rotateX","rotateY","rotateZ","scale","scaleX","scaleY","scaleZ","skew","skewX","skewY","perspective","matrix","matrix3d"],l={CSS:{},springs:{}};function C(n,e,t){return Math.min(Math.max(n,e),t)}function u(n,e){return-1<n.indexOf(e)}function o(n,e){return n.apply(null,e)}var w={arr:function(n){return Array.isArray(n)},obj:function(n){return u(Object.prototype.toString.call(n),"Object")},pth:function(n){return w.obj(n)&&n.hasOwnProperty("totalLength")},svg:function(n){return n instanceof SVGElement},inp:function(n){return n instanceof HTMLInputElement},dom:function(n){return n.nodeType||w.svg(n)},str:function(n){return"string"==typeof n},fnc:function(n){return"function"==typeof n},und:function(n){return void 0===n},nil:function(n){return w.und(n)||null===n},hex:function(n){return/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(n)},rgb:function(n){return/^rgb/.test(n)},hsl:function(n){return/^hsl/.test(n)},col:function(n){return w.hex(n)||w.rgb(n)||w.hsl(n)},key:function(n){return!i.hasOwnProperty(n)&&!M.hasOwnProperty(n)&&"targets"!==n&&"keyframes"!==n}};function d(n){n=/\(([^)]+)\)/.exec(n);return n?n[1].split(",").map(function(n){return parseFloat(n)}):[]}function c(r,t){var n=d(r),e=C(w.und(n[0])?1:n[0],.1,100),a=C(w.und(n[1])?100:n[1],.1,100),o=C(w.und(n[2])?10:n[2],.1,100),n=C(w.und(n[3])?0:n[3],.1,100),u=Math.sqrt(a/e),i=o/(2*Math.sqrt(a*e)),c=i<1?u*Math.sqrt(1-i*i):0,s=i<1?(i*u-n)/c:-n+u;function f(n){var e=t?t*n/1e3:n,e=i<1?Math.exp(-e*i*u)*(+Math.cos(c*e)+s*Math.sin(c*e)):(1+s*e)*Math.exp(-e*u);return 0===n||1===n?n:1-e}return t?f:function(){var n=l.springs[r];if(n)return n;for(var e=0,t=0;;)if(1===f(e+=1/6)){if(16<=++t)break}else t=0;return n=e*(1/6)*1e3,l.springs[r]=n}}function q(e){return void 0===e&&(e=10),function(n){return Math.ceil(C(n,1e-6,1)*e)*(1/e)}}var H=function(b,e,M,t){if(0<=b&&b<=1&&0<=M&&M<=1){var x=new Float32Array(11);if(b!==e||M!==t)for(var n=0;n<11;++n)x[n]=k(.1*n,b,M);return function(n){return b===e&&M===t||0===n||1===n?n:k(r(n),e,t)}}function r(n){for(var e=0,t=1;10!==t&&x[t]<=n;++t)e+=.1;var r=e+.1*((n-x[--t])/(x[t+1]-x[t])),a=O(r,b,M);if(.001<=a){for(var o=n,u=r,i=b,c=M,s=0;s<4;++s){var f=O(u,i,c);if(0===f)return u;u-=(k(u,i,c)-o)/f}return u}if(0===a)return r;for(var l,d,p=n,h=e,g=e+.1,m=b,v=M,y=0;0<(l=k(d=h+(g-h)/2,m,v)-p)?g=d:h=d,1e-7<Math.abs(l)&&++y<10;);return d}};function r(n,e){return 1-3*e+3*n}function k(n,e,t){return((r(e,t)*n+(3*t-6*e))*n+3*e)*n}function O(n,e,t){return 3*r(e,t)*n*n+2*(3*t-6*e)*n+3*e}e={linear:function(){return function(n){return n}}},t={Sine:function(){return function(n){return 1-Math.cos(n*Math.PI/2)}},Expo:function(){return function(n){return n?Math.pow(2,10*n-10):0}},Circ:function(){return function(n){return 1-Math.sqrt(1-n*n)}},Back:function(){return function(n){return n*n*(3*n-2)}},Bounce:function(){return function(n){for(var e,t=4;n<((e=Math.pow(2,--t))-1)/11;);return 1/Math.pow(4,3-t)-7.5625*Math.pow((3*e-2)/22-n,2)}},Elastic:function(n,e){void 0===e&&(e=.5);var t=C(n=void 0===n?1:n,1,10),r=C(e,.1,2);return function(n){return 0===n||1===n?n:-t*Math.pow(2,10*(n-1))*Math.sin((n-1-r/(2*Math.PI)*Math.asin(1/t))*(2*Math.PI)/r)}}},["Quad","Cubic","Quart","Quint"].forEach(function(n,e){t[n]=function(){return function(n){return Math.pow(n,e+2)}}}),Object.keys(t).forEach(function(n){var r=t[n];e["easeIn"+n]=r,e["easeOut"+n]=function(e,t){return function(n){return 1-r(e,t)(1-n)}},e["easeInOut"+n]=function(e,t){return function(n){return n<.5?r(e,t)(2*n)/2:1-r(e,t)(-2*n+2)/2}},e["easeOutIn"+n]=function(e,t){return function(n){return n<.5?(1-r(e,t)(1-2*n))/2:(r(e,t)(2*n-1)+1)/2}}});var e,t,s=e;function P(n,e){if(w.fnc(n))return n;var t=n.split("(")[0],r=s[t],a=d(n);switch(t){case"spring":return c(n,e);case"cubicBezier":return o(H,a);case"steps":return o(q,a);default:return o(r,a)}}function a(n){try{return document.querySelectorAll(n)}catch(n){}}function I(n,e){for(var t,r=n.length,a=2<=arguments.length?e:void 0,o=[],u=0;u<r;u++)u in n&&(t=n[u],e.call(a,t,u,n))&&o.push(t);return o}function f(n){return n.reduce(function(n,e){return n.concat(w.arr(e)?f(e):e)},[])}function p(n){return w.arr(n)?n:(n=w.str(n)?a(n)||n:n)instanceof NodeList||n instanceof HTMLCollection?[].slice.call(n):[n]}function h(n,e){return n.some(function(n){return n===e})}function g(n){var e,t={};for(e in n)t[e]=n[e];return t}function x(n,e){var t,r=g(n);for(t in n)r[t]=(e.hasOwnProperty(t)?e:n)[t];return r}function D(n,e){var t,r=g(n);for(t in e)r[t]=(w.und(n[t])?e:n)[t];return r}function V(n){var e,t,r,a,o,u,i;return w.rgb(n)?(e=/rgb\((\d+,\s*[\d]+,\s*[\d]+)\)/g.exec(t=n))?"rgba("+e[1]+",1)":t:w.hex(n)?(e=(e=n).replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,function(n,e,t,r){return e+e+t+t+r+r}),e=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(e),"rgba("+parseInt(e[1],16)+","+parseInt(e[2],16)+","+parseInt(e[3],16)+",1)"):w.hsl(n)?(t=/hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(t=n)||/hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)/g.exec(t),n=parseInt(t[1],10)/360,u=parseInt(t[2],10)/100,i=parseInt(t[3],10)/100,t=t[4]||1,0==u?r=a=o=i:(r=c(u=2*i-(i=i<.5?i*(1+u):i+u-i*u),i,n+1/3),a=c(u,i,n),o=c(u,i,n-1/3)),"rgba("+255*r+","+255*a+","+255*o+","+t+")"):void 0;function c(n,e,t){return t<0&&(t+=1),1<t&&--t,t<1/6?n+6*(e-n)*t:t<.5?e:t<2/3?n+(e-n)*(2/3-t)*6:n}}function B(n){n=/[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?(%|px|pt|em|rem|in|cm|mm|ex|ch|pc|vw|vh|vmin|vmax|deg|rad|turn)?$/.exec(n);if(n)return n[1]}function m(n,e){return w.fnc(n)?n(e.target,e.id,e.total):n}function v(n,e){return n.getAttribute(e)}function y(n,e,t){var r,a,o;return h([t,"deg","rad","turn"],B(e))?e:(r=l.CSS[e+t],w.und(r)?(a=document.createElement(n.tagName),(n=n.parentNode&&n.parentNode!==document?n.parentNode:document.body).appendChild(a),a.style.position="absolute",a.style.width=100+t,o=100/a.offsetWidth,n.removeChild(a),n=o*parseFloat(e),l.CSS[e+t]=n):r)}function $(n,e,t){var r;if(e in n.style)return r=e.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase(),e=n.style[e]||getComputedStyle(n).getPropertyValue(r)||"0",t?y(n,e,t):e}function b(n,e){return w.dom(n)&&!w.inp(n)&&(!w.nil(v(n,e))||w.svg(n)&&n[e])?"attribute":w.dom(n)&&h(j,e)?"transform":w.dom(n)&&"transform"!==e&&$(n,e)?"css":null!=n[e]?"object":void 0}function W(n){if(w.dom(n)){for(var e,t=n.style.transform||"",r=/(\w+)\(([^)]*)\)/g,a=new Map;e=r.exec(t);)a.set(e[1],e[2]);return a}}function X(n,e,t,r){var a=u(e,"scale")?1:0+(u(a=e,"translate")||"perspective"===a?"px":u(a,"rotate")||u(a,"skew")?"deg":void 0),o=W(n).get(e)||a;return t&&(t.transforms.list.set(e,o),t.transforms.last=e),r?y(n,o,r):o}function T(n,e,t,r){switch(b(n,e)){case"transform":return X(n,e,r,t);case"css":return $(n,e,t);case"attribute":return v(n,e);default:return n[e]||0}}function E(n,e){var t=/^(\*=|\+=|-=)/.exec(n);if(!t)return n;var r=B(n)||0,a=parseFloat(e),o=parseFloat(n.replace(t[0],""));switch(t[0][0]){case"+":return a+o+r;case"-":return a-o+r;case"*":return a*o+r}}function Y(n,e){var t;return w.col(n)?V(n):/\s/g.test(n)?n:(t=(t=B(n))?n.substr(0,n.length-t.length):n,e?t+e:t)}function F(n,e){return Math.sqrt(Math.pow(e.x-n.x,2)+Math.pow(e.y-n.y,2))}function Z(n){for(var e,t=n.points,r=0,a=0;a<t.numberOfItems;a++){var o=t.getItem(a);0<a&&(r+=F(e,o)),e=o}return r}function G(n){if(n.getTotalLength)return n.getTotalLength();switch(n.tagName.toLowerCase()){case"circle":return 2*Math.PI*v(n,"r");case"rect":return 2*v(t=n,"width")+2*v(t,"height");case"line":return F({x:v(t=n,"x1"),y:v(t,"y1")},{x:v(t,"x2"),y:v(t,"y2")});case"polyline":return Z(n);case"polygon":return e=n.points,Z(n)+F(e.getItem(e.numberOfItems-1),e.getItem(0))}var e,t}function Q(n,e){var e=e||{},n=e.el||function(n){for(var e=n.parentNode;w.svg(e)&&w.svg(e.parentNode);)e=e.parentNode;return e}(n),t=n.getBoundingClientRect(),r=v(n,"viewBox"),a=t.width,t=t.height,e=e.viewBox||(r?r.split(" "):[0,0,a,t]);return{el:n,viewBox:e,x:+e[0],y:+e[1],w:a,h:t,vW:e[2],vH:e[3]}}function z(n,e){var t=/[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g,r=Y(w.pth(n)?n.totalLength:n,e)+"";return{original:r,numbers:r.match(t)?r.match(t).map(Number):[0],strings:w.str(n)||e?r.split(t):[]}}function A(n){return I(n?f(w.arr(n)?n.map(p):p(n)):[],function(n,e,t){return t.indexOf(n)===e})}function _(n){var t=A(n);return t.map(function(n,e){return{target:n,id:e,total:t.length,transforms:{list:W(n)}}})}function R(e){for(var t=I(f(e.map(function(n){return Object.keys(n)})),function(n){return w.key(n)}).reduce(function(n,e){return n.indexOf(e)<0&&n.push(e),n},[]),a={},n=0;n<t.length;n++)!function(n){var r=t[n];a[r]=e.map(function(n){var e,t={};for(e in n)w.key(e)?e==r&&(t.value=n[e]):t[e]=n[e];return t})}(n);return a}function J(n,e){var t,r=[],a=e.keyframes;for(t in e=a?D(R(a),e):e)w.key(t)&&r.push({name:t,tweens:function(n,t){var e,r=g(t),a=(/^spring/.test(r.easing)&&(r.duration=c(r.easing)),w.arr(n)&&(2===(e=n.length)&&!w.obj(n[0])?n={value:n}:w.fnc(t.duration)||(r.duration=t.duration/e)),w.arr(n)?n:[n]);return a.map(function(n,e){n=w.obj(n)&&!w.pth(n)?n:{value:n};return w.und(n.delay)&&(n.delay=e?0:t.delay),w.und(n.endDelay)&&(n.endDelay=e===a.length-1?t.endDelay:0),n}).map(function(n){return D(n,r)})}(e[t],n)});return r}function K(i,c){var s;return i.tweens.map(function(n){var n=function(n,e){var t,r={};for(t in n){var a=m(n[t],e);w.arr(a)&&1===(a=a.map(function(n){return m(n,e)})).length&&(a=a[0]),r[t]=a}return r.duration=parseFloat(r.duration),r.delay=parseFloat(r.delay),r}(n,c),e=n.value,t=w.arr(e)?e[1]:e,r=B(t),a=T(c.target,i.name,r,c),o=s?s.to.original:a,u=w.arr(e)?e[0]:o,a=B(u)||B(a),r=r||a;return w.und(t)&&(t=o),n.from=z(u,r),n.to=z(E(t,u),r),n.start=s?s.end:0,n.end=n.start+n.delay+n.duration+n.endDelay,n.easing=P(n.easing,n.duration),n.isPath=w.pth(e),n.isPathTargetInsideSVG=n.isPath&&w.svg(c.target),n.isColor=w.col(n.from.original),n.isColor&&(n.round=1),s=n})}var U={css:function(n,e,t){return n.style[e]=t},attribute:function(n,e,t){return n.setAttribute(e,t)},object:function(n,e,t){return n[e]=t},transform:function(n,e,t,r,a){var o;r.list.set(e,t),e!==r.last&&!a||(o="",r.list.forEach(function(n,e){o+=e+"("+n+") "}),n.style.transform=o)}};function nn(n,u){_(n).forEach(function(n){for(var e in u){var t=m(u[e],n),r=n.target,a=B(t),o=T(r,e,a,n),t=E(Y(t,a||B(o)),o),a=b(r,e);U[a](r,e,t,n.transforms,!0)}})}function en(n,e){return I(f(n.map(function(o){return e.map(function(n){var e,t,r=o,a=b(r.target,n.name);if(a)return t=(e=K(n,r))[e.length-1],{type:a,property:n.name,animatable:r,tweens:e,duration:t.end,delay:e[0].delay,endDelay:t.endDelay}})})),function(n){return!w.und(n)})}function tn(n,e){function t(n){return n.timelineOffset||0}var r=n.length,a={};return a.duration=r?Math.max.apply(Math,n.map(function(n){return t(n)+n.duration})):e.duration,a.delay=r?Math.min.apply(Math,n.map(function(n){return t(n)+n.delay})):e.delay,a.endDelay=r?a.duration-Math.max.apply(Math,n.map(function(n){return t(n)+n.duration-n.endDelay})):e.endDelay,a}var rn=0;var N,S=[],an=("undefined"!=typeof document&&document.addEventListener("visibilitychange",function(){L.suspendWhenDocumentHidden&&(n()?N=cancelAnimationFrame(N):(S.forEach(function(n){return n._onDocumentVisibility()}),an()))}),function(){!(N||n()&&L.suspendWhenDocumentHidden)&&0<S.length&&(N=requestAnimationFrame(on))});function on(n){for(var e=S.length,t=0;t<e;){var r=S[t];r.paused?(S.splice(t,1),e--):(r.tick(n),t++)}N=0<t?requestAnimationFrame(on):void 0}function n(){return document&&document.hidden}function L(n){var c,s=0,f=0,l=0,d=0,p=null;function h(n){var e=window.Promise&&new Promise(function(n){return p=n});return n.finished=e}e=x(i,n=n=void 0===n?{}:n),t=J(r=x(M,n),n),n=_(n.targets),r=tn(t=en(n,t),r),a=rn,rn++;var e,t,r,a,k=D(e,{id:a,children:[],animatables:n,animations:t,duration:r.duration,delay:r.delay,endDelay:r.endDelay});h(k);function g(){var n=k.direction;"alternate"!==n&&(k.direction="normal"!==n?"normal":"reverse"),k.reversed=!k.reversed,c.forEach(function(n){return n.reversed=k.reversed})}function m(n){return k.reversed?k.duration-n:n}function o(){s=0,f=m(k.currentTime)*(1/L.speed)}function v(n,e){e&&e.seek(n-e.timelineOffset)}function y(e){for(var n=0,t=k.animations,r=t.length;n<r;){for(var a=t[n],o=a.animatable,u=a.tweens,i=u.length-1,c=u[i],i=(i&&(c=I(u,function(n){return e<n.end})[0]||c),C(e-c.start-c.delay,0,c.duration)/c.duration),s=isNaN(i)?1:c.easing(i),f=c.to.strings,l=c.round,d=[],p=c.to.numbers.length,h=void 0,g=0;g<p;g++){var m=void 0,v=c.to.numbers[g],y=c.from.numbers[g]||0,m=c.isPath?function(e,t,n){function r(n){return e.el.getPointAtLength(1<=t+(n=void 0===n?0:n)?t+n:0)}var a=Q(e.el,e.svg),o=r(),u=r(-1),i=r(1),c=n?1:a.w/a.vW,s=n?1:a.h/a.vH;switch(e.property){case"x":return(o.x-a.x)*c;case"y":return(o.y-a.y)*s;case"angle":return 180*Math.atan2(i.y-u.y,i.x-u.x)/Math.PI}}(c.value,s*v,c.isPathTargetInsideSVG):y+s*(v-y);!l||c.isColor&&2<g||(m=Math.round(m*l)/l),d.push(m)}var b=f.length;if(b)for(var h=f[0],M=0;M<b;M++){f[M];var x=f[M+1],w=d[M];isNaN(w)||(h+=x?w+x:w+" ")}else h=d[0];U[a.type](o.target,a.property,h,o.transforms),a.currentValue=h,n++}}function b(n){k[n]&&!k.passThrough&&k[n](k)}function u(n){var e=k.duration,t=k.delay,r=e-k.endDelay,a=m(n);if(k.progress=C(a/e*100,0,100),k.reversePlayback=a<k.currentTime,c){var o=a;if(k.reversePlayback)for(var u=d;u--;)v(o,c[u]);else for(var i=0;i<d;i++)v(o,c[i])}!k.began&&0<k.currentTime&&(k.began=!0,b("begin")),!k.loopBegan&&0<k.currentTime&&(k.loopBegan=!0,b("loopBegin")),a<=t&&0!==k.currentTime&&y(0),(r<=a&&k.currentTime!==e||!e)&&y(e),t<a&&a<r?(k.changeBegan||(k.changeBegan=!0,k.changeCompleted=!1,b("changeBegin")),b("change"),y(a)):k.changeBegan&&(k.changeCompleted=!0,k.changeBegan=!1,b("changeComplete")),k.currentTime=C(a,0,e),k.began&&b("update"),e<=n&&(f=0,k.remaining&&!0!==k.remaining&&k.remaining--,k.remaining?(s=l,b("loopComplete"),k.loopBegan=!1,"alternate"===k.direction&&g()):(k.paused=!0,k.completed||(k.completed=!0,b("loopComplete"),b("complete"),!k.passThrough&&"Promise"in window&&(p(),h(k)))))}return k.reset=function(){var n=k.direction;k.passThrough=!1,k.currentTime=0,k.progress=0,k.paused=!0,k.began=!1,k.loopBegan=!1,k.changeBegan=!1,k.completed=!1,k.changeCompleted=!1,k.reversePlayback=!1,k.reversed="reverse"===n,k.remaining=k.loop,c=k.children;for(var e=d=c.length;e--;)k.children[e].reset();(k.reversed&&!0!==k.loop||"alternate"===n&&1===k.loop)&&k.remaining++,y(k.reversed?k.duration:0)},k._onDocumentVisibility=o,k.set=function(n,e){return nn(n,e),k},k.tick=function(n){u(((l=n)+(f-(s=s||l)))*L.speed)},k.seek=function(n){u(m(n))},k.pause=function(){k.paused=!0,o()},k.play=function(){k.paused&&(k.completed&&k.reset(),k.paused=!1,S.push(k),o(),an())},k.reverse=function(){g(),k.completed=!k.reversed,o()},k.restart=function(){k.reset(),k.play()},k.remove=function(n){cn(A(n),k)},k.reset(),k.autoplay&&k.play(),k}function un(n,e){for(var t=e.length;t--;)h(n,e[t].animatable.target)&&e.splice(t,1)}function cn(n,e){var t=e.animations,r=e.children;un(n,t);for(var a=r.length;a--;){var o=r[a],u=o.animations;un(n,u),u.length||o.children.length||r.splice(a,1)}t.length||r.length||e.pause()}return L.version="3.2.2",L.speed=1,L.suspendWhenDocumentHidden=!0,L.running=S,L.remove=function(n){for(var e=A(n),t=S.length;t--;)cn(e,S[t])},L.get=T,L.set=nn,L.convertPx=y,L.path=function(n,e){var t=w.str(n)?a(n)[0]:n,r=e||100;return function(n){return{property:n,el:t,svg:Q(t),totalLength:G(t)*(r/100)}}},L.setDashoffset=function(n){var e=G(n);return n.setAttribute("stroke-dasharray",e),e},L.stagger=function(n,e){var i=(e=void 0===e?{}:e).direction||"normal",c=e.easing?P(e.easing):null,s=e.grid,f=e.axis,l=e.from||0,d="first"===l,p="center"===l,h="last"===l,g=w.arr(n),m=g?parseFloat(n[0]):parseFloat(n),v=g?parseFloat(n[1]):0,y=B(g?n[1]:n)||0,b=e.start||0+(g?m:0),M=[],x=0;return function(n,e,t){if(d&&(l=0),p&&(l=(t-1)/2),h&&(l=t-1),!M.length){for(var r,a,o,u=0;u<t;u++)s?(r=p?(s[0]-1)/2:l%s[0],a=p?(s[1]-1)/2:Math.floor(l/s[0]),r=r-u%s[0],a=a-Math.floor(u/s[0]),o=Math.sqrt(r*r+a*a),"x"===f&&(o=-r),M.push(o="y"===f?-a:o)):M.push(Math.abs(l-u)),x=Math.max.apply(Math,M);c&&(M=M.map(function(n){return c(n/x)*x})),"reverse"===i&&(M=M.map(function(n){return f?n<0?-1*n:-n:Math.abs(x-n)}))}return b+(g?(v-m)/x:m)*(Math.round(100*M[e])/100)+y}},L.timeline=function(u){var i=L(u=void 0===u?{}:u);return i.duration=0,i.add=function(n,e){var t=S.indexOf(i),r=i.children;function a(n){n.passThrough=!0}-1<t&&S.splice(t,1);for(var o=0;o<r.length;o++)a(r[o]);t=D(n,x(M,u)),t.targets=t.targets||u.targets,n=i.duration,t.autoplay=!1,t.direction=i.direction,t.timelineOffset=w.und(e)?n:E(e,n),a(i),i.seek(t.timelineOffset),e=L(t),a(e),r.push(e),n=tn(r,u);return i.delay=n.delay,i.endDelay=n.endDelay,i.duration=n.duration,i.seek(0),i.reset(),i.autoplay&&i.play(),i},i},L.easing=P,L.penner=s,L.random=function(n,e){return Math.floor(Math.random()*(e-n+1))+n},L});</script>
+<script>
+/* ================================================================
+ * Bootswatch + brand.yml, deconstructed — for a Quarto HTML report
+ * Same architecture as the reveal.js / Shiny versions: stacked planes,
+ * each the SAME rendered-document markup with a stage class swapped
+ * in. The "app" being restyled here is the report itself — masthead,
+ * TOC, callout, table — since a plain .qmd + _quarto.yml is what a
+ * report author is actually deconstructing. Three real transformations:
+ * base -> bootswatch preset -> brand.yml -> custom.scss polish.
+ * ================================================================ */
+(function () {
+  const STAGE_CLASSES = ['s-base', 's-bootswatch', 's-brand', 's-polish'];
+  const BLK = ['base', 'bootswatch', 'brand', 'polish'];
+
+  const MOCKUP_HTML = `
+    <div class="site-nav">
+      <span class="site-brand"><span class="logo-dot"></span>Page Layout</span>
+      <span class="site-links"><span>Home</span></span>
+      <span class="site-search">&#9906;</span>
+    </div>
+    <div class="masthead">
+      <div class="masthead-text">
+        <div class="doc-title">Quarterly Report</div>
+        <div class="doc-sub">Analytics Team &middot; August 2026</div>
+      </div>
+    </div>
+    <div class="doc-body">
+      <div class="sidenav">
+        <div class="active">Overview</div>
+        <div>Appendix</div>
+      </div>
+      <div class="main">
+        <h2>Key Metrics</h2>
+        <p>Revenue grew 4.2% quarter over quarter, driven by strong <a href="#">renewal rates</a> across enterprise accounts.</p>
+        <div class="callout">
+          <div class="callout-header"><span>&#8505;</span>Note</div>
+          <div class="callout-body">Customer churn dropped to lowest level in six years.</div>
+        </div>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 200 118" width="100%" height="118">
+            <line x1="20" y1="8" x2="20" y2="104" stroke="#dee2e6" stroke-width="1"/>
+            <line x1="20" y1="104" x2="196" y2="104" stroke="#dee2e6" stroke-width="1"/>
+            <text x="15" y="27" font-size="8" fill="#8a8f98" text-anchor="end">60</text>
+            <text x="15" y="59" font-size="8" fill="#8a8f98" text-anchor="end">40</text>
+            <text x="15" y="91" font-size="8" fill="#8a8f98" text-anchor="end">20</text>
+            <path d="M28,78 C42,68 58,22 78,26 C96,30 112,74 138,88 C155,94 168,90 186,84"
+                  fill="none" stroke="#2bb3ad" stroke-width="1.6"/>
+            <path d="M28,94 C55,99 85,93 112,98 C140,101 165,99 188,97"
+                  fill="none" stroke="#f2836b" stroke-width="1.6"/>
+            <g fill="#2bb3ad">
+              <circle cx="28" cy="80" r="2.1"/><circle cx="52" cy="86" r="2.1"/>
+              <circle cx="70" cy="42" r="2.1"/><circle cx="82" cy="24" r="2.1"/>
+              <circle cx="104" cy="60" r="2.1"/><circle cx="130" cy="92" r="2.1"/>
+              <circle cx="158" cy="96" r="2.1"/><circle cx="186" cy="84" r="2.1"/>
+            </g>
+            <g fill="#f2836b">
+              <circle cx="28" cy="96" r="2.1"/><circle cx="48" cy="100" r="2.1"/>
+              <circle cx="78" cy="98" r="2.1"/><circle cx="108" cy="102" r="2.1"/>
+              <circle cx="140" cy="103" r="2.1"/><circle cx="168" cy="101" r="2.1"/>
+            </g>
+          </svg>
+          <div class="chart-cap">Figure 1. MPG vs. horsepower, by transmission</div>
+        </div>
+        <h2>Appendix</h2>
+        <p>Below find accompanying data tables for all provided plots.</p>
+      </div>
+      <div class="margin">
+        <div class="margin-toc-title">On this page</div>
+        <div class="margin-toc">
+          <div>Overview</div>
+          <div class="active">Key Metrics</div>
+          <div>Appendix</div>
+        </div>
+        <div class="margin-table">
+          
+<table class="caption-top" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Metric</td>
+<td data-quarto-table-cell-role="th">Value</td>
+</tr>
+<tr class="even">
+<td>Revenue</td>
+<td>$128K</td>
+</tr>
+<tr class="odd">
+<td>Orders</td>
+<td>1,204</td>
+</tr>
+<tr class="even">
+<td>Customers</td>
+<td>386</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+      </div>
+    </div>`;
+
+  const CHUNKS = [
+    {
+      blk: 'base', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>: <span class="gd-key">html</span>`,
+    },
+    {
+      blk: 'bootswatch', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>:
+  <span class="gd-key">html</span>:
+    <span class="gd-key">theme</span>: <span class="gd-str">lux</span>`,
+    },
+    {
+      blk: 'brand', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>:
+  <span class="gd-key">html</span>:
+    <span class="gd-key">theme</span>: <span class="gd-str">lux</span>
+<span class="gd-key">brand</span>: <span class="gd-str">brand.yml</span>`,
+    },
+    {
+      blk: 'polish', file: 'custom.scss',
+      code: `.callout-note {
+  box-shadow: <span class="gd-str">0 8px 20px rgba(123,45,70,.14)</span>;
+}
+table {
+  border-radius: <span class="gd-str">.75rem</span>;
+  overflow: <span class="gd-str">hidden</span>;
+}
+tr:nth-child(even) td {
+  background: <span class="gd-str">rgba(123,45,70,.035)</span>;
+}`,
+    },
+  ];
+
+  let built = false, planes = [], codeWindows = [];
+
+  function codeWindow(chunk) {
+    const win = document.createElement('div');
+    win.className = 'codewindow';
+    win.dataset.blk = chunk.blk;
+    win.innerHTML = `
+      <div class="cw-header">
+        <span class="cw-dots"><span></span><span></span><span></span></span>
+        <span class="cw-file">${chunk.file}</span>
+        <span class="cw-spacer"></span>
+      </div>
+      <pre class="cw-body"><code>${chunk.code}</code></pre>`;
+    return win;
+  }
+
+  function htmlPlane(id, stageClass) {
+    const d = document.createElement('div');
+    d.className = 'bd-plane'; d.id = id;
+    const tilt = document.createElement('div');
+    tilt.className = 'bd-tilt';
+    const card = document.createElement('div');
+    card.className = 'bd-card';
+    const mockup = document.createElement('div');
+    mockup.className = 'bd-mockup ' + stageClass;
+    mockup.innerHTML = MOCKUP_HTML;
+    tilt.appendChild(card);
+    tilt.appendChild(mockup);
+    d.appendChild(tilt);
+    return { div: d, tilt, card };
+  }
+
+  function build() {
+    const stage = document.getElementById('bd-stage');
+    if (!stage || built) return;
+    built = true;
+
+    const codeCol = document.createElement('div');
+    codeCol.className = 'bd-codewindows';
+    codeWindows = CHUNKS.map(codeWindow);
+    codeWindows.forEach(w => codeCol.appendChild(w));
+    stage.appendChild(codeCol);
+
+    const plot = document.createElement('div');
+    plot.id = 'bd-plot';
+    planes = STAGE_CLASSES.map((cls, i) => htmlPlane('bd-plane-' + BLK[i], cls));
+    planes.forEach(p => plot.appendChild(p.div));
+    stage.appendChild(plot);
+  }
+
+  function render(stage) {
+    build();
+    // 4 planes -> stages 0..8: flat, laid, exploded, focus x4, collapse, flat
+    const flat = stage >= 8;
+    const collapsed = stage >= 7;
+    const laid = stage >= 1 && !flat;
+    const exploded = stage >= 2 && !collapsed;
+    const focusIdx = (stage >= 3 && !collapsed) ? stage - 3 : -1;
+    const focusBlk = focusIdx >= 0 ? BLK[focusIdx] : null;
+
+    const N = planes.length, SPREAD = 82;
+    planes.forEach((p, i) => {
+      const fan = exploded ? 16 + ((N - 1) / 2 - i) * SPREAD : 0;
+      const dim = focusIdx >= 0 && i !== focusIdx;
+      TM.anime({ targets: p.div, translateY: fan, duration: 850, easing: 'easeInOutCubic' });
+      TM.anime({
+        targets: p.tilt, rotateX: laid ? 56 : 0, rotateZ: laid ? 20 : 0,
+        scale: exploded ? 0.82 : 1, opacity: dim ? 0.16 : 1,
+        duration: 850, easing: 'easeInOutCubic',
+      });
+      TM.anime({ targets: p.card, opacity: exploded ? 1 : 0, duration: 600, easing: 'easeInOutQuad' });
+    });
+
+    codeWindows.forEach(w => {
+      const isFocus = w.dataset.blk === focusBlk;
+      w.classList.toggle('bd-hot', isFocus);
+      w.classList.toggle('bd-dim', focusIdx >= 0 && !isFocus);
+    });
+  }
+
+  // ---- minimal TM shim (no reveal.js in a report) ----
+  window.TM = window.TM || {};
+  TM._busy = 0;
+  TM.busyInc = function () { TM._busy++; };
+  TM.busyDec = function () { TM._busy = Math.max(0, TM._busy - 1); };
+  TM.anime = function (params) {
+    TM.busyInc();
+    const inst = anime(params);
+    inst.finished.then(TM.busyDec, TM.busyDec);
+    return inst;
+  };
+
+  const LABELS = [
+    'flat — finished report', 'laid back', 'exploded',
+    'focus: base _quarto.yml', 'focus: bootswatch theme', 'focus: brand.yml', 'focus: custom.scss',
+    'collapsed', 'flat (end)',
+  ];
+  let stage = 0;
+  const label = document.getElementById('bdStageLabel');
+  function setStage(n) {
+    stage = Math.max(0, Math.min(8, n));
+    render(stage);
+    label.textContent = 'stage ' + stage + ' — ' + LABELS[stage];
+  }
+  document.getElementById('bdNext').onclick = () => setStage(stage + 1);
+  document.getElementById('bdPrev').onclick = () => setStage(stage - 1);
+  setStage(0);
+})();
+</script>
 
 </main>
 <!-- /main column -->

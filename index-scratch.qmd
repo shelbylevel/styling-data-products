@@ -29,6 +29,60 @@ Shelby Level
 
 Reporting & Analytics Analyst III
 
+## Trust is an Emotional Gatekeeper {auto-animate=true}
+
+::: notes
+But we often overlook the other three dimensions: Quality & Design, Familiarity, and Personal Intuition, dismissing them as "superficial styling." However, these are the emotional and cognitive gatekeepers that can make or break whether someone trusts our work.
+
+* Data Accuracy
+* Source & Intent
+
+* Execution & Aesthetics
+* Psychological Alignment
+* *Status: Often dismissed as "superficial styling."*
+
+* **Aesthetics**
+* **Visual Elements**
+* **Professional Finish**
+
+* **With Source**
+* Reduces cognitive load
+* Visual recognition
+:::
+
+## The Takeaway: Design Earns the Right to be Read
+
+::: {.takeaway-wrap}
+
+::: {.takeaway-quote}
+"Data integrity builds the truth, but quality and design build the *bridge* to that truth."
+:::
+
+::: {.takeaway-list}
+* **Without Quality:** Excellent data is dismissed as amateurish or suspicious.
+* **Without Familiarity:** Complex data induces anxiety and cognitive rejection.
+* **Without Personal Intuition:** The user lacks the raw confidence to act on your insights.
+:::
+
+:::
+
+::: notes
+The "Hard" Metrics (The Baseline): Data Integrity, Source, and Intent are what data professionals focus 99% of their time on. They are required, but they are invisible if the user rejects the chart upfront.
+
+The "Soft" Metrics (The Gatekeepers): Quality, Familiarity, and Personal Intuition act as the emotional and cognitive gatekeeper. If a chart looks unprofessional or unfamiliar, viewers experience friction and judge it as untrustworthy before they even read a single data point.
+:::
+
+---
+
+This is one of the easiest mistakes to make. We have a palette with six colors, so naturally we want to use all six colors.
+
+Now every bar is bright, every card is competing for attention, and the audience has to decide where to begin.
+
+Most of the time, color works better when we use less of it and reserve the strongest contrast for the point that matters most.
+
+Here, I have made the decision for the audience of where to focus their attention.
+
+
 ```{r eval = FALSE}
 # tags$img(htmltools::HTML(paste(
 #   suppressWarnings(readLines(

@@ -100,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-b022ab278588d6d775131d0af10ad929.css">
+<link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-7ab1a629f61522a66e3036a395d408cd.css">
 <link rel="stylesheet" href="bd/css/brand-deconstructed.css">
 <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -211,10 +211,10 @@ Shelby Level
 </div>
 </div>
 
-</section><section class="slide level2"><div class="fragment">
-<p><img data-src="inst/img/linux-distro.jpeg" class="absolute" style="top: 5px; right: 0px; height: 100%; "></p>
-</div>
-<aside class="notes"><p>To start us off I have a quick question: how many of you would download and install software from this website? Not many, right?</p>
+</section><section class="slide level2"><p><img data-src="inst/img/linux-distro.jpeg" class="absolute" style="height: 100%; "></p>
+<aside class="notes"><p>I want to start us off with a quick question.</p>
+<p>How many of you would download and install software you found on this website?</p>
+<p>Not many, right?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -225,10 +225,10 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level2"><div class="fragment">
-<p><img data-src="inst/img/worst-dashboard.jpg" class="absolute" style="top: 5px; right: 0px; height: 100%; "></p>
-</div>
-<aside class="notes"><p>And how many of you would want to share this dashboard with your boss or a client? Again, not many. You might even be cringing at the thought of it.</p>
+      }</style></aside></section><section class="slide level2"><p><img data-src="inst/img/worst-dashboard.jpg" class="absolute" style="top: 10px; height: 100%; "></p>
+<aside class="notes"><p>Now, How many of you want to share this dashboard with your boss or a client?</p>
+<p>Anyone? I would rather pretend I can’t make dashboards at all.</p>
+<p>These are two very different products, but they create the same reaction: hesitation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -239,96 +239,14 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level2"><div class="fragment">
-<p><img data-src="inst/img/bootstrap-logo.svg" class="absolute" style="top: 6px; right: 100px; height: 100%; "></p>
-</div>
-<aside class="notes"><p>Now your work probably doesn’t look nearly as bad as the examples I just showed you. That is thanks to Bootstrap. Bootstrap is the default core styling and layout engine for HTML-based outputs, dashboards, websites, and books. When we make something with Quarto or Shiny, we are using Bootstrap often without knowing it. This is what gives us our “good enough” look right out of the box. Your headers are bolded, your tables are formatted, and your content automatically resizes to fit the screen without having to write any CSS.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section class="slide level2"><div class="columns">
-<div class="column">
-<p><img data-src="inst/img/default-bootstrap.png" class="absolute" style="top: 5px; right: 400px; height: 100%; "></p>
-</div>
-<div class="column">
-<p><img data-src="inst/img/quarto-demo.png" class="absolute" style="top: 120px; left: 465px; height: 60%; "></p>
-</div>
-</div>
-<aside class="notes"><p>But it also means that your work looks like every other dashboard or report you’v ever seen, and probably also the demo you copied from the Shiny or Quarto website. This default look has a cost. It feels unfinished, and it makes great data products much easier to ignore.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section class="slide level2"><aside class="notes"><p>Hi everyone! I’m Shelby Level, and I work primarily on dashboards, reports, and other data products that help people make decisions. Today’s talk is about something that often gets treated as optional or an afterthought: styling. Not because I think every data person should become a designer. But because styling can make or break whether people engage with our work.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="what-to-expect" class="slide level2"><h2>What to Expect</h2>
+      }</style></aside></section><section id="you-already-made-a-judgment" class="slide level2 center"><h2>You already made a judgment</h2>
 <div class="fragment">
-<ol type="1">
-<li>Why Styling Matters</li>
-</ol>
+<p>Before reading a single number</p>
 </div>
-<div class="fragment">
-<ol start="2" type="1">
-<li>Color</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="3" type="1">
-<li>Leveraging Color with bootswatch
-<ul>
-<li>bootswatch</li>
-<li>flip between themes with paper of different colors</li>
-</ul>
-</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="4" type="1">
-<li>Typography</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="5" type="1">
-<li>Leveraging Typography with brand.yml
-<ul>
-<li>brand.yml</li>
-<li>flip between fonts with paper of different fonts</li>
-</ul>
-</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="6" type="1">
-<li>Creating Reliability
-<ul>
-<li>brand.yml use across various formats</li>
-</ul>
-</li>
-</ol>
-</div>
-<aside class="notes"><p>What to expect: In this talk we’ll cover the basics of styling, why it matters, and discuss two important but easy to implement aspects of styling: color and typography. Finally, in this talk I’ll walk you through applying these skills to your own work, without a CSS induced headache</p>
+<aside class="notes"><p>You already made a judgment, before reading a single number You don’t know if the software works or whether the dashboard data is accurate.</p>
+<p>But you have already decided whether you want to keep looking.</p>
+<p>That first impression doesn’t tell you whether the product is actually trustworthy.</p>
+<p>But it affects whether you give the product a chance to prove that it is.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -339,9 +257,12 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="why-styling-matters" class="slide level2"><h2>Why Styling Matters</h2>
-<aside class="notes"><p>Why didn’t you want to download software from that first website? Why didn’t you want to share that dashboard with your boss or a client? Because you didn’t trust it. It didn’t matter what the contents were, the visual design was poor and you were instantly skeptical. Now you may not be able to put your finger on why, but researchers actually studied this. In a 2025 qualitative study they asked viewers what makes them trust a chart and coded their 185 responses into five real categories. This study found that people’s own reasons for trusting (or distrusting) a chart go well beyond the data itself — and they don’t always agree on which factors matter most.</p>
-<p>Trust is an emotional gatekeeper, and it is influenced by more than just the data itself. The McKinley et al. (2025) framework proves that viewers reject accurate data if it fails the “instinct” test. People evaluate trustworthiness, usability, and professionalism almost instantly. The visual experience becomes part of the analytical experience.</p>
+      }</style></aside></section><section id="who-i-am" class="slide level2 center"><h2>Who I Am</h2>
+<aside class="notes"><p>I’m Shelby Level. I build dashboards, reports, and other data products that help people make decisions. I came to this work as a data person, not as a designer.</p>
+<p>And I have made some not so great looking dashboards and reports along the way.</p>
+<p>I cared about if the numbers were right, the code ran, and the dashboard loaded. And then I was done. Or at least, I really wanted to be done and the last thing I wanted to do was fight with CSS.</p>
+<p>I looked at the default Bootstrap theme applied to my work and thought, “It works, it’s accessible and it looks fine. Surely that’s enough.</p>
+<p>Sometimes it is enough. But sometimes this “good enough” makes really good work much easier to ignore.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -352,50 +273,88 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="influencing-trust" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Influencing Trust</h2>
+      }</style></aside></section><section id="styling-is-not-evidence" class="slide level2 center"><h2>Styling is Not Evidence</h2>
+<div class="fragment">
+<p>But it influences whether people examine the evidence</p>
+</div>
+<aside class="notes"><p>Styling is Not Evidence, But it influences whether people examine the evidence</p>
+<p>Before we go further, I want to be clear: Polished styling does not make data accurate, just like a nice font can’t replace credible sources.</p>
+<p>But styling can affect whether someone pauses to pay attention and give our work a chance.</p>
+<p>TODO: It can communicate that someone thought about the audience and that this is finished work, not something that accidentally escaped from our development environment.</p>
+<p>Styling doesn’t create the evidence, but it helps determine how the evidence is received.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="people-evaluate-more-than-the-data" class="slide level2 center"><h2>People evaluate more than the data</h2>
+<aside class="notes"><p>People evaluate more than the data And this isn’t something I made up to justify spending too much time playing with the Adobe Color Wheel tool.</p>
+<p>In a 2025 study, researchers asked people to rank visualizations by perceived trustworthiness and explain their reasoning.</p>
+<p>And, as expected, people talked about data accuracy, sources, and objectivity. But they also mentioned aesthetics, professionalism, familiarity, and even intuition.</p>
+<p>People were evaluating more than whether the numbers looked correct, they were evaluating the entire visual experience.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="what-viewers-use-to-judge-trust" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">What Viewers Use to Judge Trust</h2>
 <div id="theme-container" class="trust-grid">
 <div class="trust-column">
-<div id="theme-readability" class="trust-box trust-readability-bg" data-id="readability-box">
+<div id="theme-readability" class="trust-box trust-readability-bg fragment" data-id="readability-box" data-fragment-index="1">
 <p><span class="trust-title">Readability</span></p>
 </div>
-<div class="trust-chips trust-readability-chips">
+<div class="trust-chips trust-readability-chips fragment" data-fragment-index="6">
 <p><span class="trust-chip">Simple</span> <span class="trust-chip">Clarity</span> <span class="trust-chip">Complex</span></p>
 </div>
 </div>
 <div class="trust-column">
-<div id="theme-integrity" class="trust-box trust-integrity-bg" data-id="integrity-box">
+<div id="theme-integrity" class="trust-box trust-integrity-bg fragment" data-id="integrity-box" data-fragment-index="2">
 <p><span class="trust-title">Integrity &amp; Transparency</span></p>
 </div>
-<div class="trust-chips trust-integrity-chips">
+<div class="trust-chips trust-integrity-chips fragment" data-fragment-index="6">
 <p><span class="trust-chip">Data Integrity</span> <span class="trust-chip">Labeling</span> <span class="trust-chip">Source</span> <span class="trust-chip">Objectivity</span> <span class="trust-chip">Intent</span></p>
 </div>
 </div>
 <div class="trust-column">
-<div id="theme-quality" class="trust-box trust-quality-bg" data-id="quality-box">
+<div id="theme-quality" class="trust-box trust-quality-bg fragment" data-id="quality-box" data-fragment-index="3">
 <p><span class="trust-title">Quality &amp; Design</span></p>
 </div>
-<div class="trust-chips trust-quality-chips">
+<div class="trust-chips trust-quality-chips fragment" data-fragment-index="6">
 <p><span class="trust-chip">Vis Type</span> <span class="trust-chip">Visual Elements</span> <span class="trust-chip">Aesthetics</span> <span class="trust-chip">Professional</span> <span class="trust-chip">Academic</span></p>
 </div>
 </div>
 <div class="trust-column">
-<div id="theme-familiarity" class="trust-box trust-familiarity-bg" data-id="familiarity-box">
+<div id="theme-familiarity" class="trust-box trust-familiarity-bg fragment" data-id="familiarity-box" data-fragment-index="4">
 <p><span class="trust-title">Familiarity</span></p>
 </div>
-<div class="trust-chips trust-familiarity-chips">
+<div class="trust-chips trust-familiarity-chips fragment" data-fragment-index="6">
 <p><span class="trust-chip">With Topic</span> <span class="trust-chip">With Source</span> <span class="trust-chip">Unspecified</span></p>
 </div>
 </div>
 <div class="trust-column">
-<div id="theme-personal" class="trust-box trust-personal-bg" data-id="personal-box">
+<div id="theme-personal" class="trust-box trust-personal-bg fragment" data-id="personal-box" data-fragment-index="5">
 <p><span class="trust-title">Personal</span></p>
 </div>
-<div class="trust-chips trust-personal-chips">
+<div class="trust-chips trust-personal-chips fragment" data-fragment-index="6">
 <p><span class="trust-chip">Confidence</span> <span class="trust-chip">Intuition</span> <span class="trust-chip">Relevance</span> <span class="trust-chip">Reliability</span> <span class="trust-chip">Importance</span></p>
 </div>
 </div>
 </div>
-<aside class="notes"><p>Here are all the design factors that influence a viewer’s perceived trustworthiness of your work. That’s a lot right? Let’s break it down</p>
+<aside class="notes"><p>Their responses fell into five broad categories: readability, integrity and transparency, quality and design, familiarity, and personal factors.</p>
+<p>People didn’t always prioritize the same things. One person forcused on a clearly cited source while another focused on clarity.</p>
+<p>And, unfortunately, the researchers didn’t discover a magical checklist that will make every person trust everything you produce.</p>
+<p>Here are all of the individual keywords that participants used to describe why they trusted a visualization. And this is a lot of information to process, and it can be overwhelming to think about how to address all of these factors in our work.</p>
+<p>So let’s take a step back and break it down into a more manageable framework. This reveals two broader ways we evaluate trust: cognitively and affectively.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -438,14 +397,11 @@ Shelby Level
 </div>
 </div>
 </div>
-<aside class="notes"><p>Here is where we spend the most time on: Readability and Integrity &amp; Transparency. We make sure the data is accurate, the source is credible, and the intent is clear.</p>
-<ul>
-<li>
-<strong>Data Accuracy:</strong> Clean data, clear labeling.</li>
-<li>
-<strong>Source &amp; Intent:</strong> Citation, peer review, objectivity.</li>
-<li><em>Status: Crucial, non-negotiable, and where we spend our time.</em></li>
-</ul>
+<aside class="notes"><p>Cognition-based trust comes from intentionally evaluating the work.</p>
+<p>Can I understand it? Is the data represented clearly? Is the source transparent?</p>
+<p>This is where we spend most of our time as data professionals, and rightfully so. We clean the data, verify calculations, cite the source, and hopefully document our methods.</p>
+<p>We might even ask someone else to reproduce it, just in case we didn’t suffer enough the first time.</p>
+<p>This work is foundational, but because we are trained to prioritize it, it is often where we stop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -493,12 +449,13 @@ Shelby Level
 </div>
 </div>
 </div>
-<aside class="notes"><p>But we often overlook the other three dimensions: Quality &amp; Design, Familiarity, and Personal Intuition, dismissing them as “superficial styling.” However, these are the emotional and cognitive gatekeepers that can make or break whether someone trusts our work.</p>
-<ul>
-<li>Execution &amp; Aesthetics</li>
-<li>Psychological Alignment</li>
-<li><em>Status: Often dismissed as “superficial styling.”</em></li>
-</ul>
+<aside class="notes"><p>This is where affective-based trust comes in, and this is where we often fail to spend enough time (and also what we usually save until everything else is done).</p>
+<p>It’s closer to the reaction you had to those opening examples.</p>
+<p>Does it feel appropriate? Have I seen work that looks like this before? Does my gut tell me to keep looking?</p>
+<p>Our audience doesn’t start with the methods or reference section. They start with whatever loads on the screen.</p>
+<p>Before checking a source or questioning a number, they see the colors, typography, spacing, and overall design.</p>
+<p>That instinct is not always accurate, and aesthetics were not necessarily more important than clarity or integrity.</p>
+<p>But secondary does not mean irrelevant. If visual design influences whether someone takes a closer look, it’s worth taking seriously. 4:30 timing</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -509,8 +466,8 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="where-this-talk-is-headed" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Where This Talk Is Headed</h2>
-<div id="theme-container" class="trust-zoom-grid">
+      }</style></aside></section><section id="two-design-choices-with-a-big-impact" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Two Design Choices With a Big Impact</h2>
+<p>(edit slide visuals) ::: {#theme-container .trust-zoom-grid}</p>
 <div class="trust-zoom-sidebar">
 <div id="theme-readability" class="trust-box trust-readability-bg" data-id="readability-box">
 <p><span class="trust-title">Readability</span></p>
@@ -545,310 +502,232 @@ Shelby Level
 </div>
 </div>
 </div>
-</div>
-<aside class="notes"><p>These six factors — the design, source, and intuition cues — are what the rest of this talk will focus on.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="revisit" class="slide level2"><h2>Revisit</h2>
-<div class="fragment">
-<p><img data-src="inst/img/linux-distro.jpeg" class="absolute" style="top: 5px; right: 0px; height: 100%; "></p>
-</div>
-<aside class="notes"><p>Still not convinced that these affective-based components are worth your time? Let’s revisit the first example. Most of you labelled the website I showed you as untrustworthy. Why? Because it failed the “instinct” test. It didn’t look professional, the source didn’t look familiar, and it didn’t inspire confidence. However, there are probably a few of you who would download software from this website because you recognize it as a trusted source. DistroWatch has been a credible and reliable source of information for the Linux Community, one of the most widely used operating system in the world, for over 25 years? Linux users have trusted this site for decades to track, compare, and learn about different available Linux distributions.</p>
-<p>Now that you know the cognitive based components check out, you’re probably more likely to overlook the affective based components when reconsidering your initial assessment. This demonstrates the interplay between the cognitive and affective components of trust. The data is the same, but the perceived quality changes dramatically based on the design, source, and intuition cues you receive on first glance.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="trust-is-an-emotional-gatekeeper-for-our-work" class="slide level2"><h2>Trust is an Emotional Gatekeeper for Our Work</h2>
-<aside class="notes"><p>Tying this back to our work: A data professional would probably trust your work even if it wasn’t well designed, so long as the cognitive based components are sound like your sources, data integrity, and objectivity. However, the intended audience of our work is usually not data professionals. They are busy decision makers. They don’t have time to read every chart, and they don’t have time to evaluate the quality of our work. They make snap judgments based on their first impressions, meaning they might not even get to considering your data sources and integrity if their intuition tells them it’s untrustworthy. And those first impressions are influenced by the design, source, and intuition cues we just discussed. This is why styling matters, and why it is worth your time to learn how to do it well.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="trust-is-an-emotional-gatekeeper" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Trust is an Emotional Gatekeeper</h2>
-<aside class="notes"><p>But we often overlook the other three dimensions: Quality &amp; Design, Familiarity, and Personal Intuition, dismissing them as “superficial styling.” However, these are the emotional and cognitive gatekeepers that can make or break whether someone trusts our work.</p>
-<ul>
-<li><p>Execution &amp; Aesthetics</p></li>
-<li><p>Psychological Alignment</p></li>
-<li><p><em>Status: Often dismissed as “superficial styling.”</em></p></li>
-<li><p><strong>Aesthetics</strong></p></li>
-<li><p><strong>Visual Elements</strong></p></li>
-<li><p><strong>Professional Finish</strong></p></li>
-<li><p><strong>With Source</strong></p></li>
-<li><p>Reduces cognitive load</p></li>
-<li><p>Visual recognition</p></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="but-trust-is-an-emotional-gatekeeper" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">…But Trust is an Emotional Gatekeeper</h2>
-<div class="intro-text short">
-<p>McKinley, Pandey &amp; Ottley’s 2025 CHI study on viewer trust in data visualization found that people’s own reasons for trusting (or distrusting) a chart go well beyond the data itself — and they don’t always agree on which factors matter most:</p>
-</div>
-<div id="framework-grid" class="focus-grid-expanded" data-id="framework-grid">
-<div id="box-rational" class="box-rational-faded" data-id="box-rational">
-<h3 id="integrity-transparency">1. Integrity &amp; Transparency</h3>
-<ul>
-<li>Data Accuracy</li>
-<li>Source &amp; Intent</li>
-</ul>
-</div>
-<div id="box-emotional" class="box-emotional-active" data-id="box-emotional">
-<h3 id="the-design-psychological-triad">The Design &amp; Psychological Triad</h3>
-<div class="triad-grid">
-<div class="fragment fragment-card fragment-quality">
-<h4 id="quality-design">🎨 Quality &amp; Design</h4>
-<ul>
-<li><span class="trust-focus-item">Aesthetics</span></li>
-<li><span class="trust-focus-item">Visual Elements</span></li>
-<li><span class="trust-focus-item">Professional Finish</span></li>
-</ul>
-</div>
-<div class="fragment fragment-card fragment-familiarity">
-<h4 id="familiarity">🤝 Familiarity</h4>
-<ul>
-<li><span class="trust-focus-item">With Source</span></li>
-<li>Reduces cognitive load</li>
-<li>Visual recognition</li>
-</ul>
-</div>
-<div class="fragment fragment-card fragment-personal">
-<h4 id="personal-context">🧠 Personal Context</h4>
-<ul>
-<li>Confidence</li>
-<li><span class="trust-focus-item">Reliability</span></li>
-<li><span class="trust-focus-item">Intuition</span></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section><section id="the-takeaway-design-earns-the-right-to-be-read" class="slide level2"><h2>The Takeaway: Design Earns the Right to be Read</h2>
-<div class="takeaway-wrap">
-<div class="takeaway-quote">
-<p>“Data integrity builds the truth, but quality and design build the <em>bridge</em> to that truth.”</p>
-</div>
-<div class="takeaway-list">
-<ul>
-<li>
-<strong>Without Quality:</strong> Excellent data is dismissed as amateurish or suspicious.</li>
-<li>
-<strong>Without Familiarity:</strong> Complex data induces anxiety and cognitive rejection.</li>
-<li>
-<strong>Without Personal Intuition:</strong> The user lacks the raw confidence to act on your insights.</li>
-</ul>
-</div>
-</div>
-<aside class="notes"><p>The “Hard” Metrics (The Baseline): Data Integrity, Source, and Intent are what data professionals focus 99% of their time on. They are required, but they are invisible if the user rejects the chart upfront.</p>
-<p>The “Soft” Metrics (The Gatekeepers): Quality, Familiarity, and Personal Intuition act as the emotional and cognitive gatekeeper. If a chart looks unprofessional or unfamiliar, viewers experience friction and judge it as untrustworthy before they even read a single data point.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="hidden-dimensions-of-visual-trust" class="slide level2"><h2>Hidden Dimensions of Visual Trust</h2>
-</section><section id="trust-equation" class="slide level2"><h2>Trust Equation</h2>
-<p><img data-src="inst/img/trust.jpg" class="absolute" style="top: 0px; right: 0px; height: 100%; "></p>
-</section><section id="styling-trust" class="slide level2"><h2>Styling != Trust</h2>
-<p>Linux reveal</p>
-</section><section class="slide level2"><div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="inst/img/plain-dashboard.jpeg" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-<aside class="notes"><p>I’ll let you in on a secret, this is my dashboard and over time I’ve learned how to style data products people actually want to use, like this one</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section class="slide level2"><div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="inst/img/styled-dashboard.jpeg" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-</div>
-</section><section id="why-styling-matters-1" class="slide level2"><h2>Why Styling Matters</h2>
-<p>Trust</p>
-<ul>
-<li>Color</li>
-<li>Typography</li>
-</ul>
-<aside class="notes"><p>When creating data products, the visual design plays a crucial role in how users interact with and perceive the information. A well-designed interface can make complex data more accessible and engaging, while a poorly designed one can lead to confusion and disengagement.</p>
-<p>People evaluate trustworthiness, usability, and professionalism almost instantly.</p>
-<p>The visual experience becomes part of the analytical experience.</p>
-<p>That may not feel fair, but it’s reality.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside></section><section id="the-landscape-of-visual-trust" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">The Landscape of Visual Trust</h2>
-<div style="text-align: center; margin-top: 10px; font-size: 1.1em; color: #bbb;">
-<p>Perceived trustworthiness is driven by 5 core macro themes and 16 distinct design keywords.</p>
-</div>
-<div id="big-picture-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 30px; height: 680px;">
-<!-- 1. READABILITY (BLUE) -->
-<div id="theme-readability" style="background: #162a3d; border-top: 6px solid #2b5c8f; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;">
-<h3 id="readability">📱 Readability</h3>
-<p>::: {.keyword style=“background: #2b5c8f;”} Simple ::: ::: {.keyword style=“background: #2b5c8f;”} Complex ::: ::: {.keyword style=“background: #2b5c8f;”} Clarity :::</p>
-</div>
-<!-- 2. INTEGRITY & TRANSPARENCY (GREEN) -->
-<div id="theme-integrity" style="background: #132b1a; border-top: 6px solid #2e6f40; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;">
-<h3 id="integrity">🛡️ Integrity</h3>
-<p>::: {.keyword style=“background: #2e6f40;”} Data Integrity <span class="sub-pill">↳ Labeling</span></p>
-</div>
-<p>::: {.keyword style=“background: #2e6f40;”} Source <span class="sub-pill">↳ Objectivity</span></p>
-</div>
-<p>::: {.keyword style=“background: #2e6f40;”} Intent ::: :::</p>
-<!-- 3. QUALITY & DESIGN (ORANGE) -->
-<div id="theme-quality" style="background: #36200d; border-top: 6px solid #d97724; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;">
-<h3 id="quality-design-1">🎨 Quality &amp; Design</h3>
-<p>::: {.keyword style=“background: #d97724;”} Vis Type <span class="sub-pill">↳ Visual Elements</span></p>
-</div>
-<p>::: {.keyword style=“background: #d97724;”} Aesthetics <span class="sub-pill">↳ Professional</span> ::: ::: {.keyword style=“background: #d97724;”} Academic ::: :::</p>
-<!-- 4. FAMILIARITY (PURPLE) -->
-<div id="theme-familiarity" style="background: #21152e; border-top: 6px solid #6a3d9a; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;">
-<h3 id="familiarity-1">🤝 Familiarity</h3>
-<p>::: {.keyword style=“background: #6a3d9a;”} with Topic ::: ::: {.keyword style=“background: #6a3d9a;”} with Source ::: ::: {.keyword style=“background: #6a3d9a;”} Unspecified :::</p>
-</div>
-<!-- 5. PERSONAL (GRAY) -->
-<div id="theme-personal" style="background: #262626; border-top: 6px solid #555555; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px;">
-<h3 id="personal">🧠 Personal</h3>
-<p>::: {.keyword style=“background: #555555;”} Confidence <span class="sub-pill">↳ Reliability</span></p>
-</div>
-<p>::: {.keyword style=“background: #555555;”} Intuition <span class="sub-pill">↳ Importance</span> ::: ::: {.keyword style=“background: #555555;”} Relevance ::: :::</p>
 <p>:::</p>
-</section><section id="design-factors-that-influence-perceived-trustworthiness" class="slide level2"><h2>Design Factors That Influence Perceived Trustworthiness</h2>
-<div class="hierarchy" data-node-color="#dddddd" data-arrow-color="#999999">
-<div class="item" color="#f2f2f2">
-<div class="item" color="#87cefa">
-<p>Readability</p>
-<div class="item" color="#8FC1E8">
-<p>Complex</p>
+<aside class="notes"><p>So, now that we know styling matters, what do we do with this?</p>
+<p>You don’t need to become a graphic designer, earn a design degree, or even spend your weekend learning CSS.</p>
+<p>We are going to focus on two design choices that strongly shape how our work is experienced: color and typography.</p>
+<p>Then we’ll make those choices reusable across formats so we don’t have to start over with every product we make, without a CSS-induced headache.</p>
+<p>Let’s start with color.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="color-shapes-attention-and-tone" class="slide level2"><h2>Color Shapes Attention and Tone</h2>
+<p><img data-src="https://datawrapper.de/cdn-cgi/image/quality=85,width=1801,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/which-color-scale-to-use-in-data-vis/e9a7ed8d71-1740123119/200801_colorscale-intro-f-1.png" class="absolute" style="height: 90%; "></p>
+<aside class="notes"><p>Now there is no magical shade of trustworthy blue that will make everyone believe everything you make</p>
+<p>But color is one of the first things people notice, and it should always have a job.</p>
+<p>Color can help people understand. It can distinguish categories, reveal patterns…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="color-shapes-attention-and-tone-1" class="slide level2"><h2>Color Shapes Attention and Tone</h2>
+<p><img data-src="inst/img/color-emphasis.avif" class="absolute" style=""></p>
+<aside class="notes"><p>and direct attention to important information</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="color-shapes-attention-and-tone-2" class="slide level2"><h2>Color Shapes Attention and Tone</h2>
+<p><img data-src="https://datawrapper.de/cdn-cgi/image/quality=85,width=3538,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/acf60230fc-1740123150/Artboard-1-copy-130.png" class="absolute" style="top: 200px; "></p>
+<aside class="notes"><p>But color also shapes the overall experience. A palette can feel calm or energetic, serious or playful, restrained or overwhelming.</p>
+<p>And context matters. Red could represent good luck, a political party, a negative value, or it could simply mean your organization gave you a branding guide with exactly one usable color and said, “Good luck.”</p>
+<p>So instead of asking, “Which colors do I like?” ask:   “What does this color need to do?”</p>
+<p>While color helps users navigate the data, typography helps them navigate the text.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="typography-shapes-hierarchy-and-voice" class="slide level2"><h2>Typography Shapes Hierarchy and Voice</h2>
+<div class="fragment">
+<p><img data-src="inst/img/using-text.avif" class="absolute" style="height: 90%; "></p>
 </div>
-<div class="item" color="#8FC1E8">
-<p>Simple</p>
+<aside class="notes"><p>Typography may be less noticeable than color, but our data products are full of it.</p>
+<p>Titles, descriptions, labels, annotations, sources, and of course numbers.</p>
+<p>Typography helps people navigate all of that information.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="typography-shapes-hierarchy-and-voice-1" class="slide level2"><h2>Typography Shapes Hierarchy and Voice</h2>
+<p><img data-src="inst/img/font-size.avif" class="absolute" style="height: 90%; "></p>
+<div class="fragment">
+<p><img data-src="inst/img/font-type.jpeg" class="absolute" style="bottom: 200px; right: 0px; height: 50%; "></p>
 </div>
-<div class="item" color="#8FC1E8">
-<p>Clarity</p>
+<aside class="notes"><p>Differences in size, weight, style, and contrast help people recognize what they should read first, what comes next, and what is supporting detail.</p>
+<p>It also shapes the overall voice of your product, speaking volumes about the mood, tone, and personality you want to convey.</p>
+<p>Which one of these notes do you want to find waiting for you?</p>
+<p>A typeface can feel serious or playful, traditional or modern, restrained or expressive. Those choices contribute to the tone and personality we communicate before anyone reads every word.</p>
+<p>Of course, before a font can give our work personality or make it feel like ours, it has to be readable.</p>
+<p>It needs to work at the sizes we actually use. It needs clear letters, clear numbers, and enough contrast against the background.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section class="slide level2"><p><img data-src="inst/img/papyrus.gif" class="absolute" style="top: 6px; right: 100px; height: 90%; "></p>
+<aside class="notes"><p>I’m looking at you, Papyrus.</p>
+<p>So instead of asking, “Which font do I like?” ask:</p>
+<p>“What does this typography need to communicate?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="together-color-and-typography-shape-the-first-impression" class="slide level2"><h2>Together Color and Typography Shape the First Impression</h2>
+<p>(edit slide visuals)</p>
+<aside class="notes"><p>Color helps direct attention and set the tone. Typography creates hierarchy and gives your work a voice.</p>
+<p>Neither changes the underlying information.</p>
+<p>But together, these design choices shape the entire visual experience of a data product.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="you-dont-need-to-start-from-scratch" class="slide level2"><h2>You Don’t Need to Start From Scratch</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="inst/img/airbnb-brand-guide.jpg" class="absolute" style="height: 50%; "></p>
 </div>
-</div>
-<div class="item" color="#A9D18E">
-<p>Integrity and Transparency</p>
-<div class="item" color="#A9D18E">
-<p>Data Integrity</p>
-<div class="item" color="#A9D18E">
-<p>Labeling</p>
-</div>
-</div>
-<div class="item" color="#A9D18E">
-<p>Source</p>
-<div class="item" color="#A9D18E">
-<p>Objectivity</p>
-</div>
-</div>
-<div class="item" color="#A9D18E">
-<p>Intent</p>
-</div>
-</div>
-<div class="item" color="#E8974E">
-<p>Quality &amp; Design</p>
-<div class="item" color="#E8974E">
-<p>Vis Type</p>
-<div class="item" color="#E8974E">
-<p>Visual Elements</p>
-</div>
-</div>
-<div class="item" color="#E8974E">
-<p>Aesthetics</p>
-<div class="item" color="#E8974E">
-<p>Professional</p>
-</div>
-</div>
-<div class="item" color="#E8974E">
-<p>Academic</p>
-</div>
-</div>
-<div class="item" color="#d8bfd7">
-<p>Familiarity</p>
-<div class="item" color="#C6A2D9">
-<p>with Topic</p>
-</div>
-<div class="item" color="#C6A2D9">
-<p>with Source</p>
-</div>
-<div class="item" color="#C6A2D9">
-<p>Unspecified</p>
-</div>
-</div>
-<div class="item" color="#c7c7c7">
-<p>Personal</p>
-<div class="item" color="#B0B0B0">
-<p>Confidence</p>
-<div class="item" color="#B0B0B0">
-<p>Reliability</p>
-</div>
-</div>
-<div class="item" color="#B0B0B0">
-<p>Intuition</p>
-<div class="item" color="#B0B0B0">
-<p>Importance</p>
-</div>
-</div>
-<div class="item" color="#B0B0B0">
-<p>Relevance</p>
-</div>
+<div class="column fragment">
+<p><img data-src="inst/img/color-palette.jpg" class="absolute" style="bottom: 0px; height: 50%; "></p>
 </div>
 </div>
+<aside class="notes"><p>At this point, you might be thinking, “Okay, great. Now I have to create an entire design system.”</p>
+<p>I need fonts, button styles, and a brand color palette with approximately 47 carefully coordinated shades of gray.</p>
+<p>This is typically where I decide the default theme is looking pretty good after all.</p>
+<p>Fortunately, we don’t have to start from scratch.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="bootstrap-is-already-doing-more-than-you-think" class="slide level2"><h2>Bootstrap Is Already Doing More Than You Think</h2>
+<p><img data-src="inst/img/bootstrap-logo.svg" class="absolute" style="bottom: 50px; right: 400px; height: 80%; "></p>
+<aside class="notes"><p>When we create an HTML product with Shiny or Quarto, Bootstrap is already doing a lot of the design work for us.</p>
+<p>It provides the layout system and styles familiar components like headings, buttons, and tables.</p>
+<p>That is why our work can look reasonably polished before we write any CSS.</p>
+<p>Bootstrap gives us a solid, functional foundation. 8:00 timing</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="but-a-good-default-is-still-a-default" class="slide level2"><h2>But a Good Default Is Still a Default</h2>
+<p><img data-src="inst/img/demo-shiny-app.png" class="absolute" style="height: 55%; "><img data-src="inst/img/quarto-default.png" class="absolute" style="bottom: 0px; right: 0px; height: 45%; "></p>
+<aside class="notes"><p>But it is still the default. Bootstrap is consistent, responsive, familiar, and it works.</p>
+<p>But it also means our work can look a lot like every other dashboard or report we’ve ever seen.</p>
+<p>Or suspiciously similar to the example we copied from the Shiny or Quarto website while trying to remember how to move the table of contents.</p>
+<p>Bootstrap gives us “good enough.”</p>
+<p>What we need is an easy way to move from “good enough” to “this stands out and looks intentional.” What we need is an easy way to make that foundation feel more intentional.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="bootswatch-gives-us-a-better-starting-point" class="slide level2"><h2>Bootswatch Gives Us a Better Starting Point</h2>
+<p><img data-src="inst/img/bootswatch-logo.png" class="absolute" style="top: 0px; right: 200px; height: 100%; "></p>
+<aside class="notes"><p>That is where Bootswatch comes in.</p>
+<p>Bootswatch gives us a collection of ready-made themes for Bootstrap that can be easily applied to any HTML based output.</p>
+<p>Instead of styling every button, heading, and nav bar ourselves, we choose a coordinated design where many of these decisions have already been made for us.</p>
+<p>It may not be our final design.</p>
+<p>But it is a much better place to start than an empty CSS file and a growing sense of dread.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="possibilities-of-bootswatch" class="slide level2"><h2>Possibilities of Bootswatch</h2>
+<div class="fragment">
+<p><img data-src="https://bootswatch.com/brite/thumbnail.png" class="absolute" style="top: 0%; left: 0%; height: 15%; "><img data-src="https://bootswatch.com/cerulean/thumbnail.png" class="absolute" style="top: 0%; left: 17%; height: 15%; "><img data-src="https://bootswatch.com/cosmo/thumbnail.png" class="absolute" style="top: 0%; left: 34%; height: 15%; "><img data-src="https://bootswatch.com/cyborg/thumbnail.png" class="absolute" style="top: 0%; left: 51%; height: 15%; "><img data-src="https://bootswatch.com/darkly/thumbnail.png" class="absolute" style="top: 0%; left: 68%; height: 15%; "><img data-src="https://bootswatch.com/flatly/thumbnail.png" class="absolute" style="top: 0%; left: 85%; height: 15%; "><img data-src="https://bootswatch.com/journal/thumbnail.png" class="absolute" style="top: 19%; left: 0%; height: 15%; "><img data-src="https://bootswatch.com/litera/thumbnail.png" class="absolute" style="top: 19%; left: 17%; height: 15%; "><img data-src="https://bootswatch.com/lumen/thumbnail.png" class="absolute" style="top: 19%; left: 34%; height: 15%; "><img data-src="https://bootswatch.com/lux/thumbnail.png" class="absolute" style="top: 19%; left: 51%; height: 15%; "><img data-src="https://bootswatch.com/materia/thumbnail.png" class="absolute" style="top: 19%; left: 68%; height: 15%; "><img data-src="https://bootswatch.com/minty/thumbnail.png" class="absolute" style="top: 19%; left: 85%; height: 15%; "><img data-src="https://bootswatch.com/morph/thumbnail.png" class="absolute" style="top: 38%; left: 0%; height: 15%; "><img data-src="https://bootswatch.com/pulse/thumbnail.png" class="absolute" style="top: 38%; left: 17%; height: 15%; "><img data-src="https://bootswatch.com/quartz/thumbnail.png" class="absolute" style="top: 38%; left: 34%; height: 15%; "><img data-src="https://bootswatch.com/sandstone/thumbnail.png" class="absolute" style="top: 38%; left: 51%; height: 15%; "><img data-src="https://bootswatch.com/simplex/thumbnail.png" class="absolute" style="top: 38%; left: 68%; height: 15%; "><img data-src="https://bootswatch.com/sketchy/thumbnail.png" class="absolute" style="top: 38%; left: 85%; height: 15%; "><img data-src="https://bootswatch.com/slate/thumbnail.png" class="absolute" style="top: 57%; left: 0%; height: 15%; "><img data-src="https://bootswatch.com/solar/thumbnail.png" class="absolute" style="top: 57%; left: 17%; height: 15%; "><img data-src="https://bootswatch.com/spacelab/thumbnail.png" class="absolute" style="top: 57%; left: 34%; height: 15%; "><img data-src="https://bootswatch.com/superhero/thumbnail.png" class="absolute" style="top: 57%; left: 51%; height: 15%; "><img data-src="https://bootswatch.com/united/thumbnail.png" class="absolute" style="top: 57%; left: 68%; height: 15%; "><img data-src="https://bootswatch.com/vapor/thumbnail.png" class="absolute" style="top: 57%; left: 85%; height: 15%; "><img data-src="https://bootswatch.com/yeti/thumbnail.png" class="absolute" style="top: 76%; left: 0%; height: 15%; "><img data-src="https://bootswatch.com/zephyr/thumbnail.png" class="absolute" style="top: 76%; left: 17%; height: 15%; "></p>
 </div>
-</section><section id="color" class="slide level2"><h2>Color</h2>
-</section><section id="leveraging-color" class="slide level2"><h2>Leveraging Color</h2>
+<!-- ![](https://bootswatch.com/brite/thumbnail.png){.absolute height="20%"}
+![](https://bootswatch.com/cerulean/thumbnail.png){.absolute height="20%"}
+![](https://bootswatch.com/cosmo/thumbnail.png){.absolute height="20%"}
+![](https://bootswatch.com/darkly/thumbnail.png){.absolute height="20%"}
+![](https://bootswatch.com/flatly/thumbnail.png){.absolute height="20%"} -->
+<aside class="notes"><p>Bootswatch is not one new design. It gives us a range of coordinated starting points.</p>
+<p>The structure and content stay the same, but the visual experience can feel restrained, friendly, warm, or dramatic.</p>
+<p>The point is not to find the universally best theme.</p>
+<p>The point is that we can begin closer to the experience we want, without styling every component ourselves.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="applying-bootswatch-themes-shiny" class="slide level2"><h2>Applying Bootswatch Themes: Shiny</h2>
 <div class="codewindow">
-<div class="editor qmd" name="ui.R">
+<div class="editor r" name="ui.R">
 <div class="code-copy-outer-scaffold">
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
@@ -857,7 +736,7 @@ Shelby Level
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
-<div class="editor qmd fragment" name="ui.R">
+<div class="editor r fragment" name="ui.R">
 <div class="code-copy-outer-scaffold">
 <div class="sourceCode" id="cb2" data-code-line-numbers="|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
 <span id="cb2-2"><a href="" aria-label="2"></a>  <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
@@ -868,10 +747,10 @@ Shelby Level
 </div>
 </div>
 </div>
-</section><section id="typography" class="slide level2"><h2>Typography</h2>
-</section><section id="using-typography" class="slide level2"><h2>Using Typography</h2>
-</section><section class="slide level2"><p><img data-src="inst/img/bootswatch-logo.png" class="absolute" style="top: 0px; right: 200px; height: 100%; "></p>
-<aside class="notes"><p>Themes for bootstrap are available through Bootswatch, which is a collection of free and open-source themes that can be easily applied to your dashboards and reports. These themes provide a quick way to change the look and feel of your data products without having to write custom CSS.</p>
+<p><img data-src="inst/img/default-theme-shiny.jpeg" class="absolute" style="height: 90%; "><img data-src="inst/img/default-theme-vapor.jpeg" class="absolute" style="height: 90%; "><img data-src="inst/img/default-theme-sketchy.jpeg" class="absolute" style="height: 90%; "><img data-src="inst/img/default-theme-minty.jpeg" class="absolute" style="height: 90%; "></p>
+<aside class="notes"><p>In Shiny, the change is one argument.</p>
+<p>We create a Bootstrap theme, choose a preset, and pass it to the page.</p>
+<p>One line of code changes the styling across the entire application.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -882,19 +761,122 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="apply-bootswatch-theme" class="slide level2"><h2>Apply Bootswatch Theme</h2>
+      }</style></aside></section><section id="applying-bootswatch-themes-quarto" class="slide level2"><h2>Applying Bootswatch Themes: Quarto</h2>
+<div class="codewindow">
+<div class="editor qmd" name="report.qmd">
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+</div>
+</div>
+<div class="editor qmd fragment" name="themed-report.qmd">
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb4" data-code-line-numbers="|3-5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="" aria-label="1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="" aria-label="2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb4-3"><a href="" aria-label="3"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-4"><a href="" aria-label="4"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="" aria-label="5"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> flatly</span></span>
+<span id="cb4-6"><a href="" aria-label="6"></a><span class="pp">---</span></span></code></pre></div>
+<button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+</div>
+</div>
+</div>
+<aside class="notes"><p>The same idea works in Quarto.</p>
+<p>Choose a theme in the YAML, and Quarto applies it across the document.</p>
+<p>We have changed the overall visual experience without redesigning the document or touching its content.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="same-data.-different-experience." class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Same Data. Different Experience.</h2>
+<aside class="notes"><p>These themes provide a quick way to change the look and feel of your data products without having to write custom CSS. Here is the same dashboard three times.</p>
+<p>The data are not going to change. The layout is not going to change. The only thing I am changing is the color.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="a-preset-is-a-starting-point" class="slide level2"><h2>A Preset Is a Starting Point</h2>
+<aside class="notes"><p>A Bootswatch preset gives us a coordinated starting point.</p>
+<p>But it does not know our organization’s colors, our preferred fonts, or how we want our products to feel.</p>
+<p>We could customize those choices separately in every project.</p>
+<p>Or we could define them once and reuse them.</p>
+<p>That is where <code>brand.yml</code> comes in.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="make-those-choices-reusable" class="slide level2"><h2>Make Those Choices Reusable</h2>
+<p><img data-src="inst/img/brand-yml-logo.svg" class="absolute" style="top: 0px; right: 0px; height: 100%; "></p>
+<aside class="notes"><p>A <code>brand.yml</code> file gives us one place to store the visual decisions we want to reuse.</p>
+<p>That includes our color palette, our typography, and other brand-level choices.</p>
+<p>Instead of redefining those choices in every dashboard, report, or presentation, we define them once and apply them across products.</p>
+<p>And over time it can also and help work from the same source feel recognizable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="the-importance-of-brand-recognition" class="slide level2"><h2>The Importance of Brand Recognition</h2>
+<aside class="notes"><p>Reusing these choices does more than save us time.</p>
+<p>It also helps people recognize where the work came from.</p>
+<p>The dashboard, report, and presentation shouldn’t look identical. They serve different purposes.</p>
+<p>But repeated colors, typography, and visual patterns can make them feel like they belong to the same family.</p>
+<p>Over time, people don’t have to relearn the visual language with every new product.</p>
+<p>They can recognize it and spend more time engaging with the information.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="brand-recognition-color" class="slide level2"><h2>Brand Recognition: Color</h2>
+<p><img data-src="https://datawrapper.de/cdn-cgi/image/quality=85,width=777,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/674ed8f3d5-1740123150/200801_styleguide-theeconomist-1.png" class="absolute" style="top: 240px; height: 60%; "></p>
+<p><img data-src="https://datawrapper.de/cdn-cgi/image/quality=85,width=2654,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/6b2d45aa87-1740123150/Artboard-7.png" class="absolute" style="bottom: 0px; right: 0px; height: 100%; "></p>
+</section><section id="brand-recognition-font" class="slide level2"><h2>Brand Recognition: Font</h2>
+<p><img data-src="https://datawrapper.de/cdn-cgi/image/quality=85,width=2890,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/cd35358e8d-1740123150/Artboard-1.png" class="absolute" style="right: 200px; height: 90%; "></p>
+</section><section id="apply-brand.yml" class="slide level2"><h2>Apply brand.yml</h2>
 <div class="codewindow">
 <div class="editor r" name="ui.R">
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb3" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
-<span id="cb3-2"><a href="" aria-label="2"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
-<span id="cb3-3"><a href="" aria-label="3"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
-<span id="cb3-4"><a href="" aria-label="4"></a></span>
-<span id="cb3-5"><a href="" aria-label="5"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
-<span id="cb3-6"><a href="" aria-label="6"></a>        <span class="at">preset =</span> <span class="st">"lux"</span>,</span>
-<span id="cb3-7"><a href="" aria-label="7"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
-<span id="cb3-8"><a href="" aria-label="8"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
-<span id="cb3-9"><a href="" aria-label="9"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb5" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
+<span id="cb5-2"><a href="" aria-label="2"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
+<span id="cb5-3"><a href="" aria-label="3"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
+<span id="cb5-4"><a href="" aria-label="4"></a></span>
+<span id="cb5-5"><a href="" aria-label="5"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
+<span id="cb5-6"><a href="" aria-label="6"></a>        <span class="at">preset =</span> <span class="st">"lux"</span>,</span>
+<span id="cb5-7"><a href="" aria-label="7"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
+<span id="cb5-8"><a href="" aria-label="8"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
+<span id="cb5-9"><a href="" aria-label="9"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
@@ -902,104 +884,108 @@ Shelby Level
 </section><section class="slide level2"><div class="codewindow r">
 <p>my-deck.R</p>
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
-<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
-<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
-<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
-<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="at">preset =</span> <span class="st">"sandstone"</span>,</span>
-<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
-<span id="cb4-8"><a href="" aria-hidden="true" tabindex="-1"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
-<span id="cb4-9"><a href="" aria-hidden="true" tabindex="-1"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
+<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="at">preset =</span> <span class="st">"sandstone"</span>,</span>
+<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
+<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
+<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
-</section><section class="slide level2"><p><img data-src="inst/img/brand-yml-logo.svg" class="absolute" style="top: 0px; right: 0px; height: 100%; "></p>
-</section><section class="slide level2"><!-- ::: {.codewindow .codewindow-dark .quarto width="80%"}
-my-deck.qmd
-
-````markdown
-```jgmql
-#| echo: false
-plot(1:10)
-```
-````
-::: --></section><section class="slide level2"><div class="codewindow">
+</section><section class="slide level2"><div class="codewindow">
 <div class="editor yaml" name="00-load.R">
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">meta</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> shelbylevel</span></span>
-<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span><span class="at"> https://www.shelbylevel.org</span></span>
-<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">color</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
-<span id="cb5-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deep-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#254D56;color:#ffffff;">#254D56</span>"</span></span></span>
-<span id="cb5-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span></span>
-<span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-50</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#a2bbbd;color:#ffffff;">#a2bbbd</span>"</span></span></span>
-<span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-30</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#c7d6d7;color:#1a1a1a;">#c7d6d7</span>"</span></span></span>
-<span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-10</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span></span>
-<span id="cb5-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">gulfstream</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span></span>
-<span id="cb5-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edgewater</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#d3dfdd;color:#1a1a1a;">#d3dfdd</span>"</span></span></span>
-<span id="cb5-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edgewater-20</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#dce5e4;color:#1a1a1a;">#dce5e4</span>"</span></span></span>
-<span id="cb5-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cascade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b3c2c9;color:#1a1a1a;">#b3c2c9</span>"</span></span></span>
-<span id="cb5-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">boulder</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span></span>
-<span id="cb5-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">spring-rain</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span></span>
-<span id="cb5-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">timberwolf</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#D8D5CE;color:#1a1a1a;">#D8D5CE</span>"</span></span></span>
-<span id="cb5-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">timberwolf-50</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#eceae7;color:#1a1a1a;">#eceae7</span>"</span></span></span>
-<span id="cb5-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">almond-dust</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span></span>
-<span id="cb5-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">moonstone</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#969996;color:#ffffff;">#969996</span>"</span></span></span>
-<span id="cb5-22"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">storm-cloud</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span></span>
-<span id="cb5-23"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">plum-crazy</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#59224A;color:#ffffff;">#59224A</span>"</span></span></span>
-<span id="cb5-24"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
-<span id="cb5-25"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> $brand-deep-jade</span><span class="co">       # main text color</span></span>
-<span id="cb5-26"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> $brand-faded-jade-10</span><span class="co">     # background</span></span>
-<span id="cb5-27"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span><span class="co">            # primary brand color</span></span>
-<span id="cb5-28"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span><span class="co">          # secondary accent</span></span>
-<span id="cb5-29"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tertiary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#a2bbbd;color:#ffffff;">#a2bbbd</span>"</span></span><span class="co">           # tertiary accent</span></span>
-<span id="cb5-30"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">success</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span><span class="co">            # success states</span></span>
-<span id="cb5-31"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">info</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span><span class="co">               # info messages</span></span>
-<span id="cb5-32"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span><span class="co">            # warnings</span></span>
-<span id="cb5-33"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">danger</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#6f4a64;color:#ffffff;">#6f4a64</span>"</span></span><span class="co">             # errors/danger</span></span>
-<span id="cb5-34"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span><span class="co">              # light backgrounds</span></span>
-<span id="cb5-35"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span><span class="co">               # dark elements</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">meta</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> shelbylevel</span></span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span><span class="at"> https://www.shelbylevel.org</span></span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">color</span><span class="kw">:</span></span>
+<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
+<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deep-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#254D56;color:#ffffff;">#254D56</span>"</span></span></span>
+<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span></span>
+<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-50</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#a2bbbd;color:#ffffff;">#a2bbbd</span>"</span></span></span>
+<span id="cb7-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-30</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#c7d6d7;color:#1a1a1a;">#c7d6d7</span>"</span></span></span>
+<span id="cb7-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-10</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span></span>
+<span id="cb7-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">gulfstream</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span></span>
+<span id="cb7-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edgewater</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#d3dfdd;color:#1a1a1a;">#d3dfdd</span>"</span></span></span>
+<span id="cb7-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edgewater-20</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#dce5e4;color:#1a1a1a;">#dce5e4</span>"</span></span></span>
+<span id="cb7-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cascade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b3c2c9;color:#1a1a1a;">#b3c2c9</span>"</span></span></span>
+<span id="cb7-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">boulder</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span></span>
+<span id="cb7-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">spring-rain</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span></span>
+<span id="cb7-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">timberwolf</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#D8D5CE;color:#1a1a1a;">#D8D5CE</span>"</span></span></span>
+<span id="cb7-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">timberwolf-50</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#eceae7;color:#1a1a1a;">#eceae7</span>"</span></span></span>
+<span id="cb7-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">almond-dust</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span></span>
+<span id="cb7-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">moonstone</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#969996;color:#ffffff;">#969996</span>"</span></span></span>
+<span id="cb7-22"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">storm-cloud</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span></span>
+<span id="cb7-23"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">plum-crazy</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#59224A;color:#ffffff;">#59224A</span>"</span></span></span>
+<span id="cb7-24"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb7-25"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> $brand-deep-jade</span><span class="co">       # main text color</span></span>
+<span id="cb7-26"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> $brand-faded-jade-10</span><span class="co">     # background</span></span>
+<span id="cb7-27"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span><span class="co">            # primary brand color</span></span>
+<span id="cb7-28"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span><span class="co">          # secondary accent</span></span>
+<span id="cb7-29"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tertiary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#a2bbbd;color:#ffffff;">#a2bbbd</span>"</span></span><span class="co">           # tertiary accent</span></span>
+<span id="cb7-30"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">success</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span><span class="co">            # success states</span></span>
+<span id="cb7-31"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">info</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span><span class="co">               # info messages</span></span>
+<span id="cb7-32"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span><span class="co">            # warnings</span></span>
+<span id="cb7-33"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">danger</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#6f4a64;color:#ffffff;">#6f4a64</span>"</span></span><span class="co">             # errors/danger</span></span>
+<span id="cb7-34"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span><span class="co">              # light backgrounds</span></span>
+<span id="cb7-35"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span><span class="co">               # dark elements</span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
 <div class="editor yaml fragment" name="01-clean.R">
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">typography</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
-<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
-<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">200</span><span class="kw">,</span><span class="at"> </span><span class="dv">300</span><span class="kw">,</span><span class="at"> </span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
-<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
-<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
-<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
-<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
-<span id="cb6-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
-<span id="cb6-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
-<span id="cb6-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> </span><span class="st">"1rem"</span></span>
-<span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.6</span></span>
-<span id="cb6-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
-<span id="cb6-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
-<span id="cb6-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
-<span id="cb6-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
-<span id="cb6-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> normal</span></span>
-<span id="cb6-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">600</span></span>
-<span id="cb6-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2</span></span>
-<span id="cb6-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> primary</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">typography</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
+<span id="cb8-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
+<span id="cb8-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">200</span><span class="kw">,</span><span class="at"> </span><span class="dv">300</span><span class="kw">,</span><span class="at"> </span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
+<span id="cb8-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
+<span id="cb8-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
+<span id="cb8-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
+<span id="cb8-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb8-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
+<span id="cb8-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
+<span id="cb8-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> </span><span class="st">"1rem"</span></span>
+<span id="cb8-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.6</span></span>
+<span id="cb8-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
+<span id="cb8-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb8-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
+<span id="cb8-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
+<span id="cb8-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> normal</span></span>
+<span id="cb8-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">600</span></span>
+<span id="cb8-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2</span></span>
+<span id="cb8-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> primary</span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
 </div>
-</section><section id="summary" class="slide level2 bd-slide"><h2>Summary</h2>
-<div class="gd-stage-wrap">
-<div id="bd-stage">
-
+</section><section id="apply-brand.yml-to-shiny" class="slide level2"><h2>Apply brand.yml to Shiny</h2>
+<div class="codewindow">
+<div class="editor r" name="ui.R">
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb9" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
+<span id="cb9-2"><a href="" aria-label="2"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
+<span id="cb9-3"><a href="" aria-label="3"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
+<span id="cb9-4"><a href="" aria-label="4"></a></span>
+<span id="cb9-5"><a href="" aria-label="5"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
+<span id="cb9-6"><a href="" aria-label="6"></a>        <span class="at">preset =</span> <span class="st">"lux"</span>,</span>
+<span id="cb9-7"><a href="" aria-label="7"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
+<span id="cb9-8"><a href="" aria-label="8"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
+<span id="cb9-9"><a href="" aria-label="9"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
+<button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
-<p><span id="bd-lay" class="fragment gd-frag"></span> <span id="bd-explode" class="fragment gd-frag"></span> <span id="bd-focus-base" class="fragment gd-frag"></span> <span id="bd-focus-bootswatch" class="fragment gd-frag"></span> <span id="bd-focus-brand" class="fragment gd-frag"></span> <span id="bd-focus-polish" class="fragment gd-frag"></span> <span id="bd-collapse" class="fragment gd-frag"></span> <span id="bd-unrotate" class="fragment gd-frag"></span></p>
-<aside class="notes"><p>If you remember one thing from this talk, let it be this slide. Bootswatch provides a polished foundation. brand.yml provides reusable customization. Together, they create a practical workflow.</p>
+</div>
+<aside class="notes"><p>Back in Shiny, I keep the Bootswatch preset as the foundation and add the brand file.</p>
+<p>Bootswatch handles the starting design.</p>
+<p>My brand file provides the choices that make the product feel like ours.</p>
+<p>A preset gives me a head start.</p>
+<p>The brand file gives me consistency.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1010,7 +996,124 @@ plot(1:10)
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section>
+      }</style></aside></section><section id="one-brand-across-multiple-products" class="slide level2"><h2>One Brand Across Multiple Products</h2>
+<aside class="notes"><p>Here is the payoff.</p>
+<p>The dashboard uses the brand. The report uses the brand. The slides use the brand.</p>
+<p>The products are not identical. They have different purposes and different content.</p>
+<p>But they clearly belong to the same family.</p>
+<p>And when I need to update the palette or typography, I have a consistent place to begin.</p>
+<p>That improves the audience’s experience, but it also improves mine.</p>
+<p>I spend less time rebuilding the same styling decisions and more time working on the actual product.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="styling-becomes-a-system" class="slide level2 bd-slide"><h2>Styling Becomes a System</h2>
+<div class="gd-stage-wrap">
+<div id="bd-stage">
+
+</div>
+</div>
+<p><span id="bd-lay" class="fragment gd-frag"></span> <span id="bd-explode" class="fragment gd-frag"></span> <span id="bd-focus-base" class="fragment gd-frag"></span> <span id="bd-focus-bootswatch" class="fragment gd-frag"></span> <span id="bd-focus-brand" class="fragment gd-frag"></span> <span id="bd-focus-polish" class="fragment gd-frag"></span> <span id="bd-collapse" class="fragment gd-frag"></span> <span id="bd-unrotate" class="fragment gd-frag"></span></p>
+<aside class="notes"><p>Let’s put all of that together.</p>
+<p>At the base, we have Bootstrap. It gives our product structure and functioning components.</p>
+<p>Then Bootswatch gives us a more polished starting point without requiring us to design every component ourselves.</p>
+<p>On top of that, brand.yml stores the choices that make the product recognizable: our colors, our typography, and our visual identity.</p>
+<p>And then there is still room for polish.</p>
+<p>A thoughtful highlight. Better spacing. A clearer annotation. The final details that are specific to this product and this audience.</p>
+<p>Styling does not have to be one huge task at the end.</p>
+<p>It can be a series of manageable layers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="quarto-example" class="slide level2 bdr-slide"><h2>Quarto Example</h2>
+<div class="gd-stage-wrap">
+<div id="bdr-stage">
+
+</div>
+</div>
+<p><span id="bdr-lay" class="fragment gd-frag"></span> <span id="bdr-explode" class="fragment gd-frag"></span> <span id="bdr-focus-base" class="fragment gd-frag"></span> <span id="bdr-focus-bootswatch" class="fragment gd-frag"></span> <span id="bdr-focus-brand" class="fragment gd-frag"></span> <span id="bdr-focus-polish" class="fragment gd-frag"></span> <span id="bdr-collapse" class="fragment gd-frag"></span> <span id="bdr-unrotate" class="fragment gd-frag"></span></p>
+</section><section id="dont-start-from-scratch" class="slide level2"><h2>Don’t Start From Scratch</h2>
+<div class="fragment">
+<ol type="1">
+<li>Start with a foundation</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Make a few intentional choices</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Then make those choices reusable</li>
+</ol>
+</div>
+<aside class="notes"><p>If you remember one thing from this talk, let it be this:</p>
+<p>You don’t need to start from scratch, become a graphic designer, or fight with CSS every time you create something new.</p>
+<p>Start with Bootstrap.</p>
+<p>Use Bootswatch to choose a polished foundation.</p>
+<p>Use brand.yml to make your color and typography decisions reusable.</p>
+<p>Then use the time you saved to focus on the audience and the information they need.</p>
+<p>Because accurate data deserves an accurate analysis.</p>
+<p>And good analysis deserves a presentation that helps people see its value.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="remember-this-one" class="slide level2"><h2>Remember This One?</h2>
+<div class="fragment">
+<p><img data-src="inst/img/linux-distro.jpeg" class="absolute" style="top: 5px; right: 0px; height: 100%; "></p>
+</div>
+<aside class="notes"><p>Before I finish, let’s go back to the website from the beginning.</p>
+<p>A few of you may have recognized it. This is DistroWatch, a widely used and trusted website that provides information about different Linux distributions for over 25 years.</p>
+<p>So now, knowing what it is, how many of you feel a little more comfortable clicking something?</p>
+<p>The visual experience hasn’t changed What changed was your knowledge of the source.</p>
+<p>This is why I’m not saying that good styling equals trustworthiness.</p>
+<p>DistroWatch did not become trustworthy because I explained what it was.</p>
+<p>Instead, the first impression created hesitation, and familiarity with the source gave you additional information to reconsider that impression.</p>
+<p>Those two systems are working together.</p>
+<p>But most of our products don’t come with decades of recognition behind them.</p>
+<p>Most of us cannot put up a questionable-looking dashboard and say, “don’t worry. People already know we are credible.”</p>
+<p>Our work has to communicate, as quickly as possible, that it was made intentionally and that it is worth examining. Because</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section><section id="first-impressions-are-not-the-whole-story" class="slide level2"><h2>First impressions are not the whole story</h2>
+<div class="fragment">
+<p>But they can determine whether someone stays long enough to learn the rest.</p>
+</div>
+<div class="fragment">
+<p>Keep making a strong first impression, and your work will have a better chance of being seen, understood, and used. Talk Materials and Resources shelbylevel.org/talks/first-impressions-matter</p>
+</div>
+
+</section>
 </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -1177,9 +1280,9 @@ plot(1:10)
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1280,
+        width: 1920,
 
-        height: 720,
+        height: 1080,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
@@ -1561,7 +1664,7 @@ plot(1:10)
         const focusBlk = focusIdx >= 0 ? BLK[focusIdx] : null;
 
         const N = planes.length;
-        const SPREAD = 75;
+        const SPREAD = 105; // px between planes when exploded
         planes.forEach((p, i) => {
           const fan = exploded ? 18 + ((N - 1) / 2 - i) * SPREAD : 0;
           const dim = focusIdx >= 0 && i !== focusIdx;
@@ -1601,6 +1704,291 @@ plot(1:10)
         render,
       });
     })();
+    </script><script>
+    /* ---- brand.yml, deconstructed (Quarto report) ----
+     * Marker slide: .bdr-slide   Stage container: #bdr-stage
+     * Same architecture as ggplot2-deconstructed.js / brand-deconstructed.js:
+     * stacked planes, each the SAME rendered-document markup (masthead, TOC,
+     * callout, table) with a stage class swapped in. Ported from the standalone
+     * button-driven report demo to fragment stepping via TM.gate, so it advances
+     * the same way as your other two deconstruction slides.
+     * Ids/classes are bdr- prefixed (not bd-) because this deck already has a
+     * bd-prefixed Shiny dashboard deconstruction slide — reveal.js keeps every
+     * slide in the DOM at once, so #bd-stage/#bd-plot can't be reused here
+     * without breaking whichever slide's script runs its getElementById first.
+     * Reuses TM.gate / TM.anime / TM.onReveal from infra.html unchanged.
+     */
+    (function () {
+      const STAGE_CLASSES = ['s-base', 's-bootswatch', 's-brand', 's-polish'];
+      const BLK = ['base', 'bootswatch', 'brand', 'polish']; // plane index -> code block
+
+      const MOCKUP_HTML = `
+        <div class="site-nav">
+          <span class="site-brand"><span class="logo-dot"></span>Page Layout</span>
+          <span class="site-links"><span>Home</span></span>
+          <span class="site-search">&#9906;</span>
+        </div>
+        <div class="masthead">
+          <div class="masthead-text">
+            <div class="doc-title">Quarterly Report</div>
+            <div class="doc-sub">Analytics Team &middot; August 2026</div>
+          </div>
+        </div>
+        <div class="doc-body">
+          <div class="sidenav">
+            <div class="active">Overview</div>
+            <div>Appendix</div>
+          </div>
+          <div class="main">
+            <h2>Key Metrics</h2>
+            <p>Revenue grew 4.2% quarter over quarter, driven by strong <a href="#">renewal rates</a> across enterprise accounts.</p>
+            <div class="callout">
+              <div class="callout-header"><span>&#8505;</span>Note</div>
+              <div class="callout-body">Customer churn dropped to lowest level in six years.</div>
+            </div>
+            <div class="chart-wrap">
+              <svg viewBox="0 0 200 118" width="100%" height="118">
+                <line x1="20" y1="8" x2="20" y2="104" stroke="#dee2e6" stroke-width="1"/>
+                <line x1="20" y1="104" x2="196" y2="104" stroke="#dee2e6" stroke-width="1"/>
+                <text x="15" y="27" font-size="8" fill="#8a8f98" text-anchor="end">60</text>
+                <text x="15" y="59" font-size="8" fill="#8a8f98" text-anchor="end">40</text>
+                <text x="15" y="91" font-size="8" fill="#8a8f98" text-anchor="end">20</text>
+                <path d="M28,78 C42,68 58,22 78,26 C96,30 112,74 138,88 C155,94 168,90 186,84"
+                      fill="none" stroke="#2bb3ad" stroke-width="1.6"/>
+                <path d="M28,94 C55,99 85,93 112,98 C140,101 165,99 188,97"
+                      fill="none" stroke="#f2836b" stroke-width="1.6"/>
+                <g fill="#2bb3ad">
+                  <circle cx="28" cy="80" r="2.1"/><circle cx="52" cy="86" r="2.1"/>
+                  <circle cx="70" cy="42" r="2.1"/><circle cx="82" cy="24" r="2.1"/>
+                  <circle cx="104" cy="60" r="2.1"/><circle cx="130" cy="92" r="2.1"/>
+                  <circle cx="158" cy="96" r="2.1"/><circle cx="186" cy="84" r="2.1"/>
+                </g>
+                <g fill="#f2836b">
+                  <circle cx="28" cy="96" r="2.1"/><circle cx="48" cy="100" r="2.1"/>
+                  <circle cx="78" cy="98" r="2.1"/><circle cx="108" cy="102" r="2.1"/>
+                  <circle cx="140" cy="103" r="2.1"/><circle cx="168" cy="101" r="2.1"/>
+                </g>
+              </svg>
+              <div class="chart-cap">Figure 1. MPG vs. horsepower, by transmission</div>
+            </div>
+            <h2>Appendix</h2>
+            <p>Below find accompanying data tables for all provided plots.</p>
+          </div>
+          <div class="margin">
+            <div class="margin-toc-title">On this page</div>
+            <div class="margin-toc">
+              <div>Overview</div>
+              <div class="active">Key Metrics</div>
+              <div>Appendix</div>
+            </div>
+            <div class="margin-table">
+              
+    <table class="caption-top" data-quarto-postprocess="true">
+    <tbody>
+    <tr class="odd">
+    <td data-quarto-table-cell-role="th">Metric</td>
+    <td data-quarto-table-cell-role="th">Value</td>
+    </tr>
+    <tr class="even">
+    <td>Revenue</td>
+    <td>$128K</td>
+    </tr>
+    <tr class="odd">
+    <td>Orders</td>
+    <td>1,204</td>
+    </tr>
+    <tr class="even">
+    <td>Customers</td>
+    <td>386</td>
+    </tr>
+    </tbody>
+    </table>
+
+            </div>
+          </div>
+        </div>`;
+
+      // ---- left-hand code listing ---------------------------------------------
+      const CHUNKS = [
+        {
+          blk: 'base', file: '_quarto.yml',
+          code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+    <span class="gd-key">format</span>: <span class="gd-key">html</span>`,
+        },
+        {
+          blk: 'bootswatch', file: '_quarto.yml',
+          code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+    <span class="gd-key">format</span>:
+      <span class="gd-key">html</span>:
+        <span class="gd-key">theme</span>: <span class="gd-str">lux</span>`,
+        },
+        {
+          blk: 'brand', file: '_quarto.yml',
+          code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+    <span class="gd-key">format</span>:
+      <span class="gd-key">html</span>:
+        <span class="gd-key">theme</span>: <span class="gd-str">lux</span>
+    <span class="gd-key">brand</span>: <span class="gd-str">brand.yml</span>`,
+        },
+        {
+          blk: 'polish', file: 'custom.scss',
+          code: `.callout-note {
+      box-shadow: <span class="gd-str">0 8px 20px rgba(123,45,70,.14)</span>;
+    }
+    table {
+      border-radius: <span class="gd-str">.75rem</span>;
+      overflow: <span class="gd-str">hidden</span>;
+    }
+    tr:nth-child(even) td {
+      background: <span class="gd-str">rgba(123,45,70,.035)</span>;
+    }`,
+        },
+      ];
+
+      let built = false;
+      let planes = [];      // [base, bootswatch, brand, polish] bottom -> top
+      let codeWindows = [];
+
+      function codeWindow(chunk) {
+        const win = document.createElement('div');
+        win.className = 'codewindow';
+        win.dataset.blk = chunk.blk;
+        win.innerHTML = `
+          <div class="cw-header">
+            <span class="cw-dots"><span></span><span></span><span></span></span>
+            <span class="cw-file">${chunk.file}</span>
+            <span class="cw-spacer"></span>
+          </div>
+          <pre class="cw-body"><code>${chunk.code}</code></pre>`;
+        return win;
+      }
+
+      function htmlPlane(id, stageClass) {
+        const d = document.createElement('div');
+        d.className = 'bdr-plane';
+        d.id = id;
+        d.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;';
+        const tilt = document.createElement('div');
+        tilt.className = 'bdr-tilt';
+        const card = document.createElement('div');
+        card.className = 'bdr-card';
+        const mockup = document.createElement('div');
+        mockup.className = 'bdr-mockup ' + stageClass;
+        mockup.innerHTML = MOCKUP_HTML;
+        tilt.appendChild(card);
+        tilt.appendChild(mockup);
+        d.appendChild(tilt);
+        return { div: d, tilt, mockup, card };
+      }
+
+      function build() {
+        const stage = document.getElementById('bdr-stage');
+        if (!stage || built) return !!stage;
+        built = true;
+
+        const codeCol = document.createElement('div');
+        codeCol.className = 'bdr-codewindows';
+        codeWindows = CHUNKS.map(codeWindow);
+        codeWindows.forEach(w => codeCol.appendChild(w));
+        stage.appendChild(codeCol);
+
+        const plot = document.createElement('div');
+        plot.id = 'bdr-plot';
+        planes = STAGE_CLASSES.map((cls, i) => htmlPlane('bdr-plane-' + BLK[i], cls));
+        planes.forEach(p => plot.appendChild(p.div));
+        stage.appendChild(plot);
+        return true;
+      }
+
+      function render(stage) {
+        if (!build()) return;
+        // Same stage machine as the other deconstruction slides: 0 flat, 1 laid,
+        // 2 exploded, 3..(3+N-1) focus each plane in turn, then collapse, then flat.
+        const flat = stage >= 8;
+        const collapsed = stage >= 7;
+        const laid = stage >= 1 && !flat;
+        const exploded = stage >= 2 && !collapsed;
+        const focusIdx = (stage >= 3 && !collapsed) ? stage - 3 : -1;
+        const focusBlk = focusIdx >= 0 ? BLK[focusIdx] : null;
+
+        const N = planes.length;
+        const SPREAD = 82;
+        planes.forEach((p, i) => {
+          const fan = exploded ? 16 + ((N - 1) / 2 - i) * SPREAD : 0;
+          const dim = focusIdx >= 0 && i !== focusIdx;
+          TM.anime({
+            targets: p.div,
+            translateY: fan,
+            duration: 850,
+            easing: 'easeInOutCubic',
+          });
+          TM.anime({
+            targets: p.tilt,
+            rotateX: laid ? 56 : 0,
+            rotateZ: laid ? 20 : 0,
+            scale: exploded ? 0.82 : 1,
+            opacity: dim ? 0.16 : 1,
+            duration: 850,
+            easing: 'easeInOutCubic',
+          });
+          TM.anime({
+            targets: p.card,
+            opacity: exploded ? 1 : 0,
+            duration: 600,
+            easing: 'easeInOutQuad',
+          });
+        });
+
+        codeWindows.forEach(w => {
+          const isFocus = w.dataset.blk === focusBlk;
+          w.classList.toggle('bdr-hot', isFocus);
+          w.classList.toggle('bdr-dim', focusIdx >= 0 && !isFocus);
+        });
+      }
+
+      TM.gate({
+        markerClass: 'bdr-slide',
+        fragmentIds: ['bdr-lay', 'bdr-explode',
+                      'bdr-focus-base', 'bdr-focus-bootswatch', 'bdr-focus-brand', 'bdr-focus-polish',
+                      'bdr-collapse', 'bdr-unrotate'],
+        render,
+      });
+    })();
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
     </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

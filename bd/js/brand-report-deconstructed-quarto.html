@@ -1,0 +1,235 @@
+<script>
+/* ---- brand.yml, deconstructed (Quarto report) ----
+ * Marker slide: .bdr-slide   Stage container: #bdr-stage
+ * Same architecture as ggplot2-deconstructed.js / brand-deconstructed.js:
+ * stacked planes, each the SAME rendered-document markup (masthead, TOC,
+ * callout, table) with a stage class swapped in. Ported from the standalone
+ * button-driven report demo to fragment stepping via TM.gate, so it advances
+ * the same way as your other two deconstruction slides.
+ * Ids/classes are bdr- prefixed (not bd-) because this deck already has a
+ * bd-prefixed Shiny dashboard deconstruction slide — reveal.js keeps every
+ * slide in the DOM at once, so #bd-stage/#bd-plot can't be reused here
+ * without breaking whichever slide's script runs its getElementById first.
+ * Reuses TM.gate / TM.anime / TM.onReveal from infra.html unchanged.
+ */
+(function () {
+  const STAGE_CLASSES = ['s-base', 's-bootswatch', 's-brand', 's-polish'];
+  const BLK = ['base', 'bootswatch', 'brand', 'polish']; // plane index -> code block
+
+  const MOCKUP_HTML = `
+    <div class="site-nav">
+      <span class="site-brand"><span class="logo-dot"></span>Page Layout</span>
+      <span class="site-links"><span>Home</span></span>
+      <span class="site-search">&#9906;</span>
+    </div>
+    <div class="masthead">
+      <div class="masthead-text">
+        <div class="doc-title">Quarterly Report</div>
+        <div class="doc-sub">Analytics Team &middot; August 2026</div>
+      </div>
+    </div>
+    <div class="doc-body">
+      <div class="sidenav">
+        <div class="active">Overview</div>
+        <div>Appendix</div>
+      </div>
+      <div class="main">
+        <h2>Key Metrics</h2>
+        <p>Revenue grew 4.2% quarter over quarter, driven by strong <a href="#">renewal rates</a> across enterprise accounts.</p>
+        <div class="callout">
+          <div class="callout-header"><span>&#8505;</span>Note</div>
+          <div class="callout-body">Customer churn dropped to lowest level in six years.</div>
+        </div>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 200 118" width="100%" height="118">
+            <line x1="20" y1="8" x2="20" y2="104" stroke="#dee2e6" stroke-width="1"/>
+            <line x1="20" y1="104" x2="196" y2="104" stroke="#dee2e6" stroke-width="1"/>
+            <text x="15" y="27" font-size="8" fill="#8a8f98" text-anchor="end">60</text>
+            <text x="15" y="59" font-size="8" fill="#8a8f98" text-anchor="end">40</text>
+            <text x="15" y="91" font-size="8" fill="#8a8f98" text-anchor="end">20</text>
+            <path d="M28,78 C42,68 58,22 78,26 C96,30 112,74 138,88 C155,94 168,90 186,84"
+                  fill="none" stroke="#2bb3ad" stroke-width="1.6"/>
+            <path d="M28,94 C55,99 85,93 112,98 C140,101 165,99 188,97"
+                  fill="none" stroke="#f2836b" stroke-width="1.6"/>
+            <g fill="#2bb3ad">
+              <circle cx="28" cy="80" r="2.1"/><circle cx="52" cy="86" r="2.1"/>
+              <circle cx="70" cy="42" r="2.1"/><circle cx="82" cy="24" r="2.1"/>
+              <circle cx="104" cy="60" r="2.1"/><circle cx="130" cy="92" r="2.1"/>
+              <circle cx="158" cy="96" r="2.1"/><circle cx="186" cy="84" r="2.1"/>
+            </g>
+            <g fill="#f2836b">
+              <circle cx="28" cy="96" r="2.1"/><circle cx="48" cy="100" r="2.1"/>
+              <circle cx="78" cy="98" r="2.1"/><circle cx="108" cy="102" r="2.1"/>
+              <circle cx="140" cy="103" r="2.1"/><circle cx="168" cy="101" r="2.1"/>
+            </g>
+          </svg>
+          <div class="chart-cap">Figure 1. MPG vs. horsepower, by transmission</div>
+        </div>
+        <h2>Appendix</h2>
+        <p>Below find accompanying data tables for all provided plots.</p>
+      </div>
+      <div class="margin">
+        <div class="margin-toc-title">On this page</div>
+        <div class="margin-toc">
+          <div>Overview</div>
+          <div class="active">Key Metrics</div>
+          <div>Appendix</div>
+        </div>
+        <div class="margin-table">
+          <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>Revenue</td><td>$128K</td></tr>
+            <tr><td>Orders</td><td>1,204</td></tr>
+            <tr><td>Customers</td><td>386</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>`;
+
+  // ---- left-hand code listing ---------------------------------------------
+  const CHUNKS = [
+    {
+      blk: 'base', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>: <span class="gd-key">html</span>`,
+    },
+    {
+      blk: 'bootswatch', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>:
+  <span class="gd-key">html</span>:
+    <span class="gd-key">theme</span>: <span class="gd-str">lux</span>`,
+    },
+    {
+      blk: 'brand', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>:
+  <span class="gd-key">html</span>:
+    <span class="gd-key">theme</span>: <span class="gd-str">lux</span>
+<span class="gd-key">brand</span>: <span class="gd-str">brand.yml</span>`,
+    },
+    {
+      blk: 'polish', file: 'custom.scss',
+      code: `.callout-note {
+  box-shadow: <span class="gd-str">0 8px 20px rgba(123,45,70,.14)</span>;
+}
+table {
+  border-radius: <span class="gd-str">.75rem</span>;
+  overflow: <span class="gd-str">hidden</span>;
+}
+tr:nth-child(even) td {
+  background: <span class="gd-str">rgba(123,45,70,.035)</span>;
+}`,
+    },
+  ];
+
+  let built = false;
+  let planes = [];      // [base, bootswatch, brand, polish] bottom -> top
+  let codeWindows = [];
+
+  function codeWindow(chunk) {
+    const win = document.createElement('div');
+    win.className = 'codewindow';
+    win.dataset.blk = chunk.blk;
+    win.innerHTML = `
+      <div class="cw-header">
+        <span class="cw-dots"><span></span><span></span><span></span></span>
+        <span class="cw-file">${chunk.file}</span>
+        <span class="cw-spacer"></span>
+      </div>
+      <pre class="cw-body"><code>${chunk.code}</code></pre>`;
+    return win;
+  }
+
+  function htmlPlane(id, stageClass) {
+    const d = document.createElement('div');
+    d.className = 'bdr-plane';
+    d.id = id;
+    d.style.cssText = 'position:absolute;left:0;top:0;width:100%;height:100%;';
+    const tilt = document.createElement('div');
+    tilt.className = 'bdr-tilt';
+    const card = document.createElement('div');
+    card.className = 'bdr-card';
+    const mockup = document.createElement('div');
+    mockup.className = 'bdr-mockup ' + stageClass;
+    mockup.innerHTML = MOCKUP_HTML;
+    tilt.appendChild(card);
+    tilt.appendChild(mockup);
+    d.appendChild(tilt);
+    return { div: d, tilt, mockup, card };
+  }
+
+  function build() {
+    const stage = document.getElementById('bdr-stage');
+    if (!stage || built) return !!stage;
+    built = true;
+
+    const codeCol = document.createElement('div');
+    codeCol.className = 'bdr-codewindows';
+    codeWindows = CHUNKS.map(codeWindow);
+    codeWindows.forEach(w => codeCol.appendChild(w));
+    stage.appendChild(codeCol);
+
+    const plot = document.createElement('div');
+    plot.id = 'bdr-plot';
+    planes = STAGE_CLASSES.map((cls, i) => htmlPlane('bdr-plane-' + BLK[i], cls));
+    planes.forEach(p => plot.appendChild(p.div));
+    stage.appendChild(plot);
+    return true;
+  }
+
+  function render(stage) {
+    if (!build()) return;
+    // Same stage machine as the other deconstruction slides: 0 flat, 1 laid,
+    // 2 exploded, 3..(3+N-1) focus each plane in turn, then collapse, then flat.
+    const flat = stage >= 8;
+    const collapsed = stage >= 7;
+    const laid = stage >= 1 && !flat;
+    const exploded = stage >= 2 && !collapsed;
+    const focusIdx = (stage >= 3 && !collapsed) ? stage - 3 : -1;
+    const focusBlk = focusIdx >= 0 ? BLK[focusIdx] : null;
+
+    const N = planes.length;
+    const SPREAD = 82;
+    planes.forEach((p, i) => {
+      const fan = exploded ? 16 + ((N - 1) / 2 - i) * SPREAD : 0;
+      const dim = focusIdx >= 0 && i !== focusIdx;
+      TM.anime({
+        targets: p.div,
+        translateY: fan,
+        duration: 850,
+        easing: 'easeInOutCubic',
+      });
+      TM.anime({
+        targets: p.tilt,
+        rotateX: laid ? 56 : 0,
+        rotateZ: laid ? 20 : 0,
+        scale: exploded ? 0.82 : 1,
+        opacity: dim ? 0.16 : 1,
+        duration: 850,
+        easing: 'easeInOutCubic',
+      });
+      TM.anime({
+        targets: p.card,
+        opacity: exploded ? 1 : 0,
+        duration: 600,
+        easing: 'easeInOutQuad',
+      });
+    });
+
+    codeWindows.forEach(w => {
+      const isFocus = w.dataset.blk === focusBlk;
+      w.classList.toggle('bdr-hot', isFocus);
+      w.classList.toggle('bdr-dim', focusIdx >= 0 && !isFocus);
+    });
+  }
+
+  TM.gate({
+    markerClass: 'bdr-slide',
+    fragmentIds: ['bdr-lay', 'bdr-explode',
+                  'bdr-focus-base', 'bdr-focus-bootswatch', 'bdr-focus-brand', 'bdr-focus-polish',
+                  'bdr-collapse', 'bdr-unrotate'],
+    render,
+  });
+})();
+</script>

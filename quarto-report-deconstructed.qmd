@@ -1,0 +1,427 @@
+---
+title: "Styling a Quarto Report: Bootswatch + brand.yml, Deconstructed"
+format:
+  html:
+    embed-resources: true
+    toc: false
+---
+
+The same rendered Quarto document gets restyled in three passes: a Bootswatch
+preset, `brand.yml` layered on top, then a small custom SCSS pass for the
+finishing touches — no change to your `.qmd` content at any point. Step
+through the layers below to see what each pass actually touches.
+
+```{=html}
+<div class="bd-embed">
+  <div class="bd-stage-wrap"><div id="bd-stage"></div></div>
+  <div class="bd-controls">
+    <button id="bdPrev">&larr; Prev</button>
+    <span id="bdStageLabel"></span>
+    <button id="bdNext">Next &rarr;</button>
+  </div>
+</div>
+
+<style>
+  .bd-embed {
+    background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 14px;
+    padding: 32px 28px 22px; margin: 1.5rem 0;
+  }
+  .bd-stage-wrap { perspective: 1600px; display: flex; justify-content: center; }
+  #bd-stage {
+    display: flex; gap: 40px; align-items: flex-start;
+    width: 1000px; max-width: 100%;
+  }
+
+  .bd-codewindows { flex: 0 0 320px; display: flex; flex-direction: column; gap: 14px; }
+  .bd-codewindows .codewindow {
+    background: #1b1e27; border-radius: 10px; overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 6px 18px rgba(0,0,0,.18);
+    opacity: .78; transform: scale(.99);
+    transition: opacity .3s, transform .3s, box-shadow .3s;
+  }
+  .bd-codewindows .cw-header {
+    display: flex; align-items: center; height: 30px; padding: 0 12px;
+    background: #20232c; border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .bd-codewindows .cw-dots { display: flex; gap: 6px; flex: 0 0 auto; }
+  .bd-codewindows .cw-dots span { width: 9px; height: 9px; border-radius: 50%; display: block; }
+  .bd-codewindows .cw-dots span:nth-child(1) { background: #ff5f56; }
+  .bd-codewindows .cw-dots span:nth-child(2) { background: #ffbd2e; }
+  .bd-codewindows .cw-dots span:nth-child(3) { background: #27c93f; }
+  .bd-codewindows .cw-file { flex: 1; text-align: center; font: 11.5px "SFMono-Regular", Consolas, monospace; color: #8b93a7; }
+  .bd-codewindows .cw-spacer { flex: 0 0 auto; width: 36px; }
+  .bd-codewindows .cw-body {
+    margin: 0; padding: 14px 16px; font: 13.5px/1.55 "SFMono-Regular", Consolas, monospace;
+    color: #c7cbd6; white-space: pre; overflow-x: auto;
+  }
+  .bd-codewindows .codewindow.bd-hot {
+    opacity: 1; transform: scale(1);
+    box-shadow: 0 0 0 2px rgba(125,211,192,.55), 0 10px 26px rgba(0,0,0,.28);
+  }
+  .bd-codewindows .codewindow.bd-dim { opacity: .32; }
+  .gd-key { color: #8ec9ff; } .gd-str { color: #a8e6b0; }
+
+  #bd-plot {
+    position: relative; width: 640px; height: 530px; flex: 0 0 640px;
+    transform-style: preserve-3d;
+  }
+  .bd-plane { position: absolute; inset: 0; transform-style: preserve-3d; }
+  .bd-tilt {
+    position: absolute; inset: 0; transform-style: preserve-3d;
+    transform-origin: center center;
+  }
+  .bd-card {
+    position: absolute; inset: -10px; border-radius: 14px;
+    background: #0e1016; box-shadow: 0 20px 40px rgba(0,0,0,.35);
+    opacity: 0;
+  }
+  .bd-mockup {
+    position: absolute; inset: 0; border-radius: 10px; overflow: hidden;
+    box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  }
+
+  /* ---- the three real transformations: bootswatch preset, brand.yml, polish ---- */
+  .bd-mockup {
+    --primary: #0d6efd; --link: #0d6efd;
+    --navbar-bg: #0d6efd; --navbar-fg: #fff;
+    --body-font: -apple-system, "Segoe UI", Roboto, sans-serif;
+    --heading-font: var(--body-font);
+    --radius: .375rem; --border: #dee2e6; --toc-active: #0d6efd;
+    --callout-bg: #e7f1ff; --callout-border: #0d6efd; --logo-display: none;
+    background: #fff; font-family: var(--body-font); color: #212529;
+  }
+  .bd-mockup.s-bootswatch {
+    /* format.html.theme: lux */
+    --primary: #1a1a1a; --link: #1a1a1a;
+    --navbar-bg: #1a1a1a; --navbar-fg: #fff;
+    --body-font: 'Nunito Sans', -apple-system, sans-serif; --heading-font: var(--body-font);
+    --radius: .5rem; --border: #ececec; --toc-active: #1a1a1a;
+    --callout-bg: #f5f5f5; --callout-border: #1a1a1a;
+  }
+  .bd-mockup.s-brand {
+    /* + brand: brand.yml, layered on top of the same preset */
+    --primary: #7B2D46; --link: #7B2D46;
+    --navbar-bg: #7B2D46; --navbar-fg: #fff;
+    --body-font: 'Georgia', serif; --heading-font: 'Georgia', serif;
+    --radius: .5rem; --border: #f1eceb; --toc-active: #7B2D46;
+    --callout-bg: #fbf1f0; --callout-border: #C9A227; --logo-display: flex;
+  }
+  .bd-mockup.s-polish {
+    /* + custom.scss on top of the same brand */
+    --primary: #7B2D46; --link: #7B2D46;
+    --navbar-bg: #7B2D46; --navbar-fg: #fff;
+    --body-font: 'Georgia', serif; --heading-font: 'Georgia', serif;
+    --radius: .75rem; --border: #f1eceb; --toc-active: #7B2D46;
+    --callout-bg: #fbf1f0; --callout-border: #C9A227; --logo-display: flex;
+    background: linear-gradient(180deg,#fff 0%,#fdf8f7 100%);
+  }
+  .bd-mockup.s-polish .masthead { box-shadow: 0 1px 0 rgba(123,45,70,.06); }
+  .bd-mockup.s-polish .doc-title { letter-spacing: .01em; }
+  .bd-mockup.s-polish .callout { box-shadow: 0 8px 20px rgba(123,45,70,.14); }
+  .bd-mockup.s-polish .margin-table table { border-radius: var(--radius); overflow: hidden; }
+  .bd-mockup.s-polish .margin-table tr:nth-child(even) td { background: rgba(123,45,70,.045); }
+
+  .bd-mockup .site-nav {
+    height: 28px; display: flex; align-items: center; gap: 14px;
+    padding: 0 16px; background: var(--navbar-bg); color: var(--navbar-fg);
+    font-family: var(--heading-font); font-size: 11.5px; font-weight: 700;
+  }
+  .bd-mockup .site-nav .site-brand { display: flex; align-items: center; gap: 7px; }
+  .bd-mockup .site-nav .logo-dot { width: 10px; height: 10px; }
+  .bd-mockup .site-nav .site-links { display: flex; align-items: center; gap: 14px; font-weight: 400; opacity: .9; }
+  .bd-mockup .site-nav .site-search { margin-left: auto; opacity: .85; }
+
+  .bd-mockup .masthead {
+    padding: 18px 24px 14px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .bd-mockup .logo-dot { display: var(--logo-display); width: 15px; height: 15px; border-radius: 50%; background: var(--primary); flex: 0 0 auto; }
+  .bd-mockup .masthead-text { font-family: var(--heading-font); }
+  .bd-mockup .doc-title { font-size: 19px; font-weight: 700; color: #1d2433; }
+  .bd-mockup .doc-sub { font-size: 12px; color: #6c757d; margin-top: 3px; font-family: var(--body-font); }
+  .bd-mockup .doc-body { display: flex; gap: 18px; padding: 16px 24px 20px; align-items: flex-start; }
+
+  .bd-mockup .sidenav {
+    flex: 0 0 84px; font-family: var(--body-font); font-size: 11.5px;
+  }
+  .bd-mockup .sidenav div { padding: 3px 0; color: #6c757d; line-height: 1.3; }
+  .bd-mockup .sidenav div.active { color: var(--toc-active); font-weight: 600; }
+
+  .bd-mockup .main { flex: 1; min-width: 0; font-family: var(--body-font); }
+  .bd-mockup .main h2 {
+    font-family: var(--heading-font); font-size: 15px; margin: 0 0 7px; color: #1d2433;
+  }
+  .bd-mockup .main p { font-size: 12px; line-height: 1.5; color: #3c4249; margin: 0 0 10px; }
+  .bd-mockup .main a { color: var(--link); }
+  .bd-mockup .callout {
+    border: 1px solid var(--callout-border); border-left: 4px solid var(--callout-border);
+    border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; background: #fff;
+  }
+  .bd-mockup .callout-header {
+    background: var(--callout-bg); padding: 6px 10px; display: flex; align-items: center;
+    gap: 6px; font-weight: 700; font-size: 11px; color: #1d2433; font-family: var(--heading-font);
+  }
+  .bd-mockup .callout-body { padding: 8px 10px 10px; font-size: 11.5px; color: #3c4249; }
+  .bd-mockup .chart-wrap { margin-top: 4px; }
+  .bd-mockup .chart-cap { font-size: 10.5px; color: #6c757d; font-family: var(--body-font); margin-top: 4px; margin-bottom: 20px; }
+
+  .bd-mockup .margin {
+    flex: 0 0 148px; font-family: var(--body-font);
+  }
+  .bd-mockup .margin-toc-title { font-size: 10.5px; font-weight: 700; color: #212529; margin-bottom: 6px; }
+  .bd-mockup .margin-toc { font-size: 11.5px; border-left: 2px solid var(--border); padding-left: 10px; margin-bottom: 60px; }
+  .bd-mockup .margin-toc div { padding: 3px 0; color: #6c757d; }
+  .bd-mockup .margin-toc div.active { color: var(--toc-active); font-weight: 600; }
+  .bd-mockup .margin-table table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+  .bd-mockup .margin-table th, .bd-mockup .margin-table td {
+    text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border);
+    font-family: var(--body-font);
+  }
+  .bd-mockup .margin-table th { color: #6c757d; font-weight: 600; font-size: 9.5px; }
+  .bd-mockup .margin-table td:last-child, .bd-mockup .margin-table th:last-child {
+    text-align: right; color: var(--primary); font-weight: 600;
+  }
+
+  .bd-controls {
+    display: flex; gap: 10px; align-items: center; justify-content: center;
+    margin-top: 22px;
+  }
+  .bd-controls button {
+    background: #fff; color: #212529; border: 1px solid #ced4da;
+    padding: 7px 15px; border-radius: 7px; font-size: 13px; cursor: pointer;
+  }
+  .bd-controls button:hover { border-color: #7B2D46; }
+  #bdStageLabel { color: #6c757d; font-size: 12.5px; min-width: 190px; text-align: center; }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<script>
+/* ================================================================
+ * Bootswatch + brand.yml, deconstructed — for a Quarto HTML report
+ * Same architecture as the reveal.js / Shiny versions: stacked planes,
+ * each the SAME rendered-document markup with a stage class swapped
+ * in. The "app" being restyled here is the report itself — masthead,
+ * TOC, callout, table — since a plain .qmd + _quarto.yml is what a
+ * report author is actually deconstructing. Three real transformations:
+ * base -> bootswatch preset -> brand.yml -> custom.scss polish.
+ * ================================================================ */
+(function () {
+  const STAGE_CLASSES = ['s-base', 's-bootswatch', 's-brand', 's-polish'];
+  const BLK = ['base', 'bootswatch', 'brand', 'polish'];
+
+  const MOCKUP_HTML = `
+    <div class="site-nav">
+      <span class="site-brand"><span class="logo-dot"></span>Page Layout</span>
+      <span class="site-links"><span>Home</span></span>
+      <span class="site-search">&#9906;</span>
+    </div>
+    <div class="masthead">
+      <div class="masthead-text">
+        <div class="doc-title">Quarterly Report</div>
+        <div class="doc-sub">Analytics Team &middot; August 2026</div>
+      </div>
+    </div>
+    <div class="doc-body">
+      <div class="sidenav">
+        <div class="active">Overview</div>
+        <div>Appendix</div>
+      </div>
+      <div class="main">
+        <h2>Key Metrics</h2>
+        <p>Revenue grew 4.2% quarter over quarter, driven by strong <a href="#">renewal rates</a> across enterprise accounts.</p>
+        <div class="callout">
+          <div class="callout-header"><span>&#8505;</span>Note</div>
+          <div class="callout-body">Customer churn dropped to lowest level in six years.</div>
+        </div>
+        <div class="chart-wrap">
+          <svg viewBox="0 0 200 118" width="100%" height="118">
+            <line x1="20" y1="8" x2="20" y2="104" stroke="#dee2e6" stroke-width="1"/>
+            <line x1="20" y1="104" x2="196" y2="104" stroke="#dee2e6" stroke-width="1"/>
+            <text x="15" y="27" font-size="8" fill="#8a8f98" text-anchor="end">60</text>
+            <text x="15" y="59" font-size="8" fill="#8a8f98" text-anchor="end">40</text>
+            <text x="15" y="91" font-size="8" fill="#8a8f98" text-anchor="end">20</text>
+            <path d="M28,78 C42,68 58,22 78,26 C96,30 112,74 138,88 C155,94 168,90 186,84"
+                  fill="none" stroke="#2bb3ad" stroke-width="1.6"/>
+            <path d="M28,94 C55,99 85,93 112,98 C140,101 165,99 188,97"
+                  fill="none" stroke="#f2836b" stroke-width="1.6"/>
+            <g fill="#2bb3ad">
+              <circle cx="28" cy="80" r="2.1"/><circle cx="52" cy="86" r="2.1"/>
+              <circle cx="70" cy="42" r="2.1"/><circle cx="82" cy="24" r="2.1"/>
+              <circle cx="104" cy="60" r="2.1"/><circle cx="130" cy="92" r="2.1"/>
+              <circle cx="158" cy="96" r="2.1"/><circle cx="186" cy="84" r="2.1"/>
+            </g>
+            <g fill="#f2836b">
+              <circle cx="28" cy="96" r="2.1"/><circle cx="48" cy="100" r="2.1"/>
+              <circle cx="78" cy="98" r="2.1"/><circle cx="108" cy="102" r="2.1"/>
+              <circle cx="140" cy="103" r="2.1"/><circle cx="168" cy="101" r="2.1"/>
+            </g>
+          </svg>
+          <div class="chart-cap">Figure 1. MPG vs. horsepower, by transmission</div>
+        </div>
+        <h2>Appendix</h2>
+        <p>Below find accompanying data tables for all provided plots.</p>
+      </div>
+      <div class="margin">
+        <div class="margin-toc-title">On this page</div>
+        <div class="margin-toc">
+          <div>Overview</div>
+          <div class="active">Key Metrics</div>
+          <div>Appendix</div>
+        </div>
+        <div class="margin-table">
+          <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>Revenue</td><td>$128K</td></tr>
+            <tr><td>Orders</td><td>1,204</td></tr>
+            <tr><td>Customers</td><td>386</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>`;
+
+  const CHUNKS = [
+    {
+      blk: 'base', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>: <span class="gd-key">html</span>`,
+    },
+    {
+      blk: 'bootswatch', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>:
+  <span class="gd-key">html</span>:
+    <span class="gd-key">theme</span>: <span class="gd-str">lux</span>`,
+    },
+    {
+      blk: 'brand', file: '_quarto.yml',
+      code: `<span class="gd-key">title</span>: <span class="gd-str">"Quarterly Report"</span>
+<span class="gd-key">format</span>:
+  <span class="gd-key">html</span>:
+    <span class="gd-key">theme</span>: <span class="gd-str">lux</span>
+<span class="gd-key">brand</span>: <span class="gd-str">brand.yml</span>`,
+    },
+    {
+      blk: 'polish', file: 'custom.scss',
+      code: `.callout-note {
+  box-shadow: <span class="gd-str">0 8px 20px rgba(123,45,70,.14)</span>;
+}
+table {
+  border-radius: <span class="gd-str">.75rem</span>;
+  overflow: <span class="gd-str">hidden</span>;
+}
+tr:nth-child(even) td {
+  background: <span class="gd-str">rgba(123,45,70,.035)</span>;
+}`,
+    },
+  ];
+
+  let built = false, planes = [], codeWindows = [];
+
+  function codeWindow(chunk) {
+    const win = document.createElement('div');
+    win.className = 'codewindow';
+    win.dataset.blk = chunk.blk;
+    win.innerHTML = `
+      <div class="cw-header">
+        <span class="cw-dots"><span></span><span></span><span></span></span>
+        <span class="cw-file">${chunk.file}</span>
+        <span class="cw-spacer"></span>
+      </div>
+      <pre class="cw-body"><code>${chunk.code}</code></pre>`;
+    return win;
+  }
+
+  function htmlPlane(id, stageClass) {
+    const d = document.createElement('div');
+    d.className = 'bd-plane'; d.id = id;
+    const tilt = document.createElement('div');
+    tilt.className = 'bd-tilt';
+    const card = document.createElement('div');
+    card.className = 'bd-card';
+    const mockup = document.createElement('div');
+    mockup.className = 'bd-mockup ' + stageClass;
+    mockup.innerHTML = MOCKUP_HTML;
+    tilt.appendChild(card);
+    tilt.appendChild(mockup);
+    d.appendChild(tilt);
+    return { div: d, tilt, card };
+  }
+
+  function build() {
+    const stage = document.getElementById('bd-stage');
+    if (!stage || built) return;
+    built = true;
+
+    const codeCol = document.createElement('div');
+    codeCol.className = 'bd-codewindows';
+    codeWindows = CHUNKS.map(codeWindow);
+    codeWindows.forEach(w => codeCol.appendChild(w));
+    stage.appendChild(codeCol);
+
+    const plot = document.createElement('div');
+    plot.id = 'bd-plot';
+    planes = STAGE_CLASSES.map((cls, i) => htmlPlane('bd-plane-' + BLK[i], cls));
+    planes.forEach(p => plot.appendChild(p.div));
+    stage.appendChild(plot);
+  }
+
+  function render(stage) {
+    build();
+    // 4 planes -> stages 0..8: flat, laid, exploded, focus x4, collapse, flat
+    const flat = stage >= 8;
+    const collapsed = stage >= 7;
+    const laid = stage >= 1 && !flat;
+    const exploded = stage >= 2 && !collapsed;
+    const focusIdx = (stage >= 3 && !collapsed) ? stage - 3 : -1;
+    const focusBlk = focusIdx >= 0 ? BLK[focusIdx] : null;
+
+    const N = planes.length, SPREAD = 82;
+    planes.forEach((p, i) => {
+      const fan = exploded ? 16 + ((N - 1) / 2 - i) * SPREAD : 0;
+      const dim = focusIdx >= 0 && i !== focusIdx;
+      TM.anime({ targets: p.div, translateY: fan, duration: 850, easing: 'easeInOutCubic' });
+      TM.anime({
+        targets: p.tilt, rotateX: laid ? 56 : 0, rotateZ: laid ? 20 : 0,
+        scale: exploded ? 0.82 : 1, opacity: dim ? 0.16 : 1,
+        duration: 850, easing: 'easeInOutCubic',
+      });
+      TM.anime({ targets: p.card, opacity: exploded ? 1 : 0, duration: 600, easing: 'easeInOutQuad' });
+    });
+
+    codeWindows.forEach(w => {
+      const isFocus = w.dataset.blk === focusBlk;
+      w.classList.toggle('bd-hot', isFocus);
+      w.classList.toggle('bd-dim', focusIdx >= 0 && !isFocus);
+    });
+  }
+
+  // ---- minimal TM shim (no reveal.js in a report) ----
+  window.TM = window.TM || {};
+  TM._busy = 0;
+  TM.busyInc = function () { TM._busy++; };
+  TM.busyDec = function () { TM._busy = Math.max(0, TM._busy - 1); };
+  TM.anime = function (params) {
+    TM.busyInc();
+    const inst = anime(params);
+    inst.finished.then(TM.busyDec, TM.busyDec);
+    return inst;
+  };
+
+  const LABELS = [
+    'flat — finished report', 'laid back', 'exploded',
+    'focus: base _quarto.yml', 'focus: bootswatch theme', 'focus: brand.yml', 'focus: custom.scss',
+    'collapsed', 'flat (end)',
+  ];
+  let stage = 0;
+  const label = document.getElementById('bdStageLabel');
+  function setStage(n) {
+    stage = Math.max(0, Math.min(8, n));
+    render(stage);
+    label.textContent = 'stage ' + stage + ' — ' + LABELS[stage];
+  }
+  document.getElementById('bdNext').onclick = () => setStage(stage + 1);
+  document.getElementById('bdPrev').onclick = () => setStage(stage - 1);
+  setStage(0);
+})();
+</script>
+```

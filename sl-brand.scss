@@ -487,11 +487,12 @@ code.sourceCode.yaml {
   color: $theme-fg; // base text color (commas, dashes, etc.)
   span { color: $theme-fg; } // outranks Quarto's `code span { color }` default
   span.fu { color: $theme-red; }   // YAML keys
-  span.kw { color: $theme-fg; } // YAML operators (incl. "-" list markers)
+  span.pp { color: $theme-blue; }   // YAML directives (---, ...)
+  span.kw { color: $theme-aqua; } // YAML operators (incl. "-" list markers)
   span.op { color: $theme-fg; } // YAML "-" (list item)
   span.at{ color: $theme-fg; } // YAML anchors
   span.st{
-    color: $theme-fg; // surrounding quotes render as plain fg by default...
+    color: $theme-green; // surrounding quotes render as plain fg by default...
 
     // ...but the quotes wrapping a hex-color literal (which
     // postprocess_code_highlighting.R turns into a .hex-pill) should read

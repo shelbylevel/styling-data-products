@@ -1,0 +1,696 @@
+---
+title: "First Impressions Matter"
+subtitle: "Styling Data Products People Actually Want To Use"
+author: "Shelby Level"
+format:
+    revealjs:
+        width: 1280
+        height: 720
+        revealjs-plugins:
+            - codewindow
+            # - editable
+        filters:
+            - shinylive
+            - diagrams
+            # - editable
+        # slide-number: true
+        pagetitle: "First Impressions Matter"
+        hash: true
+        code-line-numbers: false
+        progress: true
+        transition: fade
+        chalkboard: false
+        preview-links: auto
+        menu: true
+        center: false
+        # brand: _brand.yml
+        theme: sl-brand.scss
+        css: bd/css/brand-deconstructed.css
+        # pandoc-args: []
+        # include-after-body:
+        #     text: |
+        #         <script src="r-namespace-highlight.js"></script>
+        # logo: _extensions/shelbylevel/brand/logo-header.html
+        # logo:
+        #   images:
+        #     sl-logo: img/sl-logo.svg
+        # footer: "posit::conf(2026)"
+        include-in-header:
+            text: |
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+        include-after-body:
+            - bd/js/infra.html
+            - bd/js/brand-deconstructed.html
+        embed-resources: false
+execute:
+    echo: true
+---
+
+::: {.fragment}
+![](inst/img/linux-distro.jpeg){.absolute top=5px right=0 height="100%"}
+:::
+
+::: notes
+I want to start with a quick question.
+
+How many of you would download and install software from this website?
+
+Not many, right?
+:::
+
+---
+
+::: {.fragment}
+![](inst/img/worst-dashboard.jpg){.absolute top=5px right=0 height="100%"}
+:::
+
+::: notes
+Now, how many of you would confidently send this dashboard to your boss, a stakeholder, or a client?
+
+Again, probably not many.
+
+These are very different products, but they trigger a similar reaction: hesitation.
+:::
+
+::: {.fragment}
+![](inst/img/bootstrap-logo.svg){.absolute top=6px right=100px height="100%"}
+:::
+
+::: notes
+Now your work probably doesn't look nearly as bad as the examples I just showed you. That is thanks to Bootstrap. Bootstrap is the default core styling and layout engine for HTML-based outputs, dashboards, websites, and books. When we make something with Quarto or Shiny, we are using Bootstrap often without knowing it.
+This is what gives us our "good enough" look right out of the box. Your headers are bolded, your tables are formatted, and your content automatically resizes to fit the screen without having to write any CSS.
+:::
+
+---
+
+::: {.columns}
+
+::: {.column}
+![](inst/img/default-bootstrap.png){.absolute top=5px right=400px height="100%"}
+:::
+
+::: {.column}
+![](inst/img/quarto-demo.png){.absolute top=120px left=465px height="60%"}
+:::
+
+:::
+
+::: notes
+But it also means that your work looks like every other dashboard or report you'v ever seen, and probably also the demo you copied from the Shiny or Quarto website. 
+This default look has a cost. It feels unfinished, and it makes great data products much easier to ignore.
+:::
+
+---
+
+::: notes
+Hi everyone! I'm Shelby Level, and I work primarily on dashboards, reports, and other data products that help people make decisions.
+Today's talk is about something that often gets treated as optional or an afterthought: styling.
+Not because I think every data person should become a designer.
+But because styling can make or break whether people engage with our work.
+:::
+
+---
+
+## What to Expect
+
+::: {.fragment}
+1.  Why Styling Matters
+:::
+::: {.fragment}
+2.  Color
+:::
+::: {.fragment}
+3.  Leveraging Color with bootswatch
+    -  bootswatch
+    -  flip between themes with paper of different colors
+:::
+::: {.fragment}
+4.  Typography
+:::
+::: {.fragment}
+5.  Leveraging Typography with brand.yml
+    -  brand.yml
+    -  flip between fonts with paper of different fonts
+:::
+::: {.fragment}
+6.  Creating Reliability
+    -  brand.yml use across various formats
+:::
+
+::: notes
+What to expect: In this talk we'll cover the basics of styling, why it matters, and discuss two important but easy to implement aspects of styling: color and typography. Finally, in this talk I’ll walk you through applying these skills to your own work, without a CSS induced headache
+:::
+
+---
+
+## Why Styling Matters
+
+::: notes
+Why didn't you want to download software from that first website? Why didn't you want to share that dashboard with your boss or a client? Because you didn't trust it. It didn't matter what the contents were, the visual design was poor and you were instantly skeptical. Now you may not be able to put your finger on why, but researchers actually studied this. In a 2025 qualitative study they asked viewers what makes them trust a chart and coded their 185 responses into five real categories. This study found that people's own reasons for trusting (or distrusting) a chart go well beyond the data itself — and they don't always agree on which factors matter most.
+
+Trust is an emotional gatekeeper, and it is influenced by more than just the data itself. The McKinley et al. (2025) framework proves that viewers reject accurate data if it fails the "instinct" test. People evaluate trustworthiness, usability, and professionalism almost instantly. The visual experience becomes part of the analytical experience.
+:::
+
+## Influencing Trust: Landscape Hidden Dimensions of Visual Trust {auto-animate=true}
+
+::: {#theme-container .trust-grid}
+
+::: {.trust-column}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+
+::: {.trust-chips .trust-readability-chips}
+[Simple]{.trust-chip}
+[Clarity]{.trust-chip}
+[Complex]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+
+::: {.trust-chips .trust-integrity-chips}
+[Data Integrity]{.trust-chip}
+[Labeling]{.trust-chip}
+[Source]{.trust-chip}
+[Objectivity]{.trust-chip}
+[Intent]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+
+::: {.trust-chips .trust-quality-chips}
+[Vis Type]{.trust-chip}
+[Visual Elements]{.trust-chip}
+[Aesthetics]{.trust-chip}
+[Professional]{.trust-chip}
+[Academic]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+
+::: {.trust-chips .trust-familiarity-chips}
+[With Topic]{.trust-chip}
+[With Source]{.trust-chip}
+[Unspecified]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+
+::: {.trust-chips .trust-personal-chips}
+[Confidence]{.trust-chip}
+[Intuition]{.trust-chip}
+[Relevance]{.trust-chip}
+[Reliability]{.trust-chip}
+[Importance]{.trust-chip}
+:::
+:::
+
+:::
+
+::: notes
+Here are all the design factors that influence a viewer's perceived trustworthiness of your work. That's a lot right? Let's break it down
+:::
+
+## Categorizing Trust: Affective vs Cognition-Based Components {auto-animate=true}
+Similarly, our findings resonate with the work of Elhamdadi et
+al. [11], which categorized trust into affective-based components
+(e.g., Visual Elements, Aesthetics, Intuition) and cognition-based
+components (e.g., Clarity, Data Integrity, Intent). This distinction
+was mirrored in our keyword analysis.
+
+## Cognition-Based Components {auto-animate=true}
+
+::: {#theme-container .trust-zoom-grid}
+
+::: {.trust-zoom-focus}
+
+::: {.trust-column}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+
+::: {.trust-chips .trust-readability-chips}
+[Simple]{.trust-chip}
+[Clarity]{.trust-chip}
+[Complex]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+
+::: {.trust-chips .trust-integrity-chips}
+[Data Integrity]{.trust-chip}
+[Labeling]{.trust-chip}
+[Source]{.trust-chip}
+[Objectivity]{.trust-chip}
+[Intent]{.trust-chip}
+:::
+:::
+
+:::
+
+::: {.trust-zoom-sidebar}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+:::
+
+:::
+
+::: notes
+cognition-based componemnts are related to clarity, accuracy, and usability. These are the mental processes that help users understand and evaluate the information presented. This includes factors like readability, data integrity, and the overall design of the visualization. Here is where we spend the most time on: Readability and Integrity & Transparency. We make sure the data is accurate, the source is credible, and the intent is clear. 
+
+* **Data Accuracy:** Clean data, clear labeling.
+* **Source & Intent:** Citation, peer review, objectivity.
+* *Status: Crucial, non-negotiable, and where we spend our time.*
+:::
+
+## Affective-Based Components {auto-animate=true}
+
+::: {#theme-container .trust-zoom-grid}
+
+::: {.trust-zoom-sidebar}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+:::
+
+::: {.trust-zoom-focus .trust-zoom-focus-3col}
+
+::: {.trust-column}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+
+::: {.trust-chips .trust-quality-chips}
+[Vis Type]{.trust-chip}
+[Visual Elements]{.trust-chip data-id="chip-visual-elements"}
+[Aesthetics]{.trust-chip data-id="chip-aesthetics"}
+[Professional]{.trust-chip data-id="chip-professional"}
+[Academic]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+
+::: {.trust-chips .trust-familiarity-chips}
+[With Topic]{.trust-chip}
+[With Source]{.trust-chip data-id="chip-with-source"}
+[Unspecified]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+
+::: {.trust-chips .trust-personal-chips}
+[Confidence]{.trust-chip}
+[Intuition]{.trust-chip data-id="chip-intuition"}
+[Relevance]{.trust-chip}
+[Reliability]{.trust-chip data-id="chip-reliability"}
+[Importance]{.trust-chip}
+:::
+:::
+
+:::
+
+:::
+
+::: notes
+But we often overlook the other three dimensions: Quality & Design, Familiarity, and Personal Intuition, dismissing them as "superficial styling." However, these are the emotional and cognitive gatekeepers that can make or break whether someone trusts our work.
+
+* Execution & Aesthetics
+* Psychological Alignment
+* *Status: Often dismissed as "superficial styling."*
+:::
+
+## Where This Talk Is Headed {auto-animate=true}
+
+::: {#theme-container .trust-zoom-grid}
+
+::: {.trust-zoom-sidebar}
+::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
+[Readability]{.trust-title}
+:::
+::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
+[Integrity & Transparency]{.trust-title}
+:::
+:::
+
+::: {.trust-zoom-focus .trust-zoom-focus-3col}
+
+::: {.trust-column}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+
+::: {.trust-chips .trust-quality-chips}
+[Vis Type]{.trust-chip}
+[Visual Elements]{.trust-chip .trust-chip-focus data-id="chip-visual-elements"}
+[Aesthetics]{.trust-chip .trust-chip-focus data-id="chip-aesthetics"}
+[Professional]{.trust-chip .trust-chip-focus data-id="chip-professional"}
+[Academic]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
+[Familiarity]{.trust-title}
+:::
+
+::: {.trust-chips .trust-familiarity-chips}
+[With Topic]{.trust-chip}
+[With Source]{.trust-chip .trust-chip-focus data-id="chip-with-source"}
+[Unspecified]{.trust-chip}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+
+::: {.trust-chips .trust-personal-chips}
+[Confidence]{.trust-chip}
+[Intuition]{.trust-chip .trust-chip-focus data-id="chip-intuition"}
+[Relevance]{.trust-chip}
+[Reliability]{.trust-chip .trust-chip-focus data-id="chip-reliability"}
+[Importance]{.trust-chip}
+:::
+:::
+
+:::
+
+:::
+
+::: notes
+These six factors — the design, source, and intuition cues — are what the rest of this talk will focus on.
+:::
+
+## Revisit
+
+::: {.fragment}
+![](inst/img/linux-distro.jpeg){.absolute top=5px right=0 height="100%"}
+:::
+
+::: notes
+Still not convinced that these affective-based components are worth your time? Let's revisit the first example. Most of you labelled the website I showed you as untrustworthy. Why? Because it failed the "instinct" test. It didn't look professional, the source didn't look familiar, and it didn't inspire confidence. However, there are probably a few of you who would download software from this website because you recognize it as a trusted source. DistroWatch has been a credible and reliable source of information for the Linux Community, one of the most widely used operating system in the world, for over 25 years? Linux users have trusted this site for decades to track, compare, and learn about different available Linux distributions. 
+
+Now that you know the cognitive based components check out, you're probably more likely to overlook the affective based components when reconsidering your initial assessment. This demonstrates the interplay between the cognitive and affective components of trust. The data is the same, but the perceived quality changes dramatically based on the design, source, and intuition cues you receive on first glance.
+:::
+
+## Trust is an Emotional Gatekeeper for Our Work
+
+::: notes
+Tying this back to our work: A data professional would probably trust your work even if it wasn't well designed, so long as the cognitive based components are sound like your sources, data integrity, and objectivity. However, the intended audience of our work is usually not data professionals. They are busy decision makers. They don't have time to read every chart, and they don't have time to evaluate the quality of our work. They make snap judgments based on their first impressions, meaning they might not even get to considering your data sources and integrity if their intuition tells them it's untrustworthy. And those first impressions are influenced by the design, source, and intuition cues we just discussed. This is why styling matters, and why it is worth your time to learn how to do it well.
+:::
+
+## Hidden Dimensions of Visual Trust
+
+::: notes
+styling isn't always the most important trust factor, but when when people evaluate trustworthiness, usability, and professionalism almost instantly, it's the visual design that often makes the difference. It's real, it's measured, and — unlike "cite better sources" — it's actionable and straightforward to implement with Bootswatch and Brand YAML. Let's get into the details of how to do that.
+:::
+
+## Color
+
+::: {.trust-zoom-focus .trust-zoom-focus-3col}
+
+::: {.trust-column}
+::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
+[Quality & Design]{.trust-title}
+:::
+
+::: {.trust-chips .trust-quality-chips}
+[Visual Elements]{.trust-chip .trust-chip-focus data-id="chip-visual-elements"}
+[Aesthetics]{.trust-chip .trust-chip-focus data-id="chip-aesthetics"}
+[Professional]{.trust-chip .trust-chip-focus data-id="chip-professional"}
+:::
+:::
+
+::: {.trust-column}
+::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
+[Personal]{.trust-title}
+:::
+
+::: {.trust-chips .trust-personal-chips}
+[Intuition]{.trust-chip .trust-chip-focus data-id="chip-intuition"}
+:::
+:::
+
+:::
+
+## Changing the Color
+
+::: notes
+Changing 
+:::
+
+___
+
+## Leveraging Color with Bootswatch
+
+![](inst/img/bootswatch-logo.png){.absolute top=0 right=200px height="100%"}
+
+::: notes
+Themes for bootstrap are available through Bootswatch, which is a collection of free and open-source themes that can be easily applied to your dashboards and reports. These themes provide a quick way to change the look and feel of your data products without having to write custom CSS.
+:::
+
+---
+
+## Applying Bootswatch Themes - Shiny
+
+:::: {.codewindow}
+::: {.editor .r name="ui.R"}
+```r
+bslib::page_navbar(
+  title = "Dashboard",
+  bslib::nav_panel(...)
+)
+```
+:::
+
+::: {.editor .r .fragment name="ui.R"}
+```{.r code-line-numbers="|3"}
+bslib::page_navbar(
+  title = "Dashboard",
+  theme = bslib::bs_theme(preset = "lux"),
+  bslib::nav_panel(...)
+)
+```
+:::
+::::
+
+## Applying Bootswatch Themes - Quarto
+
+:::: {.codewindow}
+::: {.editor .qmd name="report.qmd"}
+```yaml
+---
+title: "My Document"
+format: html
+---
+```
+:::
+
+::: {.editor .qmd .fragment name="themed-report.qmd"}
+```{.yaml code-line-numbers="|3-5"}
+---
+title: "My Document"
+format: 
+  html:
+    theme: flatly
+---
+```
+:::
+::::
+
+---
+
+## Typography
+
+---
+
+## Using Typography
+
+---
+
+![](inst/img/brand-yml-logo.svg){.absolute top=0 right=0 height="100%"}
+
+---
+
+## Apply brand.yml
+
+::::: {.codewindow}
+::: {.editor .r name="ui.R"}
+```{.r code-line-numbers="|6-9"}
+bslib::page_navbar(
+    title = "Dashboard",
+    id = "main_nav",
+
+    theme = bslib::bs_theme(
+        preset = "lux",
+        brand = "www/brand.yml"
+    )
+)
+```
+:::
+:::::
+
+---
+
+::: {.codewindow .r}
+my-deck.R
+````{.r}
+bslib::page_navbar(
+    title = "Dashboard",
+    id = "main_nav",
+
+    theme = bslib::bs_theme(
+        preset = "sandstone",
+        brand = "www/brand.yml"
+    )
+)
+````
+:::
+
+---
+
+<!-- ::: {.codewindow .codewindow-dark .quarto width="80%"}
+my-deck.qmd
+
+````markdown
+```{{r}}
+#| echo: false
+plot(1:10)
+```
+````
+::: -->
+
+---
+
+:::: {.codewindow}
+::: {.editor .yaml name="00-load.R"}
+```yaml
+meta:
+  name: shelbylevel
+  link: https://www.shelbylevel.org
+
+color:
+  palette:
+    deep-jade: "#254D56"
+    faded-jade: "#45767a"
+    faded-jade-50: "#a2bbbd"
+    faded-jade-30: "#c7d6d7"
+    faded-jade-10: "#ecf1f2"
+    gulfstream: "#7fa6ad"
+    edgewater: "#d3dfdd"
+    edgewater-20: "#dce5e4"
+    cascade: "#b3c2c9"
+    boulder: "#727E70"
+    spring-rain: "#b2c5b4"
+    timberwolf: "#D8D5CE"
+    timberwolf-50: "#eceae7"
+    almond-dust: "#B8AEA8"
+    moonstone: "#969996"
+    storm-cloud: "#64635E"
+    plum-crazy: "#59224A"
+  
+  foreground: $brand-deep-jade       # main text color
+  background: $brand-faded-jade-10     # background
+  primary: "#45767a"            # primary brand color
+  secondary: "#7fa6ad"          # secondary accent
+  tertiary: "#a2bbbd"           # tertiary accent
+  success: "#727E70"            # success states
+  info: "#b2c5b4"               # info messages
+  warning: "#B8AEA8"            # warnings
+  danger: "#6f4a64"             # errors/danger
+  light: "#ecf1f2"              # light backgrounds
+  dark: "#64635E"               # dark elements
+```
+:::
+
+::: {.editor .yaml .fragment name="01-clean.R"}
+```yaml
+typography:
+  fonts:
+    - family: "Lato"
+      source: google
+      weight: [200, 300, 400, 600]
+    - family: "Nunito Sans"
+      source: google
+      weight: [400, 600]
+  
+  base:
+    family: "Lato"
+    size: "1rem"
+    line-height: 1.6
+    weight: 300
+  
+  headings:
+    family: "Nunito Sans"
+    style: normal
+    weight: 600
+    line-height: 1.2
+    color: primary
+```
+:::
+::::
+
+---
+
+## Summary {.bd-slide}
+
+::: {.gd-stage-wrap}
+<div id="bd-stage"></div>
+:::
+[]{.fragment .gd-frag id="bd-lay"}
+[]{.fragment .gd-frag id="bd-explode"}
+[]{.fragment .gd-frag id="bd-focus-base"}
+[]{.fragment .gd-frag id="bd-focus-bootswatch"}
+[]{.fragment .gd-frag id="bd-focus-brand"}
+[]{.fragment .gd-frag id="bd-focus-polish"}
+[]{.fragment .gd-frag id="bd-collapse"}
+[]{.fragment .gd-frag id="bd-unrotate"}
+
+::: notes
+
+If you remember one thing from this talk, let it be this slide.
+While there may not be no one-size-fits-all approach to trustworthy design, there are some simple and practical steps you can take to improve the perceived trustworthiness of your work.
+Bootswatch provides a polished foundation.
+brand.yml provides reusable customization.
+Together, they create a practical workflow.
+
+:::

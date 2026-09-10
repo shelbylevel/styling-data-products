@@ -266,7 +266,7 @@
     const focusBlk = focusIdx >= 0 ? BLK[focusIdx] : null;
 
     const N = planes.length;
-    const SPREAD = 75;
+    const SPREAD = 105; // px between planes when exploded
     planes.forEach((p, i) => {
       const fan = exploded ? 18 + ((N - 1) / 2 - i) * SPREAD : 0;
       const dim = focusIdx >= 0 && i !== focusIdx;

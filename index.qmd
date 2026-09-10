@@ -607,28 +607,28 @@ But it is a much better place to start than an empty CSS file and a growing sens
 #| eval: false
 
 # Generate Quarto image markdown for all Bootswatch theme thumbnails
-themes <- bslib::bootswatch_themes()
+# themes <- bslib::bootswatch_themes()
 
-# Grid layout parameters
-cols <- 6
-img_width_pct <- 15 # % of slide width each image occupies
-img_height_pct <- 15 # % of slide height each image occupies
-col_gap <- 2 # % horizontal gap between columns
-row_gap <- 4 # % vertical gap between rows
+# # Grid layout parameters
+# cols <- 6
+# img_width_pct <- 15 # % of slide width each image occupies
+# img_height_pct <- 15 # % of slide height each image occupies
+# col_gap <- 2 # % horizontal gap between columns
+# row_gap <- 4 # % vertical gap between rows
 
-theme_images <- purrr::imap_chr(themes, \(theme, i) {
-  row <- (i - 1) %/% cols # 0-indexed row
-  col <- (i - 1) %% cols # 0-indexed col
+# theme_images <- purrr::imap_chr(themes, \(theme, i) {
+#   row <- (i - 1) %/% cols # 0-indexed row
+#   col <- (i - 1) %% cols # 0-indexed col
 
-  top <- row * (img_height_pct + row_gap)
-  left <- col * (img_width_pct + col_gap)
+#   top <- row * (img_height_pct + row_gap)
+#   left <- col * (img_width_pct + col_gap)
 
-  glue::glue(
-    '![](https://bootswatch.com/{theme}/thumbnail.png){{.absolute top="{top}%" left="{left}%" height="{img_height_pct}%"}}'
-  )
-})
+#   glue::glue(
+#     '![](https://bootswatch.com/{theme}/thumbnail.png){{.absolute top="{top}%" left="{left}%" height="{img_height_pct}%"}}'
+#   )
+# })
 
-cat(theme_images, sep = "\n")
+# cat(theme_images, sep = "\n")
 ```
 :::
 

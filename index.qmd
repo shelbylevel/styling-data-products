@@ -604,7 +604,7 @@ But it is a much better place to start than an empty CSS file and a growing sens
 ```{r}
 #| results: asis
 #| echo: false
-#| eval: false
+#| eval: true
 
 # Generate Quarto image markdown for all Bootswatch theme thumbnails
 themes <- bslib::bootswatch_themes()
@@ -624,20 +624,17 @@ theme_images <- purrr::imap_chr(themes, \(theme, i) {
   left <- col * (img_width_pct + col_gap)
 
   sprintf(
-    '![](https://bootswatch.com/%s/thumbnail.png){.absolute top="%s%%" left="%s%%" height="%s%%"}',
-    theme, top, left, img_height_pct
+    '![](https://bootswatch.com/%s/thumbnail.png){.absolute top="calc(%s%% + 70px)" left="%s%%" height="%s%%"}',
+    theme,
+    top,
+    left,
+    img_height_pct
   )
 })
 
 cat(theme_images, sep = "\n")
 ```
 :::
-
-<!-- ![](https://bootswatch.com/brite/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/cerulean/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/cosmo/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/darkly/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/flatly/thumbnail.png){.absolute height="20%"} -->
 
 ::: notes
 Bootswatch is not one new design. It gives us a range of coordinated starting points.
@@ -779,8 +776,6 @@ Over time, the first impression can shift from, “What is this?” to, “I rec
 
 ![](https://datawrapper.de/cdn-cgi/image/quality=85,width=2654,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/6b2d45aa87-1740123150/Artboard-7.png){.absolute bottom=0px right=0px height="100%"}
 
-## Brand Recognition: Color
-
 ::: notes
 Color is one of the quickest ways to create that recognition.
 
@@ -800,8 +795,6 @@ That creates consistency across products, reduces the number of design decisions
 ## Brand Recognition: Font
 
 ![](https://datawrapper.de/cdn-cgi/image/quality=85,width=2890,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/cd35358e8d-1740123150/Artboard-1.png){.absolute right=200px height="90%"}
-
-## Brand Recognition: Font
 
 ::: notes
 Color is not the only way to make work recognizable.

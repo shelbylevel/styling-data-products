@@ -604,6 +604,7 @@ But it is a much better place to start than an empty CSS file and a growing sens
 ```{r}
 #| results: asis
 #| echo: false
+#| eval: false
 
 # Generate Quarto image markdown for all Bootswatch theme thumbnails
 themes <- bslib::bootswatch_themes()

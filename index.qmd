@@ -762,11 +762,11 @@ It also helps people recognize where the work came from.
 
 The dashboard, report, and presentation shouldn't look identical. They serve different purposes.
 
-But repeated colors, typography, and visual patterns can make them feel like they belong to the same family.
+They just need enough shared visual cues to feel like they belong to the same family.
 
-Over time, people don't have to relearn the visual language with every new product.
+That familiarity matters because people often use what they recognize as one part of deciding whether something feels credible and worth examining.
 
-They can recognize it and spend more time engaging with the information.
+Over time, the first impression can shift from, “What is this?” to, “I recognize this. I know who made it.”
 :::
 
 ---
@@ -777,9 +777,53 @@ They can recognize it and spend more time engaging with the information.
 
 ![](https://datawrapper.de/cdn-cgi/image/quality=85,width=2654,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/6b2d45aa87-1740123150/Artboard-7.png){.absolute bottom=0px right=0px height="100%"}
 
+## Brand Recognition: Color
+
+::: notes
+Color is one of the quickest ways to create that recognition.
+
+Look at these examples from The Economist.
+
+The charts cover different topics and use different forms, but they repeatedly draw from the same small family of blues, turquoise, and red.
+
+That consistency gives the work a recognizable visual signature.
+
+The goal is not to force the exact same colors into every chart. Color still needs to serve the data, and sometimes the subject requires something different.
+
+The value comes from having a familiar palette to begin with.
+
+That creates consistency across products, reduces the number of design decisions we have to make each time, and makes it easier for work from the same source to feel connected.
+:::
+
 ## Brand Recognition: Font
 
 ![](https://datawrapper.de/cdn-cgi/image/quality=85,width=2890,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/cd35358e8d-1740123150/Artboard-1.png){.absolute right=200px height="90%"}
+
+## Brand Recognition: Font
+
+::: notes
+Color is not the only way to make work recognizable.
+
+Typography can create an equally strong connection.
+
+A publication might use different colors from one visualization to the next, but a repeated typeface can still hold the work together.
+
+The New York Times is a useful example. Its visualizations can use very different palettes, but the recurring title typeface helps them remain recognizable.
+
+The same thing happens in these examples from The Economist. Different styles from the same typeface are used across titles, labels, and supporting text.
+
+That creates variety and hierarchy without losing the shared identity.
+
+So brand recognition does not require every product to look exactly the same.
+
+Sometimes a consistent font, used intentionally, is enough to make separate products sound like they are speaking with the same voice.
+
+Color can create recognition.
+
+Typography can create recognition.
+
+And when we define both in one reusable place, we do not have to recreate that identity one product at a time.
+:::
 
 ## Apply brand.yml
 
@@ -816,6 +860,10 @@ bslib::page_navbar(
 ````
 :::
 
+::: notes
+That brings us back to `brand.yml`.
+:::
+
 ---
 
 :::: {.codewindow}
@@ -829,17 +877,13 @@ color:
   palette:
     deep-jade: "#254D56"
     faded-jade: "#45767a"
-    faded-jade-50: "#a2bbbd"
-    faded-jade-30: "#c7d6d7"
     faded-jade-10: "#ecf1f2"
     gulfstream: "#7fa6ad"
     edgewater: "#d3dfdd"
-    edgewater-20: "#dce5e4"
     cascade: "#b3c2c9"
     boulder: "#727E70"
     spring-rain: "#b2c5b4"
     timberwolf: "#D8D5CE"
-    timberwolf-50: "#eceae7"
     almond-dust: "#B8AEA8"
     moonstone: "#969996"
     storm-cloud: "#64635E"

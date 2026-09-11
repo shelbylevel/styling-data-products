@@ -22,7 +22,7 @@ color:
     storm-cloud: "#64635E"
     plum-crazy: "#59224A"
   
-  foreground: $brand-deep-jade       # main text color
+  foreground: "#254D56"       # main text color
   background: $brand-faded-jade-10     # background
   primary: "#45767a"            # primary brand color
   secondary: "#7fa6ad"          # secondary accent
@@ -57,6 +57,9 @@ typography:
     color: primary
 
 defaults:
+  bootstrap:
+    defaults:
+      bs-body-color: primary
   # bootstrap:
     # defaults: # defaults also supports a string as its value
     #   navbar-light-hover-color: $brand-faded_jade

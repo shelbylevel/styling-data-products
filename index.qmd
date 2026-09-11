@@ -588,33 +588,6 @@ Bootswatch might not give us our final design instantly, but with one simple cha
 []{.fragment .gd-frag id="btd-minty"}
 []{.fragment .gd-frag id="btd-sketchy"}
 
-
-<!-- :::: {.codewindow}
-::: {.editor .r name="ui.R"}
-```r
-bslib::page_navbar(
-  title = "Dashboard",
-  bslib::nav_panel(...)
-)
-```
-:::
-
-::: {.editor .r .fragment name="ui.R"}
-```{.r code-line-numbers="|3"}
-bslib::page_navbar(
-  title = "Dashboard",
-  theme = bslib::bs_theme(preset = "lux"),
-  bslib::nav_panel(...)
-)
-```
-:::
-::::
-
-![](inst/img/default-theme-shiny.jpeg){.absolute height="90%"}
-![](inst/img/default-theme-vapor.jpeg){.absolute height="90%"}
-![](inst/img/default-theme-sketchy.jpeg){.absolute height="90%"}
-![](inst/img/default-theme-minty.jpeg){.absolute height="90%"} -->
-
 ::: notes 
 In Shiny, the change is one argument.
 

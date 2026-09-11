@@ -128,7 +128,7 @@
 )`;
 
   let built = false;
-  let codePlainEl, codeThemedEl, presetStr, themeLine, imgEls;
+  let codePlainEl, codeThemedEl, plainStateEl, themedStateEl, presetStr, themeLine, imgEls;
 
   function build() {
     const stage = document.getElementById('btd-stage');
@@ -163,6 +163,10 @@
     themeLine = code.querySelector('#btdThemeLine');
     codePlainEl.style.opacity = 1;
     codeThemedEl.style.opacity = 0;
+    plainStateEl = code.querySelector('#btdPlainState');
+themedStateEl = code.querySelector('#btdThemedState');
+plainStateEl.style.opacity = 1;
+themedStateEl.style.opacity = 0;
 
     // -- preview panel: real screenshots, crossfaded. No CSS-variable
     // mockup layer here — nothing to re-skin, these are actual app
@@ -186,6 +190,20 @@
 
     TM.anime({ targets: codePlainEl, opacity: theme.hasTheme ? 0 : 1, duration: 450, easing: 'easeInOutQuad' });
     TM.anime({ targets: codeThemedEl, opacity: theme.hasTheme ? 1 : 0, duration: 450, easing: 'easeInOutQuad' });
+
+    TM.anime({
+  targets: plainStateEl,
+  opacity: theme.hasTheme ? 0 : 1,
+  duration: 450,
+  easing: 'easeInOutQuad'
+});
+
+TM.anime({
+  targets: themedStateEl,
+  opacity: theme.hasTheme ? 1 : 0,
+  duration: 450,
+  easing: 'easeInOutQuad'
+});
 
     if (theme.hasTheme) {
       presetStr.textContent = `"${theme.id}"`;

@@ -1,0 +1,7 @@
+{
+  "permission": {
+    "read": {
+      "*.png": "allow"
+    }
+  }
+}

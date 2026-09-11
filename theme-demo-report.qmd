@@ -3,7 +3,11 @@ title: "Restaurant Tipping"
 author: "Theme Demo"
 format:
   html:
-    theme: lux      # swap this out to preview a different Bootswatch theme
+    # theme: lux      # swap this out to preview a different Bootswatch theme
+    # brand: _brand.yml
+    theme:
+      - lux
+      - _brand.yml
     toc: true
     toc-location: right
     embed-resources: true

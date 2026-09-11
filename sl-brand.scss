@@ -3,9 +3,8 @@ $dark-jade: #254D56;
 $faded-jade: #45767a;
 $faded-jade-30: #c7d6d7;
 $faded-jade-10: #ecf1f2;
-$tidewater-teal: #88aaaa;
 
-$body-bg: #d3dfdd;
+$body-bg: #ecf1f2;
 $body-color: $dark-jade;
 $presentation-heading-color: $dark-jade;
 $link-color: $dark-jade;
@@ -133,11 +132,11 @@ $code-block-bg: $theme-bg;
 /* Color each chip to match its own theme box, not a single fixed color.
    rgba() can't tint a custom-property color, so use color-mix() to fade
    the theme color into a translucent-looking tint against the dark bg. */
-.trust-readability-chips .trust-chip { color: var(--trust-readability); background: color-mix(in srgb, var(--trust-readability) 18%, transparent); }
-.trust-integrity-chips .trust-chip { color: var(--trust-integrity); background: color-mix(in srgb, var(--trust-integrity) 18%, transparent); }
-.trust-quality-chips .trust-chip { color: var(--trust-quality); background: color-mix(in srgb, var(--trust-quality) 18%, transparent); }
-.trust-familiarity-chips .trust-chip { color: var(--trust-familiarity); background: color-mix(in srgb, var(--trust-familiarity) 18%, transparent); }
-.trust-personal-chips .trust-chip { color: var(--trust-personal); background: color-mix(in srgb, var(--trust-personal) 18%, transparent); }
+.trust-readability-chips .trust-chip { color: var(--trust-readability); background: color-mix(in srgb, var(--trust-readability) 25%, transparent); }
+.trust-integrity-chips .trust-chip { color: var(--trust-integrity); background: color-mix(in srgb, var(--trust-integrity) 25%, transparent); }
+.trust-quality-chips .trust-chip { color: var(--trust-quality); background: color-mix(in srgb, var(--trust-quality) 25%, transparent); }
+.trust-familiarity-chips .trust-chip { color: var(--trust-familiarity); background: color-mix(in srgb, var(--trust-familiarity) 25%, transparent); }
+.trust-personal-chips .trust-chip { color: var(--trust-personal); background: color-mix(in srgb, var(--trust-personal) 25%, transparent); }
 
 /* Slide: zoom in on two themes, push remaining three to a dimmed sidebar.
    Sidebar/focus panes are sized with flex-basis (not grid tracks) so their

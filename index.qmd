@@ -46,7 +46,7 @@ format:
 execute:
     echo: true
 ---
-![](inst/img/linux-distro.jpeg){.absolute height="100%"}
+![](inst/img/linux-distro.jpeg){fig-align="center" height="100%"}
 
 ::: notes
 I want to start us off with a quick question.
@@ -58,7 +58,7 @@ Not many, right?
 
 ---
 
-![](inst/img/worst-dashboard.jpg){.absolute top=10px height="100%"}
+![](inst/img/worst-dashboard.jpg){fig-align="center" height="100%"}
 
 ::: notes
 Now, How many of you want to share this dashboard with your boss or a client?
@@ -352,67 +352,14 @@ Before checking a source or questioning a number, they see the colors, typograph
 That instinct is not always accurate, and aesthetics were not necessarily more important than clarity or integrity.
 
 But secondary does not mean irrelevant. If visual design influences whether someone takes a closer look, it's worth taking seriously.
-4:30 timing
 :::
 
-## Two Design Choices With a Big Impact {auto-animate=true}
+## Two Design Choices With a Big Impact
 
-(edit slide visuals)
-::: {#theme-container .trust-zoom-grid}
+::: {.fragment}
+![](https://datawrapper.de/cdn-cgi/image/quality=85,width=778,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/072a079d76-1740123150/200801_styleguide-nyt-2.png){.absolute left=0px bottom=70px height="80%"}
 
-::: {.trust-zoom-sidebar}
-::: {#theme-readability .trust-box .trust-readability-bg data-id="readability-box"}
-[Readability]{.trust-title}
-:::
-::: {#theme-integrity .trust-box .trust-integrity-bg data-id="integrity-box"}
-[Integrity & Transparency]{.trust-title}
-:::
-:::
-
-::: {.trust-zoom-focus .trust-zoom-focus-3col}
-
-::: {.trust-column}
-::: {#theme-quality .trust-box .trust-quality-bg data-id="quality-box"}
-[Quality & Design]{.trust-title}
-:::
-
-::: {.trust-chips .trust-quality-chips}
-[Vis Type]{.trust-chip}
-[Visual Elements]{.trust-chip .trust-chip-focus data-id="chip-visual-elements"}
-[Aesthetics]{.trust-chip .trust-chip-focus data-id="chip-aesthetics"}
-[Professional]{.trust-chip .trust-chip-focus data-id="chip-professional"}
-[Academic]{.trust-chip}
-:::
-:::
-
-::: {.trust-column}
-::: {#theme-familiarity .trust-box .trust-familiarity-bg data-id="familiarity-box"}
-[Familiarity]{.trust-title}
-:::
-
-::: {.trust-chips .trust-familiarity-chips}
-[With Topic]{.trust-chip}
-[With Source]{.trust-chip .trust-chip-focus data-id="chip-with-source"}
-[Unspecified]{.trust-chip}
-:::
-:::
-
-::: {.trust-column}
-::: {#theme-personal .trust-box .trust-personal-bg data-id="personal-box"}
-[Personal]{.trust-title}
-:::
-
-::: {.trust-chips .trust-personal-chips}
-[Confidence]{.trust-chip}
-[Intuition]{.trust-chip .trust-chip-focus data-id="chip-intuition"}
-[Relevance]{.trust-chip}
-[Reliability]{.trust-chip .trust-chip-focus data-id="chip-reliability"}
-[Importance]{.trust-chip}
-:::
-:::
-
-:::
-
+![](inst/img/font.png){.absolute right=0px bottom=110px height="70%"}
 :::
 
 ::: notes
@@ -429,30 +376,28 @@ Let’s start with color.
 
 ## Color Shapes Attention and Tone
 
-![](https://datawrapper.de/cdn-cgi/image/quality=85,width=1801,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/which-color-scale-to-use-in-data-vis/e9a7ed8d71-1740123119/200801_colorscale-intro-f-1.png){.absolute}
+::: {.fragment}
+![](inst/img/color-categories.png){.absolute left=50px}
+![](inst/img/color-patterns.png){.absolute right=100px}
+:::
+::: {.fragment}
+![](inst/img/color-emphasis.png){.absolute bottom=-50px height="50%"}
+:::
 
 ::: notes
 Now there is no magical shade of trustworthy blue that will make everyone believe everything you make
 
 But color is one of the first things people notice, and it should always have a job.
 
-Color can help people understand. It can distinguish categories, reveal patterns...
+Color can help people understand. It can distinguish categories, reveal patterns, and direct attention to important information
 :::
 
 ## Color Shapes Attention and Tone
 
-![](inst/img/color-emphasis.avif){.absolute}
+![](inst/img/color-effects.png){.absolute top=200px}
 
 ::: notes
-and direct attention to important information
-:::
-
-## Color Shapes Attention and Tone
-
-![](https://datawrapper.de/cdn-cgi/image/quality=85,width=3538,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/acf60230fc-1740123150/Artboard-1-copy-130.png){.absolute top=200px}
-
-::: notes
-But color also shapes the overall experience. A palette can feel calm or energetic, serious or playful, restrained or overwhelming.
+But color also shapes the overall experience. A palette can feel calm or exciting, serious or trustworthy.
 
 And context matters. Red could represent good luck, a political party, a negative value, or it could simply mean your organization gave you a branding guide with exactly one usable color and said, “Good luck.”
 
@@ -465,9 +410,10 @@ While color helps users navigate the data, typography helps them navigate the te
 
 ## Typography Shapes Hierarchy and Voice
 
-:::{.fragment}
-![](inst/img/using-text.avif){.absolute height="90%"}
-:::
+![](inst/img/map-narrative.png){.absolute}
+![](inst/img/map-tooltips.png){.absolute right=300px}
+![](inst/img/chart-axes.png){.absolute bottom=0px left=300px}
+![](inst/img/chart-annos.png){.absolute bottom=0px right=0px}
 
 ::: notes
 Typography may be less noticeable than color, but our data products are full of it.
@@ -479,29 +425,28 @@ Typography helps people navigate all of that information.
 
 ## Typography Shapes Hierarchy and Voice
 
-![](inst/img/font-size.avif){.absolute height="90%"}
+![](inst/img/font-size.png){.absolute height="82%"}
 
 :::{.fragment}
 ![](inst/img/font-type.jpeg){.absolute bottom=200px right=0px height="50%"}
 :::
 
 ::: notes
-Differences in size, weight, style, and contrast help people recognize what they should read first, what comes next, and what is supporting detail.
+Differences in size, weight, and style help people recognize what they should read first, what comes next, and what is supporting detail.
 
-It also shapes the overall voice of your product, speaking volumes about the mood, tone, and personality you want to convey.
+It also shapes the overall voice of your product by contributing to the mood, and tone we communicate before anyone reads a word.
 
-Which one of these notes do you want to find waiting for you?
-
-A typeface can feel serious or playful, traditional or modern, restrained or expressive. Those choices contribute to the tone and personality we communicate before anyone reads every word.
+Which one of these notes do you want to find waiting for you? Same words, different personality.
 
 Of course, before a font can give our work personality or make it feel like ours, it has to be readable.
 
-It needs to work at the sizes we actually use. It needs clear letters, clear numbers, and enough contrast against the background.
+It needs to work at the sizes we actually use with clear letters, numbers, and enough contrast against the background.
 :::
 
 ---
 
-![](inst/img/papyrus.gif){.absolute top=6px right=100px height="90%"}
+![](inst/img/papyrus.gif){.absolute left=0px bottom=0px height="80%"}
+![](inst/img/papyrus-meme.jpg){.absolute right=0px height="60%"}
 
 ::: notes
 I'm looking at you, Papyrus.
@@ -513,15 +458,15 @@ So instead of asking, “Which font do I like?” ask:
 
 ## Together Color and Typography Shape the First Impression
 
-(edit slide visuals)
+![](inst/img/trustworthy-palette.png){.absolute top=200px height="70%"}
+![](inst/img/map-narrative.png){.absolute top=200px right=0px height="70%"}
 
 ::: notes
-Color helps direct attention and set the tone.
-Typography creates hierarchy and gives your work a voice.
+Color helps direct attention and set the tone while typography creates hierarchy and gives your work a voice.
 
 Neither changes the underlying information.
 
-But together, these design choices shape the entire visual experience of a data product.
+But together they create the first impression long before someone evaluates the data.
 :::
 
 ## You Don't Need to Start From Scratch
@@ -542,7 +487,7 @@ I need fonts, button styles, and a brand color palette with approximately 47 coo
 
 This is typically where I decide the default theme is looking pretty good after all.
 
-Fortunately, we don't have to start from scratch.
+The good news is that we don't have to start from scratch.
 :::
 
 ## Bootstrap Is Already Doing More Than You Think
@@ -566,10 +511,7 @@ Bootstrap gives us a solid, functional foundation.
 
 
 ::: notes
-
-But it is still the default. Bootstrap is consistent, responsive, and familiar.
-
-But it also means our work can look a lot like every other dashboard or report we've ever seen.
+But this foundation also means our work can look a lot like every other dashboard or report we've ever seen.
 
 Or suspiciously similar to the example we copied from the Shiny or Quarto website while trying to remember how to move the table of contents.
 
@@ -580,7 +522,7 @@ What we need is an easy way to move from “good enough” to “this stands out
 
 ## Bootswatch Gives Us a Better Starting Point
 
-![](inst/img/bootswatch-logo.png){.absolute top=0 right=200px height="100%"}
+![](inst/img/bootswatch-logo.png){.absolute right=500px height="90%"}
 
 ::: notes
 That is where Bootswatch comes in.
@@ -589,9 +531,7 @@ Bootswatch gives us a collection of ready-made themes for Bootstrap that can be 
 
 Instead of styling every button, heading, and nav bar ourselves, we choose a coordinated design where many of these decisions have already been made for us.
 
-It may not be our final design.
-
-But it is a much better place to start than a blank CSS file and a growing sense of dread.
+It may not be our final design, but it's a much better place to start than a blank CSS file.
 :::
 
 ## Possibilities of Bootswatch
@@ -633,7 +573,7 @@ cat(theme_images, sep = "\n")
 :::
 
 ::: notes
-Bootswatch is not one new design. It gives us a range of coordinated starting points.
+Bootswatch gives us a range of coordinated starting points.
 
 The structure and content stay the same, but the visual experience can feel restrained, friendly, warm, or dramatic.
 
@@ -748,6 +688,8 @@ Instead of redefining those choices in every dashboard, report, or presentation,
 :::
 
 ## The Importance of Brand Recognition
+
+
 
 ::: notes
 Reusing these choices does more than save us time.

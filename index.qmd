@@ -13,7 +13,7 @@ format:
             - shinylive
             - diagrams
             # - editable
-        # slide-number: true
+        slide-number: true
         pagetitle: "First Impressions Matter"
         hash: true
         code-line-numbers: false
@@ -90,7 +90,7 @@ But it affects whether you give the product a chance to prove that it is.
 ::: notes
 I’m Shelby Level. I build dashboards, reports, and other data products that help people make decisions. I came to this work as a data person, not as a designer.
 
-And I have made some not so great looking dashboards and reports along the way.
+And I have made some not so great looking work.
 
 I cared about if the numbers were right, the code ran, and the dashboard loaded. And then I was done. Or at least, I really wanted to be done and the last thing I wanted to do was fight with CSS.
 
@@ -208,7 +208,7 @@ Their responses fell into five broad categories: readability, integrity and tran
 
 People didn't always prioritize the same things. One person forcused on a clearly cited source while another focused on clarity.
 
-And, unfortunately, the researchers didn't discover a magical checklist that will make every person trust everything you produce.
+And, unfortunately, the researchers didn't discover a comprehensive checklist that will make every person trust everything you produce.
 
 Here are all of the individual keywords that participants used to describe why they trusted a visualization. And this is a lot of information to process, and it can be overwhelming to think about how to address all of these factors in our work.
 
@@ -429,7 +429,7 @@ Let’s start with color.
 
 ## Color Shapes Attention and Tone
 
-![](https://datawrapper.de/cdn-cgi/image/quality=85,width=1801,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/which-color-scale-to-use-in-data-vis/e9a7ed8d71-1740123119/200801_colorscale-intro-f-1.png){.absolute height="90%"}
+![](https://datawrapper.de/cdn-cgi/image/quality=85,width=1801,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/which-color-scale-to-use-in-data-vis/e9a7ed8d71-1740123119/200801_colorscale-intro-f-1.png){.absolute}
 
 ::: notes
 Now there is no magical shade of trustworthy blue that will make everyone believe everything you make
@@ -538,7 +538,7 @@ But together, these design choices shape the entire visual experience of a data 
 ::: notes
 At this point, you might be thinking, “Okay, great. Now I have to create an entire design system.”
 
-I need fonts, button styles, and a brand color palette with approximately 47 carefully coordinated shades of gray.
+I need fonts, button styles, and a brand color palette with approximately 47 coordinated shades of gray.
 
 This is typically where I decide the default theme is looking pretty good after all.
 
@@ -557,7 +557,6 @@ It provides the layout system and styles familiar components like headings, butt
 That is why our work can look reasonably polished before we write any CSS.
 
 Bootstrap gives us a solid, functional foundation.
-8:00 timing
 :::
 
 ## But a Good Default Is Still a Default
@@ -568,7 +567,7 @@ Bootstrap gives us a solid, functional foundation.
 
 ::: notes
 
-But it is still the default. Bootstrap is consistent, responsive, familiar, and it works.
+But it is still the default. Bootstrap is consistent, responsive, and familiar.
 
 But it also means our work can look a lot like every other dashboard or report we've ever seen.
 
@@ -577,7 +576,6 @@ Or suspiciously similar to the example we copied from the Shiny or Quarto websit
 Bootstrap gives us “good enough.”
 
 What we need is an easy way to move from “good enough” to “this stands out and looks intentional.”
-What we need is an easy way to make that foundation feel more intentional.
 :::
 
 ## Bootswatch Gives Us a Better Starting Point
@@ -587,16 +585,14 @@ What we need is an easy way to make that foundation feel more intentional.
 ::: notes
 That is where Bootswatch comes in.
 
-Bootswatch gives us a collection of ready-made themes for Bootstrap that can be easily applied to any HTML based output.
+Bootswatch gives us a collection of ready-made themes for Bootstrap that can be easily applied to our HTML based outputs.
 
 Instead of styling every button, heading, and nav bar ourselves, we choose a coordinated design where many of these decisions have already been made for us.
 
 It may not be our final design.
 
-But it is a much better place to start than an empty CSS file and a growing sense of dread.
+But it is a much better place to start than a blank CSS file and a growing sense of dread.
 :::
-
----
 
 ## Possibilities of Bootswatch
 
@@ -677,7 +673,7 @@ bslib::page_navbar(
 ::: notes 
 In Shiny, the change is one argument.
 
-We create a Bootstrap theme, choose a preset, and pass it to the page.
+We choose a preset Bootswatch theme and pass it to the page.
 
 One line of code changes the styling across the entire application.
 :::
@@ -717,6 +713,7 @@ We have changed the overall visual experience without redesigning the document o
 ## Same Data. Different Experience. {auto-animate=true}
 
 
+
 ::: notes
 These themes provide a quick way to change the look and feel of your data products without having to write custom CSS.
 Here is the same dashboard three times.
@@ -748,8 +745,6 @@ A `brand.yml` file gives us one place to store the visual decisions we want to r
 That includes our color palette, our typography, and other brand-level choices.
 
 Instead of redefining those choices in every dashboard, report, or presentation, we define them once and apply them across products.
-
-And over time it can also and help work from the same source feel recognizable.
 :::
 
 ## The Importance of Brand Recognition
@@ -757,18 +752,16 @@ And over time it can also and help work from the same source feel recognizable.
 ::: notes
 Reusing these choices does more than save us time.
 
-It also helps people recognize where the work came from.
+Over time it helps work from the same source feel recognizable
 
 The dashboard, report, and presentation shouldn't look identical. They serve different purposes.
 
 They just need enough shared visual cues to feel like they belong to the same family.
 
-That familiarity matters because people often use what they recognize as one part of deciding whether something feels credible and worth examining.
+That familiarity matters because people often use what they recognize as one part of deciding whether something feels credible and trustworthy.
 
 Over time, the first impression can shift from, “What is this?” to, “I recognize this. I know who made it.”
 :::
-
----
 
 ## Brand Recognition: Color
 
@@ -803,9 +796,9 @@ Typography can create an equally strong connection.
 
 A publication might use different colors from one visualization to the next, but a repeated typeface can still hold the work together.
 
-The New York Times is a useful example. Its visualizations can use very different palettes, but the recurring title typeface helps them remain recognizable.
+The New York Times is a useful example. Their visualizations can use very different palettes, but the recurring title typeface Cheltenham helps them remain recognizable.
 
-The same thing happens in these examples from The Economist. Different styles from the same typeface are used across titles, labels, and supporting text.
+They still create hierarchy and variety by using different styles from the same typeface across titles, labels, and supporting text.
 
 That creates variety and hierarchy without losing the shared identity.
 
@@ -813,53 +806,10 @@ So brand recognition does not require every product to look exactly the same.
 
 Sometimes a consistent font, used intentionally, is enough to make separate products sound like they are speaking with the same voice.
 
-Color can create recognition.
-
-Typography can create recognition.
-
-And when we define both in one reusable place, we do not have to recreate that identity one product at a time.
+And when we define both in one reusable place, we don't have to recreate that identity one product at a time.
 :::
 
-## Apply brand.yml
-
-::::: {.codewindow}
-::: {.editor .r name="ui.R"}
-```{.r code-line-numbers="|6-9"}
-bslib::page_navbar(
-    title = "Dashboard",
-    id = "main_nav",
-
-    theme = bslib::bs_theme(
-        preset = "lux",
-        brand = "www/brand.yml"
-    )
-)
-```
-:::
-:::::
-
----
-
-::: {.codewindow .r}
-my-deck.R
-````{.r}
-bslib::page_navbar(
-    title = "Dashboard",
-    id = "main_nav",
-
-    theme = bslib::bs_theme(
-        preset = "sandstone",
-        brand = "www/brand.yml"
-    )
-)
-````
-:::
-
-::: notes
-That brings us back to `brand.yml`.
-:::
-
----
+## Brand.yml File
 
 :::: {.codewindow}
 ::: {.editor .yaml name="00-load.R"}
@@ -924,6 +874,10 @@ typography:
 ```
 :::
 ::::
+
+::: notes
+That brings us back to `brand.yml`.
+:::
 
 ## Apply brand.yml to Shiny
 
@@ -1053,7 +1007,7 @@ And good analysis deserves a presentation that helps people see its value.
 ## Remember This One?
 
 ::: {.fragment}
-![](inst/img/linux-distro.jpeg){.absolute top=5px right=0 height="100%"}
+![](inst/img/linux-distro.jpeg){.absolute height="90%"}
 :::
 
 ::: notes
@@ -1089,7 +1043,23 @@ But they can determine whether someone stays long enough to learn the rest.
 :::
 
 ::: {.fragment}
+### Talk Materials and Additional Resources
+
+![](inst/img/talk-page-qr.png){.absolute height="50%"}
+
+::: {.absolute bottom="0px"}
+{{< fa link >}} [shelbylevel.org/talks/first-impressions-matter](https://shelbylevel.org/talks/first-impressions-matter)
+:::
+
+::: {.absolute right="0px"}
+{{< fa brands github >}} [github.com/shelbylevel](https://github.com/shelbylevel)
+
+{{< fa brands linkedin >}} [linkedin.com/in/shelbylevel](https://linkedin.com/in/shelbylevel)
+
+{{< fa envelope >}} [slevel20@gmail.com](mailto:slevel20@gmail.com)
+:::
+:::
+
+::: notes
 Keep making a strong first impression, and your work will have a better chance of being seen, understood, and used.
-Talk Materials and Resources
-shelbylevel.org/talks/first-impressions-matter
 :::

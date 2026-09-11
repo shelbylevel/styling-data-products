@@ -6,6 +6,8 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="index_files/libs/quarto-contrib/diagrams-0.2.0/diagrams.css" rel="stylesheet">
+<link href="index_files/libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="index_files/libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
 <meta name="author" content="Shelby Level">
@@ -100,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-7ab1a629f61522a66e3036a395d408cd.css">
+<link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-4643c160ebc5a920506f576f506f432f.css">
 <link rel="stylesheet" href="bd/css/brand-deconstructed.css">
 <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
 <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -259,7 +261,7 @@ Shelby Level
           display:block!important;
       }</style></aside></section><section id="who-i-am" class="slide level2 center"><h2>Who I Am</h2>
 <aside class="notes"><p>I’m Shelby Level. I build dashboards, reports, and other data products that help people make decisions. I came to this work as a data person, not as a designer.</p>
-<p>And I have made some not so great looking dashboards and reports along the way.</p>
+<p>And I have made some not so great looking work.</p>
 <p>I cared about if the numbers were right, the code ran, and the dashboard loaded. And then I was done. Or at least, I really wanted to be done and the last thing I wanted to do was fight with CSS.</p>
 <p>I looked at the default Bootstrap theme applied to my work and thought, “It works, it’s accessible and it looks fine. Surely that’s enough.</p>
 <p>Sometimes it is enough. But sometimes this “good enough” makes really good work much easier to ignore.</p>
@@ -352,7 +354,7 @@ Shelby Level
 </div>
 <aside class="notes"><p>Their responses fell into five broad categories: readability, integrity and transparency, quality and design, familiarity, and personal factors.</p>
 <p>People didn’t always prioritize the same things. One person forcused on a clearly cited source while another focused on clarity.</p>
-<p>And, unfortunately, the researchers didn’t discover a magical checklist that will make every person trust everything you produce.</p>
+<p>And, unfortunately, the researchers didn’t discover a comprehensive checklist that will make every person trust everything you produce.</p>
 <p>Here are all of the individual keywords that participants used to describe why they trusted a visualization. And this is a lot of information to process, and it can be overwhelming to think about how to address all of these factors in our work.</p>
 <p>So let’s take a step back and break it down into a more manageable framework. This reveals two broader ways we evaluate trust: cognitively and affectively.</p>
 <style type="text/css">
@@ -519,7 +521,7 @@ Shelby Level
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="color-shapes-attention-and-tone" class="slide level2"><h2>Color Shapes Attention and Tone</h2>
-<p><img data-src="https://datawrapper.de/cdn-cgi/image/quality=85,width=1801,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/which-color-scale-to-use-in-data-vis/e9a7ed8d71-1740123119/200801_colorscale-intro-f-1.png" class="absolute" style="height: 90%; "></p>
+<p><img data-src="https://datawrapper.de/cdn-cgi/image/quality=85,width=1801,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/which-color-scale-to-use-in-data-vis/e9a7ed8d71-1740123119/200801_colorscale-intro-f-1.png" class="absolute" style=""></p>
 <aside class="notes"><p>Now there is no magical shade of trustworthy blue that will make everyone believe everything you make</p>
 <p>But color is one of the first things people notice, and it should always have a job.</p>
 <p>Color can help people understand. It can distinguish categories, reveal patterns…</p>
@@ -639,7 +641,7 @@ Shelby Level
 </div>
 </div>
 <aside class="notes"><p>At this point, you might be thinking, “Okay, great. Now I have to create an entire design system.”</p>
-<p>I need fonts, button styles, and a brand color palette with approximately 47 carefully coordinated shades of gray.</p>
+<p>I need fonts, button styles, and a brand color palette with approximately 47 coordinated shades of gray.</p>
 <p>This is typically where I decide the default theme is looking pretty good after all.</p>
 <p>Fortunately, we don’t have to start from scratch.</p>
 <style type="text/css">
@@ -657,7 +659,7 @@ Shelby Level
 <aside class="notes"><p>When we create an HTML product with Shiny or Quarto, Bootstrap is already doing a lot of the design work for us.</p>
 <p>It provides the layout system and styles familiar components like headings, buttons, and tables.</p>
 <p>That is why our work can look reasonably polished before we write any CSS.</p>
-<p>Bootstrap gives us a solid, functional foundation. 8:00 timing</p>
+<p>Bootstrap gives us a solid, functional foundation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -670,11 +672,11 @@ Shelby Level
           display:block!important;
       }</style></aside></section><section id="but-a-good-default-is-still-a-default" class="slide level2"><h2>But a Good Default Is Still a Default</h2>
 <p><img data-src="inst/img/demo-shiny-app.png" class="absolute" style="height: 55%; "><img data-src="inst/img/quarto-default.png" class="absolute" style="bottom: 0px; right: 0px; height: 45%; "></p>
-<aside class="notes"><p>But it is still the default. Bootstrap is consistent, responsive, familiar, and it works.</p>
+<aside class="notes"><p>But it is still the default. Bootstrap is consistent, responsive, and familiar.</p>
 <p>But it also means our work can look a lot like every other dashboard or report we’ve ever seen.</p>
 <p>Or suspiciously similar to the example we copied from the Shiny or Quarto website while trying to remember how to move the table of contents.</p>
 <p>Bootstrap gives us “good enough.”</p>
-<p>What we need is an easy way to move from “good enough” to “this stands out and looks intentional.” What we need is an easy way to make that foundation feel more intentional.</p>
+<p>What we need is an easy way to move from “good enough” to “this stands out and looks intentional.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -688,10 +690,10 @@ Shelby Level
       }</style></aside></section><section id="bootswatch-gives-us-a-better-starting-point" class="slide level2"><h2>Bootswatch Gives Us a Better Starting Point</h2>
 <p><img data-src="inst/img/bootswatch-logo.png" class="absolute" style="top: 0px; right: 200px; height: 100%; "></p>
 <aside class="notes"><p>That is where Bootswatch comes in.</p>
-<p>Bootswatch gives us a collection of ready-made themes for Bootstrap that can be easily applied to any HTML based output.</p>
+<p>Bootswatch gives us a collection of ready-made themes for Bootstrap that can be easily applied to our HTML based outputs.</p>
 <p>Instead of styling every button, heading, and nav bar ourselves, we choose a coordinated design where many of these decisions have already been made for us.</p>
 <p>It may not be our final design.</p>
-<p>But it is a much better place to start than an empty CSS file and a growing sense of dread.</p>
+<p>But it is a much better place to start than a blank CSS file and a growing sense of dread.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -706,11 +708,6 @@ Shelby Level
 <div class="fragment">
 <p><img data-src="https://bootswatch.com/brite/thumbnail.png" class="absolute" style="top: calc(0% + 70px); left: 0%; height: 15%; "><img data-src="https://bootswatch.com/cerulean/thumbnail.png" class="absolute" style="top: calc(0% + 70px); left: 17%; height: 15%; "><img data-src="https://bootswatch.com/cosmo/thumbnail.png" class="absolute" style="top: calc(0% + 70px); left: 34%; height: 15%; "><img data-src="https://bootswatch.com/cyborg/thumbnail.png" class="absolute" style="top: calc(0% + 70px); left: 51%; height: 15%; "><img data-src="https://bootswatch.com/darkly/thumbnail.png" class="absolute" style="top: calc(0% + 70px); left: 68%; height: 15%; "><img data-src="https://bootswatch.com/flatly/thumbnail.png" class="absolute" style="top: calc(0% + 70px); left: 85%; height: 15%; "><img data-src="https://bootswatch.com/journal/thumbnail.png" class="absolute" style="top: calc(19% + 70px); left: 0%; height: 15%; "><img data-src="https://bootswatch.com/litera/thumbnail.png" class="absolute" style="top: calc(19% + 70px); left: 17%; height: 15%; "><img data-src="https://bootswatch.com/lumen/thumbnail.png" class="absolute" style="top: calc(19% + 70px); left: 34%; height: 15%; "><img data-src="https://bootswatch.com/lux/thumbnail.png" class="absolute" style="top: calc(19% + 70px); left: 51%; height: 15%; "><img data-src="https://bootswatch.com/materia/thumbnail.png" class="absolute" style="top: calc(19% + 70px); left: 68%; height: 15%; "><img data-src="https://bootswatch.com/minty/thumbnail.png" class="absolute" style="top: calc(19% + 70px); left: 85%; height: 15%; "><img data-src="https://bootswatch.com/morph/thumbnail.png" class="absolute" style="top: calc(38% + 70px); left: 0%; height: 15%; "><img data-src="https://bootswatch.com/pulse/thumbnail.png" class="absolute" style="top: calc(38% + 70px); left: 17%; height: 15%; "><img data-src="https://bootswatch.com/quartz/thumbnail.png" class="absolute" style="top: calc(38% + 70px); left: 34%; height: 15%; "><img data-src="https://bootswatch.com/sandstone/thumbnail.png" class="absolute" style="top: calc(38% + 70px); left: 51%; height: 15%; "><img data-src="https://bootswatch.com/simplex/thumbnail.png" class="absolute" style="top: calc(38% + 70px); left: 68%; height: 15%; "><img data-src="https://bootswatch.com/sketchy/thumbnail.png" class="absolute" style="top: calc(38% + 70px); left: 85%; height: 15%; "><img data-src="https://bootswatch.com/slate/thumbnail.png" class="absolute" style="top: calc(57% + 70px); left: 0%; height: 15%; "><img data-src="https://bootswatch.com/solar/thumbnail.png" class="absolute" style="top: calc(57% + 70px); left: 17%; height: 15%; "><img data-src="https://bootswatch.com/spacelab/thumbnail.png" class="absolute" style="top: calc(57% + 70px); left: 34%; height: 15%; "><img data-src="https://bootswatch.com/superhero/thumbnail.png" class="absolute" style="top: calc(57% + 70px); left: 51%; height: 15%; "><img data-src="https://bootswatch.com/united/thumbnail.png" class="absolute" style="top: calc(57% + 70px); left: 68%; height: 15%; "><img data-src="https://bootswatch.com/vapor/thumbnail.png" class="absolute" style="top: calc(57% + 70px); left: 85%; height: 15%; "><img data-src="https://bootswatch.com/yeti/thumbnail.png" class="absolute" style="top: calc(76% + 70px); left: 0%; height: 15%; "><img data-src="https://bootswatch.com/zephyr/thumbnail.png" class="absolute" style="top: calc(76% + 70px); left: 17%; height: 15%; "></p>
 </div>
-<!-- ![](https://bootswatch.com/brite/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/cerulean/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/cosmo/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/darkly/thumbnail.png){.absolute height="20%"}
-![](https://bootswatch.com/flatly/thumbnail.png){.absolute height="20%"} -->
 <aside class="notes"><p>Bootswatch is not one new design. It gives us a range of coordinated starting points.</p>
 <p>The structure and content stay the same, but the visual experience can feel restrained, friendly, warm, or dramatic.</p>
 <p>The point is not to find the universally best theme.</p>
@@ -749,7 +746,7 @@ Shelby Level
 </div>
 <p><img data-src="inst/img/default-theme-shiny.jpeg" class="absolute" style="height: 90%; "><img data-src="inst/img/default-theme-vapor.jpeg" class="absolute" style="height: 90%; "><img data-src="inst/img/default-theme-sketchy.jpeg" class="absolute" style="height: 90%; "><img data-src="inst/img/default-theme-minty.jpeg" class="absolute" style="height: 90%; "></p>
 <aside class="notes"><p>In Shiny, the change is one argument.</p>
-<p>We create a Bootstrap theme, choose a preset, and pass it to the page.</p>
+<p>We choose a preset Bootswatch theme and pass it to the page.</p>
 <p>One line of code changes the styling across the entire application.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -831,7 +828,6 @@ Shelby Level
 <aside class="notes"><p>A <code>brand.yml</code> file gives us one place to store the visual decisions we want to reuse.</p>
 <p>That includes our color palette, our typography, and other brand-level choices.</p>
 <p>Instead of redefining those choices in every dashboard, report, or presentation, we define them once and apply them across products.</p>
-<p>And over time it can also and help work from the same source feel recognizable.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -844,10 +840,10 @@ Shelby Level
           display:block!important;
       }</style></aside></section><section id="the-importance-of-brand-recognition" class="slide level2"><h2>The Importance of Brand Recognition</h2>
 <aside class="notes"><p>Reusing these choices does more than save us time.</p>
-<p>It also helps people recognize where the work came from.</p>
+<p>Over time it helps work from the same source feel recognizable</p>
 <p>The dashboard, report, and presentation shouldn’t look identical. They serve different purposes.</p>
 <p>They just need enough shared visual cues to feel like they belong to the same family.</p>
-<p>That familiarity matters because people often use what they recognize as one part of deciding whether something feels credible and worth examining.</p>
+<p>That familiarity matters because people often use what they recognize as one part of deciding whether something feels credible and trustworthy.</p>
 <p>Over time, the first impression can shift from, “What is this?” to, “I recognize this. I know who made it.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -884,14 +880,12 @@ Shelby Level
 <aside class="notes"><p>Color is not the only way to make work recognizable.</p>
 <p>Typography can create an equally strong connection.</p>
 <p>A publication might use different colors from one visualization to the next, but a repeated typeface can still hold the work together.</p>
-<p>The New York Times is a useful example. Its visualizations can use very different palettes, but the recurring title typeface helps them remain recognizable.</p>
-<p>The same thing happens in these examples from The Economist. Different styles from the same typeface are used across titles, labels, and supporting text.</p>
+<p>The New York Times is a useful example. Their visualizations can use very different palettes, but the recurring title typeface Cheltenham helps them remain recognizable.</p>
+<p>They still create hierarchy and variety by using different styles from the same typeface across titles, labels, and supporting text.</p>
 <p>That creates variety and hierarchy without losing the shared identity.</p>
 <p>So brand recognition does not require every product to look exactly the same.</p>
 <p>Sometimes a consistent font, used intentionally, is enough to make separate products sound like they are speaking with the same voice.</p>
-<p>Color can create recognition.</p>
-<p>Typography can create recognition.</p>
-<p>And when we define both in one reusable place, we do not have to recreate that identity one product at a time.</p>
+<p>And when we define both in one reusable place, we don’t have to recreate that identity one product at a time.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -902,36 +896,69 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="apply-brand.yml" class="slide level2"><h2>Apply brand.yml</h2>
+      }</style></aside></section><section id="brand.yml-file" class="slide level2"><h2>Brand.yml File</h2>
 <div class="codewindow">
-<div class="editor r" name="ui.R">
+<div class="editor yaml" name="00-load.R">
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb5" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
-<span id="cb5-2"><a href="" aria-label="2"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
-<span id="cb5-3"><a href="" aria-label="3"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
-<span id="cb5-4"><a href="" aria-label="4"></a></span>
-<span id="cb5-5"><a href="" aria-label="5"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
-<span id="cb5-6"><a href="" aria-label="6"></a>        <span class="at">preset =</span> <span class="st">"lux"</span>,</span>
-<span id="cb5-7"><a href="" aria-label="7"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
-<span id="cb5-8"><a href="" aria-label="8"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
-<span id="cb5-9"><a href="" aria-label="9"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">meta</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> shelbylevel</span></span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span><span class="at"> https://www.shelbylevel.org</span></span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">color</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
+<span id="cb5-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deep-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#254D56;color:#ffffff;">#254D56</span>"</span></span></span>
+<span id="cb5-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span></span>
+<span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-10</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span></span>
+<span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">gulfstream</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span></span>
+<span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edgewater</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#d3dfdd;color:#1a1a1a;">#d3dfdd</span>"</span></span></span>
+<span id="cb5-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cascade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b3c2c9;color:#1a1a1a;">#b3c2c9</span>"</span></span></span>
+<span id="cb5-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">boulder</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span></span>
+<span id="cb5-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">spring-rain</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span></span>
+<span id="cb5-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">timberwolf</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#D8D5CE;color:#1a1a1a;">#D8D5CE</span>"</span></span></span>
+<span id="cb5-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">almond-dust</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span></span>
+<span id="cb5-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">moonstone</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#969996;color:#ffffff;">#969996</span>"</span></span></span>
+<span id="cb5-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">storm-cloud</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span></span>
+<span id="cb5-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">plum-crazy</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#59224A;color:#ffffff;">#59224A</span>"</span></span></span>
+<span id="cb5-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb5-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> $brand-deep-jade</span><span class="co">       # main text color</span></span>
+<span id="cb5-22"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> $brand-faded-jade-10</span><span class="co">     # background</span></span>
+<span id="cb5-23"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span><span class="co">            # primary brand color</span></span>
+<span id="cb5-24"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span><span class="co">          # secondary accent</span></span>
+<span id="cb5-25"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tertiary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#a2bbbd;color:#ffffff;">#a2bbbd</span>"</span></span><span class="co">           # tertiary accent</span></span>
+<span id="cb5-26"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">success</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span><span class="co">            # success states</span></span>
+<span id="cb5-27"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">info</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span><span class="co">               # info messages</span></span>
+<span id="cb5-28"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span><span class="co">            # warnings</span></span>
+<span id="cb5-29"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">danger</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#6f4a64;color:#ffffff;">#6f4a64</span>"</span></span><span class="co">             # errors/danger</span></span>
+<span id="cb5-30"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span><span class="co">              # light backgrounds</span></span>
+<span id="cb5-31"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span><span class="co">               # dark elements</span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
-</div>
-</section><section class="slide level2"><div class="codewindow r">
-<p>my-deck.R</p>
+<div class="editor yaml fragment" name="01-clean.R">
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
-<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
-<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
-<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
-<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="at">preset =</span> <span class="st">"sandstone"</span>,</span>
-<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
-<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
-<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">typography</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
+<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">200</span><span class="kw">,</span><span class="at"> </span><span class="dv">300</span><span class="kw">,</span><span class="at"> </span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
+<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
+<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
+<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
+<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb6-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
+<span id="cb6-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
+<span id="cb6-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> </span><span class="st">"1rem"</span></span>
+<span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.6</span></span>
+<span id="cb6-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
+<span id="cb6-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
+<span id="cb6-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
+<span id="cb6-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
+<span id="cb6-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> normal</span></span>
+<span id="cb6-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">600</span></span>
+<span id="cb6-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2</span></span>
+<span id="cb6-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> primary</span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+</div>
 </div>
 </div>
 <aside class="notes"><p>That brings us back to <code>brand.yml</code>.</p>
@@ -945,83 +972,19 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level2"><div class="codewindow">
-<div class="editor yaml" name="00-load.R">
-<div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">meta</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> shelbylevel</span></span>
-<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span><span class="at"> https://www.shelbylevel.org</span></span>
-<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">color</span><span class="kw">:</span></span>
-<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
-<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">deep-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#254D56;color:#ffffff;">#254D56</span>"</span></span></span>
-<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span></span>
-<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">faded-jade-10</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span></span>
-<span id="cb7-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">gulfstream</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span></span>
-<span id="cb7-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">edgewater</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#d3dfdd;color:#1a1a1a;">#d3dfdd</span>"</span></span></span>
-<span id="cb7-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">cascade</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b3c2c9;color:#1a1a1a;">#b3c2c9</span>"</span></span></span>
-<span id="cb7-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">boulder</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span></span>
-<span id="cb7-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">spring-rain</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span></span>
-<span id="cb7-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">timberwolf</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#D8D5CE;color:#1a1a1a;">#D8D5CE</span>"</span></span></span>
-<span id="cb7-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">almond-dust</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span></span>
-<span id="cb7-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">moonstone</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#969996;color:#ffffff;">#969996</span>"</span></span></span>
-<span id="cb7-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">storm-cloud</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span></span>
-<span id="cb7-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">plum-crazy</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#59224A;color:#ffffff;">#59224A</span>"</span></span></span>
-<span id="cb7-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
-<span id="cb7-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> $brand-deep-jade</span><span class="co">       # main text color</span></span>
-<span id="cb7-22"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> $brand-faded-jade-10</span><span class="co">     # background</span></span>
-<span id="cb7-23"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#45767a;color:#ffffff;">#45767a</span>"</span></span><span class="co">            # primary brand color</span></span>
-<span id="cb7-24"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#7fa6ad;color:#ffffff;">#7fa6ad</span>"</span></span><span class="co">          # secondary accent</span></span>
-<span id="cb7-25"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tertiary</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#a2bbbd;color:#ffffff;">#a2bbbd</span>"</span></span><span class="co">           # tertiary accent</span></span>
-<span id="cb7-26"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">success</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#727E70;color:#ffffff;">#727E70</span>"</span></span><span class="co">            # success states</span></span>
-<span id="cb7-27"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">info</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#b2c5b4;color:#1a1a1a;">#b2c5b4</span>"</span></span><span class="co">               # info messages</span></span>
-<span id="cb7-28"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#B8AEA8;color:#ffffff;">#B8AEA8</span>"</span></span><span class="co">            # warnings</span></span>
-<span id="cb7-29"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">danger</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#6f4a64;color:#ffffff;">#6f4a64</span>"</span></span><span class="co">             # errors/danger</span></span>
-<span id="cb7-30"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#ecf1f2;color:#1a1a1a;">#ecf1f2</span>"</span></span><span class="co">              # light backgrounds</span></span>
-<span id="cb7-31"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st"><span>"<span class="hex-pill" style="background-color:#64635E;color:#ffffff;">#64635E</span>"</span></span><span class="co">               # dark elements</span></span></code></pre></div>
-<button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
-</div>
-</div>
-<div class="editor yaml fragment" name="01-clean.R">
-<div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">typography</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
-<span id="cb8-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
-<span id="cb8-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">200</span><span class="kw">,</span><span class="at"> </span><span class="dv">300</span><span class="kw">,</span><span class="at"> </span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
-<span id="cb8-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
-<span id="cb8-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
-<span id="cb8-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">[</span></span></span><span class="dv">400</span><span class="kw">,</span><span class="at"> </span><span class="dv">600</span><span class="kw"><span><span class="bracket-depth" style="color:#ed90a4;">]</span></span></span></span>
-<span id="cb8-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
-<span id="cb8-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
-<span id="cb8-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lato"</span></span>
-<span id="cb8-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> </span><span class="st">"1rem"</span></span>
-<span id="cb8-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.6</span></span>
-<span id="cb8-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">300</span></span>
-<span id="cb8-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span></span>
-<span id="cb8-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
-<span id="cb8-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nunito Sans"</span></span>
-<span id="cb8-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> normal</span></span>
-<span id="cb8-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">600</span></span>
-<span id="cb8-20"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2</span></span>
-<span id="cb8-21"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> primary</span></span></code></pre></div>
-<button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
-</div>
-</div>
-</div>
-</section><section id="apply-brand.yml-to-shiny" class="slide level2"><h2>Apply brand.yml to Shiny</h2>
+      }</style></aside></section><section id="apply-brand.yml-to-shiny" class="slide level2"><h2>Apply brand.yml to Shiny</h2>
 <div class="codewindow">
 <div class="editor r" name="ui.R">
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb9" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
-<span id="cb9-2"><a href="" aria-label="2"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
-<span id="cb9-3"><a href="" aria-label="3"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
-<span id="cb9-4"><a href="" aria-label="4"></a></span>
-<span id="cb9-5"><a href="" aria-label="5"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
-<span id="cb9-6"><a href="" aria-label="6"></a>        <span class="at">preset =</span> <span class="st">"lux"</span>,</span>
-<span id="cb9-7"><a href="" aria-label="7"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
-<span id="cb9-8"><a href="" aria-label="8"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
-<span id="cb9-9"><a href="" aria-label="9"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb7" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
+<span id="cb7-2"><a href="" aria-label="2"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
+<span id="cb7-3"><a href="" aria-label="3"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
+<span id="cb7-4"><a href="" aria-label="4"></a></span>
+<span id="cb7-5"><a href="" aria-label="5"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
+<span id="cb7-6"><a href="" aria-label="6"></a>        <span class="at">preset =</span> <span class="st">"lux"</span>,</span>
+<span id="cb7-7"><a href="" aria-label="7"></a>        <span class="at">brand =</span> <span class="st">"www/brand.yml"</span></span>
+<span id="cb7-8"><a href="" aria-label="8"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
+<span id="cb7-9"><a href="" aria-label="9"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
@@ -1127,7 +1090,7 @@ Shelby Level
           display:block!important;
       }</style></aside></section><section id="remember-this-one" class="slide level2"><h2>Remember This One?</h2>
 <div class="fragment">
-<p><img data-src="inst/img/linux-distro.jpeg" class="absolute" style="top: 5px; right: 0px; height: 100%; "></p>
+<p><img data-src="inst/img/linux-distro.jpeg" class="absolute" style="height: 90%; "></p>
 </div>
 <aside class="notes"><p>Before I finish, let’s go back to the website from the beginning.</p>
 <p>A few of you may have recognized it. This is DistroWatch, a widely used and trusted website that provides information about different Linux distributions for over 25 years.</p>
@@ -1155,10 +1118,29 @@ Shelby Level
 <p>But they can determine whether someone stays long enough to learn the rest.</p>
 </div>
 <div class="fragment">
-<p>Keep making a strong first impression, and your work will have a better chance of being seen, understood, and used. Talk Materials and Resources shelbylevel.org/talks/first-impressions-matter</p>
+<h3 id="talk-materials-and-additional-resources">Talk Materials and Additional Resources</h3>
+<p><img data-src="inst/img/talk-page-qr.png" class="absolute" style="height: 50%; "></p>
+<div class="absolute" style="bottom: 0px; ">
+<p><i class="fa-solid fa-link" aria-label="link"></i> <a href="https://shelbylevel.org/talks/first-impressions-matter">shelbylevel.org/talks/first-impressions-matter</a></p>
 </div>
-
-</section>
+<div class="absolute" style="right: 0px; ">
+<p><i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/shelbylevel">github.com/shelbylevel</a></p>
+<p><i class="fa-brands fa-linkedin" aria-label="linkedin"></i> <a href="https://linkedin.com/in/shelbylevel">linkedin.com/in/shelbylevel</a></p>
+<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:slevel20@gmail.com">slevel20@gmail.com</a></p>
+</div>
+</div>
+<aside class="notes"><p>Keep making a strong first impression, and your work will have a better chance of being seen, understood, and used.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside></section>
 </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -1200,7 +1182,7 @@ Shelby Level
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

@@ -446,7 +446,7 @@ It needs to work at the sizes we actually use with clear letters, numbers, and e
 
 ---
 
-![](inst/img/papyrus.gif){.absolute left=0px bottom=0px height="80%"}
+![](inst/img/papyrus.gif){.absolute left=0px bottom=0px height="70%"}
 ![](inst/img/papyrus-meme.jpg){.absolute right=0px height="60%"}
 
 ::: notes
@@ -655,7 +655,7 @@ Choose a theme in the YAML, and Quarto applies it across the document.
 We have changed the overall visual experience without redesigning the document or touching its content.
 ::: -->
 
-## A Preset Is a Starting Point
+## A Preset Is a Starting Point {.center}
 
 ::: notes
 A Bootswatch preset gives us a coordinated starting point.
@@ -815,11 +815,34 @@ The typography section works the same way. It defines the fonts, weights, sizing
 Once those decisions live in brand.yml, the brand is no longer dependent on me remembering every design decision. Those decisions are recorded in a format the tools can use.
 :::
 
-## Apply brand.yml to Shiny
+## Apply brand.yml
 
 (add visual demo)
 
-::::: {.codewindow}
+:::: {.codewindow}
+::: {.editor .qmd name="report.qmd"}
+```yaml
+---
+title: "My Document"
+format: html
+---
+```
+:::
+
+::: {.editor .qmd .fragment name="themed-report.qmd"}
+```{.yaml code-line-numbers="|3-6"}
+---
+title: "My Document"
+format: 
+  html:
+    theme: flatly
+    brand: brand.yml
+---
+```
+:::
+::::
+
+<!-- ::::: {.codewindow}
 ::: {.editor .r name="ui.R"}
 ```{.r code-line-numbers="|6-9"}
 bslib::page_navbar(
@@ -833,10 +856,10 @@ bslib::page_navbar(
 )
 ```
 :::
-:::::
+::::: -->
 
 ::: notes
-Back in Shiny, I keep the Bootswatch preset as the foundation and add the brand file.
+Now in Quarto, I keep the Bootswatch preset as the foundation and add the brand file.
 
 Bootswatch handles the starting design.
 
@@ -868,8 +891,6 @@ I spend less time rebuilding the same styling decisions and more time working on
 :::
 
 ## Styling Becomes a System {.bd-slide}
-
-(need to fix - broke it when adding another animation)
 
 ::: {.gd-stage-wrap}
 <div id="bd-stage"></div>

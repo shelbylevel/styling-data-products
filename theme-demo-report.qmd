@@ -1,0 +1,108 @@
+---
+title: "Restaurant Tipping"
+author: "Theme Demo"
+format:
+  html:
+    theme: lux      # swap this out to preview a different Bootswatch theme
+    toc: true
+    toc-location: right
+    embed-resources: true
+    fig-width: 5
+    fig-height: 3.125
+execute:
+  warning: false
+  message: false
+  echo: false
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+library(gt)
+library(ggridges)
+library(scales)
+library(thematic)
+
+thematic_rmd()
+
+# The classic tips dataset used by the original bslib theme demo app
+tips <- read_csv(
+  "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv",
+  show_col_types = FALSE
+) |>
+  mutate(
+    day = factor(day, levels = c("Thur", "Fri", "Sat", "Sun")),
+    time = factor(time, levels = c("Lunch", "Dinner")),
+    tip_pct = tip / total_bill
+  )
+```
+
+## Overview
+
+As bills grow larger, tips grow with them, but not perfectly proportionally —
+the curve flattens a little at the high end, suggesting the biggest checks
+don't always earn a tip that keeps pace percentage-wise.
+
+```{r}
+#| label: fig-bill-vs-tip
+#| fig-cap: "Total bill vs. tip, with a loess trend line"
+
+ggplot(tips, aes(x = total_bill, y = tip)) +
+  geom_point(alpha = 0.6, size = 1.8) +
+  geom_smooth(
+    method = "loess",
+    formula = y ~ x
+    # color = "#0d6efd",
+    # fill = "grey70"
+  ) +
+  labs(x = "Total bill ($)", y = "Tip ($)") +
+  theme_minimal(base_size = 13)
+```
+
+::: {.column-margin}
+
+```{r}
+#| label: tbl-tips-data
+#| tbl-cap: "First 10 recorded checks"
+
+tips |>
+  slice_head(n = 10) |>
+  select(total_bill, tip, sex, smoker, day, time, size) |>
+  gt() |>
+  fmt_currency(columns = c(total_bill, tip), decimals = 2) |>
+  cols_label(
+    total_bill = "Total bill",
+    tip = "Tip",
+    sex = "Sex",
+    smoker = "Smoker",
+    day = "Day",
+    time = "Time",
+    size = "Party size"
+  ) |>
+  # opt_table_font(font = google_font("Inter")) |>
+  tab_options(
+    table.width = pct(100),
+    column_labels.font.weight = "bold"
+  )
+```
+
+:::
+
+## Tip percentages by day
+
+How tip percentage is distributed across
+each day of the week:
+
+```{r}
+#| label: fig-tip-pct-ridge
+#| fig-cap: "Distribution of tip percentage by day"
+
+ggplot(tips, aes(x = tip_pct, y = day)) +
+  geom_density_ridges(alpha = 0.7, scale = 1.2) +
+  scale_x_continuous(labels = percent_format()) +
+  # scale_fill_brewer(palette = "Blues", direction = -1) +
+  labs(x = "Tip percentage", y = NULL) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "none")
+```

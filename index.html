@@ -564,7 +564,7 @@ Shelby Level
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section class="slide level2"><p><img data-src="inst/img/papyrus.gif" class="absolute" style="left: 0px; bottom: 0px; height: 80%; "><img data-src="inst/img/papyrus-meme.jpg" class="absolute" style="right: 0px; height: 60%; "></p>
+      }</style></aside></section><section class="slide level2"><p><img data-src="inst/img/papyrus.gif" class="absolute" style="left: 0px; bottom: 0px; height: 70%; "><img data-src="inst/img/papyrus-meme.jpg" class="absolute" style="right: 0px; height: 60%; "></p>
 <aside class="notes"><p>I’m looking at you, Papyrus.</p>
 <p>So instead of asking, “Which font do I like?” ask:</p>
 <p>“What does this typography need to communicate?”</p>
@@ -755,7 +755,7 @@ The same idea works in Quarto.
 Choose a theme in the YAML, and Quarto applies it across the document.
 
 We have changed the overall visual experience without redesigning the document or touching its content.
-::: --></section><section id="a-preset-is-a-starting-point" class="slide level2"><h2>A Preset Is a Starting Point</h2>
+::: --></section><section id="a-preset-is-a-starting-point" class="slide level2 center"><h2>A Preset Is a Starting Point</h2>
 <aside class="notes"><p>A Bootswatch preset gives us a coordinated starting point.</p>
 <p>But it doesn’t know our organization’s colors, our preferred fonts, or how we want our products to feel.</p>
 <p>We could customize those choices separately in every project.</p>
@@ -919,25 +919,47 @@ We have changed the overall visual experience without redesigning the document o
           width: 1px!important;
           overflow: hidden!important;
           display:block!important;
-      }</style></aside></section><section id="apply-brand.yml-to-shiny" class="slide level2"><h2>Apply brand.yml to Shiny</h2>
+      }</style></aside></section><section id="apply-brand.yml" class="slide level2"><h2>Apply brand.yml</h2>
 <p>(add visual demo)</p>
 <div class="codewindow">
-<div class="editor r" name="ui.R">
+<div class="editor qmd" name="report.qmd">
 <div class="code-copy-outer-scaffold">
-<div class="sourceCode" id="cb3" data-code-line-numbers="|6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="" aria-label="1"></a><span><span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">page_navbar</span><span><span class="bracket-depth" style="color:#ed90a4;">(</span></span></span>
-<span id="cb3-2"><a href="" aria-label="2"></a>    <span class="at">title =</span> <span class="st">"Dashboard"</span>,</span>
-<span id="cb3-3"><a href="" aria-label="3"></a>    <span class="at">id =</span> <span class="st">"main_nav"</span>,</span>
-<span id="cb3-4"><a href="" aria-label="4"></a></span>
-<span id="cb3-5"><a href="" aria-label="5"></a>    <span class="at">theme =</span><span> <span class="namespace" style="color:#FFCC66;">bslib</span></span><span class="sc">::</span><span class="fu">bs_theme</span><span><span class="bracket-depth" style="color:#d3a263;">(</span></span></span>
-<span id="cb3-6"><a href="" aria-label="6"></a>        <span class="at">preset =</span> <span class="st">"lux"</span>,</span>
-<span id="cb3-7"><a href="" aria-label="7"></a>        <span class="at">brand =</span> <span class="st">"brand.yml"</span></span>
-<span id="cb3-8"><a href="" aria-label="8"></a><span>    <span class="bracket-depth" style="color:#d3a263;">)</span></span></span>
-<span id="cb3-9"><a href="" aria-label="9"></a><span><span class="bracket-depth" style="color:#ed90a4;">)</span></span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+</div>
+</div>
+<div class="editor qmd fragment" name="themed-report.qmd">
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb4" data-code-line-numbers="|3-6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="" aria-label="1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="" aria-label="2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb4-3"><a href="" aria-label="3"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-4"><a href="" aria-label="4"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="" aria-label="5"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> flatly</span></span>
+<span id="cb4-6"><a href="" aria-label="6"></a><span class="at">    </span><span class="fu">brand</span><span class="kw">:</span><span class="at"> brand.yml</span></span>
+<span id="cb4-7"><a href="" aria-label="7"></a><span class="pp">---</span></span></code></pre></div>
 <button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
 </div>
 </div>
 </div>
-<aside class="notes"><p>Back in Shiny, I keep the Bootswatch preset as the foundation and add the brand file.</p>
+<!-- ::::: {.codewindow}
+::: {.editor .r name="ui.R"}
+```{.r code-line-numbers="|6-9"}
+bslib::page_navbar(
+    title = "Dashboard",
+    id = "main_nav",
+
+    theme = bslib::bs_theme(
+        preset = "lux",
+        brand = "brand.yml"
+    )
+)
+```
+:::
+::::: -->
+<aside class="notes"><p>Now in Quarto, I keep the Bootswatch preset as the foundation and add the brand file.</p>
 <p>Bootswatch handles the starting design.</p>
 <p>My brand file provides the choices that make the product feel like ours.</p>
 <p>A preset gives me a head start.</p>
@@ -972,7 +994,6 @@ We have changed the overall visual experience without redesigning the document o
           overflow: hidden!important;
           display:block!important;
       }</style></aside></section><section id="styling-becomes-a-system" class="slide level2 bd-slide"><h2>Styling Becomes a System</h2>
-<p>(need to fix - broke it when adding another animation)</p>
 <div class="gd-stage-wrap">
 <div id="bd-stage">
 
@@ -1635,12 +1656,6 @@ We have changed the overall visual experience without redesigning the document o
             duration: 600,
             easing: 'easeInOutQuad',
           });
-          TM.anime({
-      targets: plainStateEl,
-      opacity: theme.hasTheme ? 0 : 1,
-      duration: 450,
-      easing: 'easeInOutQuad'
-    });
         });
 
         codeBlocks.forEach(b => {

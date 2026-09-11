@@ -1345,3 +1345,93 @@ code.sourceCode.r {
   font-size: 22px;
   color: #727e70;
 }
+
+/* ==========================================================
+   Applying Bootswatch Themes: Shiny
+   Same TM.gate/TM.anime architecture as brand-deconstructed.js —
+   namespaced btd- so it can't collide with #bd-stage/#bd-plot or
+   #bdr-stage/#bdr-plot, since all three slides sit in the DOM at once.
+   ========================================================== */
+
+.btd-slide {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.btd-slide h2 { margin: 0 0 24px 0; line-height: 1.05; }
+
+.btd-slide > .gd-frag,
+.btd-slide .gd-frag {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; pointer-events: none;
+}
+
+.btd-slide .gd-stage-wrap {
+  position: relative; width: 100%; height: 820px;
+  margin: 0; overflow: visible; perspective: 2200px;
+}
+
+/* Two-column composition, same math as .bd-slide:
+   590px code + 74px gap + 900px preview = 1564px */
+.btd-slide #btd-stage {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  gap: 74px; width: 100%; height: 100%; margin: 0 auto;
+}
+
+/* ---------------- Code panel (reuses .bd-codewindow chrome) ---------------- */
+
+.btd-slide .bd-code {
+  flex: 0 0 590px; width: 590px; max-width: 590px; margin: 0;
+  font-family: "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
+  font-size: 17px; line-height: 1.5;
+  overflow-wrap: normal; word-break: normal;
+}
+.btd-slide .bd-codewindow { border-radius: 14px; overflow: hidden; }
+.btd-slide .bd-codewindow .header { height: 42px; padding-left: 20px; gap: 18px; }
+.btd-slide .bd-codewindow .header .file {
+  height: 90%; margin-top: 5px; padding-left: 22px; padding-right: 22px;
+  gap: 7px; border-radius: 12px 12px 0 0;
+}
+.btd-slide .bd-codewindow .textarea {
+  box-sizing: border-box; padding: 22px 26px 24px; overflow: hidden;
+}
+.btd-slide .bd-codewindow .textarea pre { margin: 0; white-space: pre; }
+
+/* The two code states crossfade in place rather than reflowing the window
+   when the theme line appears — sized to the taller (themed) variant so
+   nothing jumps. */
+.btd-slide .btd-code-stack { position: relative; min-height: 145px; }
+.btd-slide .btd-code-stack pre {
+  position: absolute; inset: 0;
+  transition: opacity .45s ease;
+}
+.btd-slide .btd-theme-line {
+  display: block; padding: 2px 9px; margin: 0 -9px; border-radius: 7px;
+  transition: background .5s ease;
+}
+.btd-slide .btd-theme-line.btd-flash { background: var(--btd-flash, rgba(125,211,192,.18)); }
+
+/* ---------------- Preview panel (real screenshots, crossfaded) ---------------- */
+
+.btd-slide #btd-preview {
+  position: relative;
+  flex: 0 0 900px; width: 900px;
+  aspect-ratio: 4355 / 2502;
+  border-radius: 15px; overflow: hidden;
+  background: #0d0f14;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, .5);
+}
+.btd-slide .btd-shot {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .55s ease;
+}
+.btd-slide .btd-shot.btd-on { opacity: 1; }
+
+/* center bootswatch screenshots */
+.reveal img {
+    max-width: 97%;
+    max-height: 95%;
+    padding-left: 13px;
+}

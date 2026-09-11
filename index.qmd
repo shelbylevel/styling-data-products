@@ -9,9 +9,9 @@ format:
         revealjs-plugins:
             - codewindow
             # - editable
-        filters:
-            - shinylive
-            - diagrams
+        # filters:
+        #     - shinylive
+        #     - diagrams
             # - editable
         slide-number: true
         pagetitle: "First Impressions Matter"
@@ -42,6 +42,7 @@ format:
             - bd/js/infra.html
             - bd/js/brand-deconstructed.html
             - bd/js/brand-report-deconstructed-quarto.html
+            - bd/js/bootswatch-theme-demo.html
         embed-resources: false
 execute:
     echo: true
@@ -530,8 +531,6 @@ That is where Bootswatch comes in.
 Bootswatch gives us a collection of ready-made themes for Bootstrap that can be easily applied to our HTML based outputs.
 
 Instead of styling every button, heading, and nav bar ourselves, we choose a coordinated design where many of these decisions have already been made for us.
-
-It may not be our final design, but it's a much better place to start than a blank CSS file.
 :::
 
 ## Possibilities of Bootswatch
@@ -575,16 +574,22 @@ cat(theme_images, sep = "\n")
 ::: notes
 Bootswatch gives us a range of coordinated starting points.
 
-The structure and content stay the same, but the visual experience can feel restrained, friendly, warm, or dramatic.
+The structure and content stay the same, but we're able to quickly change the look and feel of our data products without having to write custom CSS.
 
-The point is not to find the universally best theme.
-
-The point is that we can begin closer to the experience we want, without styling every component ourselves.
+Bootswatch might not give us our final design instantly, but with one simple change we can get a lot closer to the experience we want.
 :::
 
-## Applying Bootswatch Themes: Shiny
+## Applying Bootswatch Themes {.btd-slide}
 
-:::: {.codewindow}
+::: {.gd-stage-wrap}
+<div id="btd-stage"></div>
+:::
+[]{.fragment .gd-frag id="btd-vapor"}
+[]{.fragment .gd-frag id="btd-minty"}
+[]{.fragment .gd-frag id="btd-sketchy"}
+
+
+<!-- :::: {.codewindow}
 ::: {.editor .r name="ui.R"}
 ```r
 bslib::page_navbar(
@@ -608,17 +613,17 @@ bslib::page_navbar(
 ![](inst/img/default-theme-shiny.jpeg){.absolute height="90%"}
 ![](inst/img/default-theme-vapor.jpeg){.absolute height="90%"}
 ![](inst/img/default-theme-sketchy.jpeg){.absolute height="90%"}
-![](inst/img/default-theme-minty.jpeg){.absolute height="90%"}
+![](inst/img/default-theme-minty.jpeg){.absolute height="90%"} -->
 
 ::: notes 
 In Shiny, the change is one argument.
 
-We choose a preset Bootswatch theme and pass it to the page.
+We choose a preset Bootswatch theme, pass it to the app through the theme argument, and it changes the styling across the entire application.
 
-One line of code changes the styling across the entire application.
+One line of code changes the entire visual experience without redesigning the document or touching its content.
 :::
 
-## Applying Bootswatch Themes: Quarto
+<!-- ## Applying Bootswatch Themes: Quarto
 
 :::: {.codewindow}
 ::: {.editor .qmd name="report.qmd"}
@@ -648,25 +653,14 @@ The same idea works in Quarto.
 Choose a theme in the YAML, and Quarto applies it across the document.
 
 We have changed the overall visual experience without redesigning the document or touching its content.
-:::
-
-## Same Data. Different Experience. {auto-animate=true}
-
-
-
-::: notes
-These themes provide a quick way to change the look and feel of your data products without having to write custom CSS.
-Here is the same dashboard three times.
-
-The data are not going to change. The layout is not going to change. The only thing I am changing is the color.
-:::
+::: -->
 
 ## A Preset Is a Starting Point
 
 ::: notes
 A Bootswatch preset gives us a coordinated starting point.
 
-But it does not know our organization’s colors, our preferred fonts, or how we want our products to feel.
+But it doesn't know our organization’s colors, our preferred fonts, or how we want our products to feel.
 
 We could customize those choices separately in every project.
 
@@ -689,7 +683,7 @@ Instead of redefining those choices in every dashboard, report, or presentation,
 
 ## The Importance of Brand Recognition
 
-
+![](https://datawrapper.de/cdn-cgi/image/quality=85,width=2582,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/a4eaf9456a-1740123150/Artboard-6.png){.absolute left=300px height="90%"}
 
 ::: notes
 Reusing these choices does more than save us time.
@@ -732,26 +726,22 @@ That creates consistency across products, reduces the number of design decisions
 ![](https://datawrapper.de/cdn-cgi/image/quality=85,width=2890,f=auto,fit=cover/https://kirby.datawrapper.de/media/pages/blog/colors-for-data-vis-style-guides/cd35358e8d-1740123150/Artboard-1.png){.absolute right=200px height="90%"}
 
 ::: notes
-Color is not the only way to make work recognizable.
+Typography can also create a strong connection.
 
-Typography can create an equally strong connection.
+An organization might use different colors from one publication to the next, but a repeated typeface can still hold the work together.
 
-A publication might use different colors from one visualization to the next, but a repeated typeface can still hold the work together.
+The New York Times is a useful example. Their visualizations can use very different palettes, but the recurring title font Cheltenham helps them remain recognizable.
 
-The New York Times is a useful example. Their visualizations can use very different palettes, but the recurring title typeface Cheltenham helps them remain recognizable.
+Differing styles from the same font create variety and hierarchy across titles, labels, and supporting text.
 
-They still create hierarchy and variety by using different styles from the same typeface across titles, labels, and supporting text.
+So brand recognition does not require every product to look exactly the same, it just needs enough shared identity to make separate products sound like they are speaking with the same voice.
 
-That creates variety and hierarchy without losing the shared identity.
-
-So brand recognition does not require every product to look exactly the same.
-
-Sometimes a consistent font, used intentionally, is enough to make separate products sound like they are speaking with the same voice.
-
-And when we define both in one reusable place, we don't have to recreate that identity one product at a time.
+And when we define these brand elements in one reusable place, we don't have to recreate that identity one product at a time.
 :::
 
 ## Brand.yml File
+
+(extend code window to display all text)
 
 :::: {.codewindow}
 ::: {.editor .yaml name="00-load.R"}
@@ -767,12 +757,9 @@ color:
     faded-jade-10: "#ecf1f2"
     gulfstream: "#7fa6ad"
     edgewater: "#d3dfdd"
-    cascade: "#b3c2c9"
     boulder: "#727E70"
     spring-rain: "#b2c5b4"
-    timberwolf: "#D8D5CE"
     almond-dust: "#B8AEA8"
-    moonstone: "#969996"
     storm-cloud: "#64635E"
     plum-crazy: "#59224A"
   
@@ -804,12 +791,11 @@ typography:
   base:
     family: "Lato"
     size: "1rem"
-    line-height: 1.6
     weight: 300
+    line-height: 1.6
   
   headings:
     family: "Nunito Sans"
-    style: normal
     weight: 600
     line-height: 1.2
     color: primary
@@ -819,9 +805,19 @@ typography:
 
 ::: notes
 That brings us back to `brand.yml`.
+
+Color and typography shape the first impression, but consistency is what makes that impression recognizable over time, and I can define them once in a single file.
+
+The first section establishes my color palette and gives each color a purpose. I am not just saving hex codes. I am identifying which color should be used for text, backgrounds, primary elements, warnings, errors, and other interface states.
+
+The typography section works the same way. It defines the fonts, weights, sizing, and spacing for both body text and headings.
+
+Once those decisions live in brand.yml, the brand is no longer dependent on me remembering every design decision. Those decisions are recorded in a format the tools can use.
 :::
 
 ## Apply brand.yml to Shiny
+
+(add visual demo)
 
 ::::: {.codewindow}
 ::: {.editor .r name="ui.R"}
@@ -832,7 +828,7 @@ bslib::page_navbar(
 
     theme = bslib::bs_theme(
         preset = "lux",
-        brand = "www/brand.yml"
+        brand = "brand.yml"
     )
 )
 ```
@@ -853,6 +849,8 @@ The brand file gives me consistency.
 
 ## One Brand Across Multiple Products
 
+(add visual demo)
+
 ::: notes
 Here is the payoff.
 
@@ -866,10 +864,12 @@ And when I need to update the palette or typography, I have a consistent place t
 
 That improves the audience’s experience, but it also improves mine.
 
-I spend less time rebuilding the same styling decisions and more time working on the actual product.
+I spend less time rebuilding the same styling decisions and more time working on the content.
 :::
 
 ## Styling Becomes a System {.bd-slide}
+
+(need to fix - broke it when adding another animation)
 
 ::: {.gd-stage-wrap}
 <div id="bd-stage"></div>
@@ -886,22 +886,20 @@ I spend less time rebuilding the same styling decisions and more time working on
 ::: notes
 Let’s put all of that together.
 
-At the base, we have Bootstrap. It gives our product structure and functioning components.
+At our foundation, we have Bootstrap. It gives our product structure and functioning components.
 
-Then Bootswatch gives us a more polished starting point without requiring us to design every component ourselves.
+Apply a Bootswatch theme for a more polished starting point without any design effort.
 
-On top of that, brand.yml stores the choices that make the product recognizable: our colors, our typography, and our visual identity.
+On top of that, brand.yml stores the choices that make the product recognizable: our colors, fonts, and visual identity.
 
-And then there is still room for polish.
+And then there is still room to polish any components you want to design yourself. The final details that are specific to this product and this audience.
 
-A thoughtful highlight. Better spacing. A clearer annotation. The final details that are specific to this product and this audience.
-
-Styling does not have to be one huge task at the end.
+Styling does not have to be one huge task left looming at the end of your projects.
 
 It can be a series of manageable layers.
 :::
 
-## Quarto Example {.bdr-slide}
+<!-- ## Quarto Example {.bdr-slide}
 ::: {.gd-stage-wrap}
 <div id="bdr-stage"></div>
 :::
@@ -912,39 +910,7 @@ It can be a series of manageable layers.
 []{.fragment .gd-frag id="bdr-focus-brand"}
 []{.fragment .gd-frag id="bdr-focus-polish"}
 []{.fragment .gd-frag id="bdr-collapse"}
-[]{.fragment .gd-frag id="bdr-unrotate"}
-
-## Don't Start From Scratch
-
-::: {.fragment}
-1. Start with a foundation
-:::
-
-::: {.fragment}
-2. Make a few intentional choices
-:::
-
-::: {.fragment}
-3. Then make those choices reusable
-:::
-
-::: notes
-If you remember one thing from this talk, let it be this:
-
-You don't need to start from scratch, become a graphic designer, or fight with CSS every time you create something new.
-
-Start with Bootstrap.
-
-Use Bootswatch to choose a polished foundation.
-
-Use brand.yml to make your color and typography decisions reusable.
-
-Then use the time you saved to focus on the audience and the information they need.
-
-Because accurate data deserves an accurate analysis.
-
-And good analysis deserves a presentation that helps people see its value.
-:::
+[]{.fragment .gd-frag id="bdr-unrotate"} -->
 
 ## Remember This One?
 
@@ -955,7 +921,7 @@ And good analysis deserves a presentation that helps people see its value.
 ::: notes
 Before I finish, let’s go back to the website from the beginning.
 
-A few of you may have recognized it. This is DistroWatch, a widely used and trusted website that provides information about different Linux distributions for over 25 years.
+A few of you may have recognized it. This is DistroWatch, a widely used and trusted website that provides information about available Linux distributions for over 25 years.
 
 So now, knowing what it is, how many of you feel a little more comfortable clicking something?
 
@@ -964,7 +930,7 @@ What changed was your knowledge of the source.
 
 This is why I'm not saying that good styling equals trustworthiness.
 
-DistroWatch did not become trustworthy because I explained what it was.
+DistroWatch didn't become trustworthy because I explained what it was.
 
 Instead, the first impression created hesitation, and familiarity with the source gave you additional information to reconsider that impression.
 
@@ -972,7 +938,7 @@ Those two systems are working together.
 
 But most of our products don't come with decades of recognition behind them.
 
-Most of us cannot put up a questionable-looking dashboard and say, “don't worry. People already know we are credible.”
+Most of us can't put up a questionable-looking dashboard and say, “don't worry. People already know we're credible.”
 
 Our work has to communicate, as quickly as possible, that it was made intentionally and that it is worth examining.
 Because
@@ -981,19 +947,19 @@ Because
 ## First impressions are not the whole story
 
 ::: {.fragment}
-But they can determine whether someone stays long enough to learn the rest.
+But they can determine whether someone stays long enough to learn the rest
 :::
 
 ::: {.fragment}
 ### Talk Materials and Additional Resources
 
-![](inst/img/talk-page-qr.png){.absolute height="50%"}
+![](inst/img/talk-page-qr.png){.absolute bottom=100px height="50%"}
 
 ::: {.absolute bottom="0px"}
 {{< fa link >}} [shelbylevel.org/talks/first-impressions-matter](https://shelbylevel.org/talks/first-impressions-matter)
 :::
 
-::: {.absolute right="0px"}
+::: {.absolute right="0px" bottom=100px}
 {{< fa brands github >}} [github.com/shelbylevel](https://github.com/shelbylevel)
 
 {{< fa brands linkedin >}} [linkedin.com/in/shelbylevel](https://linkedin.com/in/shelbylevel)
